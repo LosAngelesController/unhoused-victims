@@ -8,7 +8,7 @@ import MapboxLanguage from '@mapbox/mapbox-gl-language';
 import { uploadMapboxTrack } from '../components/mapboxtrack';
 import Nav from '../components/nav'
 
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
  
 const councildistricts = require('./CouncilDistricts.json')
 const citybounds = require('./citybounds.json')
@@ -21,6 +21,7 @@ import * as turf from '@turf/turf'
 
 const Home: NextPage = () => {
 
+  var [hasStartedControls, setHasStartedControls] = useState(false)
 
   function checkHideOrShowTopRightGeocoder() {
     var toprightbox = document.querySelector(".mapboxgl-ctrl-top-right")
@@ -67,17 +68,30 @@ const formulaForZoom = () => {
   }
 }
 
-const map = new mapboxgl.Map({
+const urlParams = new URLSearchParams(window.location.search);
+const latParam = urlParams.get('lat');
+const lngParam = urlParams.get('lng');
+const zoomParam = urlParams.get('zoom');
+const debugParam = urlParams.get('debug');
+
+var mapparams:any = {
   container: divRef.current, // container ID
-  style: 'mapbox://styles/comradekyler/ckxslkfs7kemm15mpb8700qoq', // style URL
+  style: 'mapbox://styles/comradekyler/cl03amxb2002g14p5mwo6nmqi', // style URL
   center: [-118.41,34], // starting position [lng, lat]
   zoom: formulaForZoom() // starting zoom
-});
+}
+
+
+
+const map = new mapboxgl.Map(mapparams);
 
 var rtldone=false;
 
+
+
 try {
-if (rtldone  === false) {
+if (rtldone  === false && hasStartedControls === false) {
+  setHasStartedControls(true)
   //multilingual support
 //right to left allows arabic rendering
 mapboxgl.setRTLTextPlugin('https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-rtl-text/v0.10.1/mapbox-gl-rtl-text.js', (callbackinfo:any) => {
@@ -196,6 +210,204 @@ window.addEventListener('resize',  handleResize);
 
 map.on('load', () => {
 
+  if (debugParam) {
+    map.showTileBoundaries = true;
+    map.showCollisionBoxes = true;
+    map.showPadding = true;
+  }
+
+  if (urlParams.get('terraindebug')) {
+
+    map.showTerrainWireframe = true;
+  }
+
+  map.addSource('housingvector', {
+    'type': 'vector',
+    'url': 'mapbox://comradekyler.ckzxdlka74tqd27p9n2r3a08p-0dvs5'
+    });
+
+    map.addLayer({
+      'id': 'housinglayer',
+      'type': 'circle',
+      'source': 'housingvector',
+      'source-layer': 'export-housing-2022-v7',
+      'paint': {
+      'circle-color': [
+        "interpolate",
+        ["linear"],
+        [
+          "to-number",
+          ["get", "Affordable %"]
+        ],
+        0,
+        "#fde047",
+        1,
+        "#16a34a"
+      ],
+      'circle-radius': [
+        "interpolate",
+        ["linear"],
+        ["zoom"],
+        0.66,
+        [
+          "interpolate",
+          ["linear"],
+          [
+            "to-number",
+            [
+              "get",
+              "Affordable Units"
+            ]
+          ],
+          0,
+          3,
+          1000,
+          30
+        ],
+        6.924,
+        [
+          "interpolate",
+          ["linear"],
+          [
+            "to-number",
+            [
+              "get",
+              "Affordable Units"
+            ]
+          ],
+          0,
+          2.5,
+          1000,
+          60
+        ],
+        9.882,
+        [
+          "interpolate",
+          ["linear"],
+          [
+            "to-number",
+            [
+              "get",
+              "Affordable Units"
+            ]
+          ],
+          0,
+          2.5,
+          1000,
+          75
+        ],
+        11.312,
+        [
+          "interpolate",
+          ["linear"],
+          [
+            "to-number",
+            [
+              "get",
+              "Affordable Units"
+            ]
+          ],
+          0,
+          4,
+          1000,
+          80
+        ],
+        14,
+        [
+          "*",
+          [
+            "interpolate",
+            ["linear"],
+            [
+              "to-number",
+              [
+                "get",
+                "Affordable Units"
+              ]
+            ],
+            0,
+            4,
+            1000,
+            80
+          ],
+          1.2
+        ],
+        18,
+        [
+          "*",
+          [
+            "interpolate",
+            ["linear"],
+            [
+              "to-number",
+              [
+                "get",
+                "Affordable Units"
+              ]
+            ],
+            0,
+            6,
+            2000,
+            80
+          ],
+          4
+        ]
+      ],
+      'circle-stroke-width': [
+        "interpolate",
+        ["linear"],
+        ["zoom"],
+        5,
+        1.2,
+        8,
+        1.7,
+        17,
+        1.8
+      ],
+      'circle-stroke-color': "#111111"
+      }
+      });
+
+      // Create a popup, but don't add it to the map yet.
+const popup = new mapboxgl.Popup({
+  closeButton: false,
+  closeOnClick: false
+  });
+   
+  map.on('mousemove', 'housinglayer', (e:any) => {
+  // Change the cursor style as a UI indicator.
+  map.getCanvas().style.cursor = 'pointer';
+   
+  // Copy coordinates array.
+  const coordinates = e.features[0].geometry.coordinates.slice();
+  const description = `<b>${e.features[0].properties["Address"]}</b> ${e.features[0].properties["Zip Code"]}<br>
+  <strong>${e.features[0].properties["Affordable Units"]}</strong> Affordable Units<br>
+  <strong>${e.features[0].properties["Total Units"]}</strong> Total Units<br>
+  <strong>Covenant Year</strong> ${e.features[0].properties["Year of Covenant"]}
+  ${e.features[0].properties["Certificate of Occupancy"] ? `<br><b> Certificate of Occupancy</b> ${e.features[0].properties["Certificate of Occupancy"]}` : `<br><b> Certificate of Occupancy</b> None in Data`}
+  ${e.features[0].properties["Type"] ? `<br>${e.features[0].properties["Type"]}` : ""}
+  ${e.features[0].properties["Type2"] ? `<br>${e.features[0].properties["Type2"]}` : ""}
+  `;
+   
+//console.log(e.features)
+
+  // Ensure that if the map is zoomed out such that multiple
+  // copies of the feature are visible, the popup appears
+  // over the copy being pointed to.
+  while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+  coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+  }
+   
+  // Populate the popup and set its coordinates
+  // based on the feature found.
+  popup.setLngLat(coordinates).setHTML(description).addTo(map);
+  });
+   
+  map.on('mouseleave', 'housinglayer', () => {
+  map.getCanvas().style.cursor = '';
+  popup.remove();
+  });
+
 if (! document.querySelector(".mapboxgl-ctrl-top-right > .mapboxgl-ctrl-geocoder")) {
   map.addControl(
     geocoder2
@@ -220,11 +432,6 @@ if (! document.querySelector(".mapboxgl-ctrl-top-right > .mapboxgl-ctrl-geocoder
     }
   })
 
- 
-
-
-
-
   map.addLayer({
     id: 'cityboundfill',
     type: 'fill',
@@ -239,28 +446,33 @@ if (! document.querySelector(".mapboxgl-ctrl-top-right > .mapboxgl-ctrl-geocoder
   })
 }
 
-// Add zoom and rotation controls to the map.
+if ( hasStartedControls === false ) {
+  // Add zoom and rotation controls to the map.
 map.addControl(new mapboxgl.NavigationControl());
      
-  // Add geolocate control to the map.
-  map.addControl(
-    new mapboxgl.GeolocateControl({
-    positionOptions: {
-    enableHighAccuracy: true
-    },
-    // When active the map will receive updates to the device's location as it changes.
-    trackUserLocation: true,
-    // Draw an arrow next to the location dot to indicate which direction the device is heading.
-    showUserHeading: true
-    })
-  );
+// Add geolocate control to the map.
+map.addControl(
+  new mapboxgl.GeolocateControl({
+  positionOptions: {
+  enableHighAccuracy: true
+  },
+  // When active the map will receive updates to the device's location as it changes.
+  trackUserLocation: true,
+  // Draw an arrow next to the location dot to indicate which direction the device is heading.
+  showUserHeading: true
+  }) 
+);
+}
+
 
   checkHideOrShowTopRightGeocoder()
 });
 
+var mapname = 'housingv2'
+
 map.on('dragstart', (e) => {
   uploadMapboxTrack({
-    mapname: 'parkingfines',
+    mapname,
     eventtype: 'dragstart',
     globallng: map.getCenter().lng,
     globallat: map.getCenter().lat,
@@ -270,7 +482,7 @@ map.on('dragstart', (e) => {
   
   map.on('dragend', (e) => {
     uploadMapboxTrack({
-      mapname: 'parkingfines',
+      mapname,
       eventtype: 'dragend',
       globallng: map.getCenter().lng,
       globallat: map.getCenter().lat,
@@ -280,7 +492,7 @@ map.on('dragstart', (e) => {
   
     map.on('zoomstart', (e) => {
       uploadMapboxTrack({
-        mapname: 'parkingfines',
+        mapname,
         eventtype: 'dragstart',
         globallng: map.getCenter().lng,
         globallat: map.getCenter().lat,
@@ -290,7 +502,7 @@ map.on('dragstart', (e) => {
   
       map.on('zoomend', (e) => {
         uploadMapboxTrack({
-          mapname: 'parkingfines',
+          mapname,
           eventtype: 'zoomend',
           globallng: map.getCenter().lng,
           globallat: map.getCenter().lat,
@@ -343,7 +555,7 @@ content="Heatmap of Top Parking Fine Locations in Los Angeles."
     >
 
 
-  <div className='titleBox  fixed mt-[3.8em] ml-2 md:mt-[3.8em] md:ml-3 break-words'>2021 Parking Tickets LA</div>
+  <div className='titleBox  fixed mt-[3.8em] ml-2 md:mt-[3.8em] md:ml-3 break-words bg-gray-100'>Affordable Housing Covenants - 2010 to Dec 2021</div>
 
   <div
     className={`geocoder md:hidden mt-[7.5em] xs:text-sm sm:text-base md:text-lg`} id='geocoder'></div>
