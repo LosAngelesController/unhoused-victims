@@ -519,29 +519,22 @@ map.on('dragstart', (e) => {
       <Head>
      <meta charSet="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
-<meta
-name="description"
-content="Heatmap of Top Parking Fine Locations in Los Angeles."
-/>
-<title>LAPD 2021 Stops Interactive Map - Mejia For Controller</title>
+<title>Affordable Housing Covenants - 2010 to May 2021 | Map</title>
+      <meta property="og:type" content="website"/>
+      <meta name="twitter:site" content="@kennethmejiala" />
+        <meta name="twitter:creator" content="@kennethmejiala" />
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:site" content="@kennethmejiala"/>
-<meta name="twitter:creator" content="@kennethmejiala"/>
-<meta name="twitter:title" content="LAPD Stops 2021 Interactive Map"/>
-<meta name="twitter:description" content="View interactive heatmap of LAPD Stops in 2021. Explore where LAPD Stopped the most people and download data."/>
-<meta name="description" content="View interactive heatmap of LAPD Stops in 2021. Explore where LAPD Stopped the most people and download data." />
-<meta name="twitter:image" content="https://parkingfines.mejiaforcontroller.com/preview.png"/>
-<link rel="icon" href="https://mejiaforcontroller.com/wp-content/uploads/2020/12/cropped-favicon-1-32x32.png" sizes="32x32"/>
-<link rel="icon" href="https://mejiaforcontroller.com/wp-content/uploads/2020/12/cropped-favicon-1-192x192.png" sizes="192x192"/>
-<link rel="apple-touch-icon" href="https://mejiaforcontroller.com/wp-content/uploads/2020/12/cropped-favicon-1-180x180.png"/>
-<meta name="msapplication-TileImage" content="https://mejiaforcontroller.com/wp-content/uploads/2020/12/cropped-favicon-1-270x270.png"/>
+    <meta name="twitter:title" key='twittertitle' content="Affordable Housing Covenants - 2010 to May 2021 | Map"></meta>
+<meta name="twitter:description"  key='twitterdesc' content="Browse and Search Affordable Housing in Los Angeles"></meta>
+      <meta name="twitter:image" key='twitterimg' content="https://data.mejiaforcontroller.com/affordablehousingpic.png"></meta>
+      <meta name="twitter:image:alt" content="Where is LA's Affordable Housing? | Kenneth Mejia for LA City Controller" />
+      <meta name="description" content="A Map of Affordable Housing in Los Angeles. Find Housing near you." />
 
-
-<meta property="og:url"                content="https://parkingfines.mejiaforcontroller.com" />
+      <meta property="og:url"                content="https://affordablehousing.mejiaforcontroller.com/" />
 <meta property="og:type"               content="website" />
-<meta property="og:title"              content="LAPD Stops 2021 Interactive Mapp" />
-<meta property="og:description"        content="iew interactive heatmap of LAPD Stops in 2021. Explore where LAPD Stopped the most people and download data of stops." />
-<meta property="og:image"              content="https://parkingfines.mejiaforcontroller.com/preview.png" />
+<meta property="og:title"              content="Affordable Housing Covenants - 2010 to May 2021 | Map" />
+<meta property="og:description"        content="Browse and Search Affordable Housing in Los Angeles" />
+<meta property="og:image"              content="https://data.mejiaforcontroller.com/affordablehousingpic.png" />
 
 <script defer={true} src="https://helianthus.mejiaforcontroller.com/index.js"></script>
       </Head>
