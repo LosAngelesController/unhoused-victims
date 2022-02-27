@@ -28,6 +28,12 @@ function Payroll() {
       <meta name="twitter:image" key='twitterimg' content="https://data.mejiaforcontroller.com/affordablehousingpic.png"></meta>
       <meta name="description" content="A Map of Affordable Housing in Los Angeles. Find Housing near you." />
       
+      <link rel="icon" href="https://mejiaforcontroller.com/wp-content/uploads/2020/12/cropped-favicon-1-32x32.png" sizes="32x32"/>
+<link rel="icon" href="https://mejiaforcontroller.com/wp-content/uploads/2020/12/cropped-favicon-1-192x192.png" sizes="192x192"/>
+<link rel="apple-touch-icon" href="https://mejiaforcontroller.com/wp-content/uploads/2020/12/cropped-favicon-1-180x180.png"/> 
+<meta name="msapplication-TileImage" content="https://mejiaforcontroller.com/wp-content/uploads/2020/12/cropped-favicon-1-270x270.png"/>
+
+
       <meta property="og:url"                content="https://affordablehousing.mejiaforcontroller.com/" />
 <meta property="og:type"               content="website" />
 <meta property="og:title"              content="Affordable Housing Covenants - 2010 to May 2021 | List" />
