@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import dynamic from 'next/dynamic';
+import { AnyMxRecord } from 'dns';
 
 //import tableau from 'tableau-api';
 //var tableau = require('tableau-api');
@@ -21,7 +22,7 @@ type MyState = {
 
 type TableauType = React.Component<MyProps, MyState> & {vizContainer: any}
 
-const TableauEmbedFunc = (props) => {
+const TableauEmbedFunc = (props:any) => {
 
   var vizContainer;
  // var viz;
