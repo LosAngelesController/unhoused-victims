@@ -1,5 +1,5 @@
 //import TableauEmbed from '../components/tableau'
-//import TableauEmbedFunc from '../components/tableaufun'
+import TableauEmbedFunc from '../components/tableaufun'
 //import BasicEmbed from '../components/basicembed'
 //import Disclaimer from '../components/disclaimer'
 
@@ -13,11 +13,6 @@ import Head from 'next/head'
 
 import React from 'react'
 import dynamic from 'next/dynamic'
-
-const DynamicComponentWithNoSSR = dynamic(
-  () => import('../components/tableaufun'),
-  { ssr: false }
-)
 
 function Payroll() {
   return <div className='height100'>
@@ -42,7 +37,7 @@ function Payroll() {
     <div suppressHydrationWarning={true} className='height100'>
       <React.StrictMode>
         <Nav/>
-        <DynamicComponentWithNoSSR
+        <TableauEmbedFunc
           key='payroll1'
           url='https://public.tableau.com/views/AffordableHousingLA/sheet?:language=en-US&:display_count=n&:origin=viz_share_link'
         />
