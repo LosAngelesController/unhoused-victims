@@ -67,7 +67,7 @@ const TableauEmbedFunc = (props:any) => {
         };
 
         if (filtersAttachToUrl) {
-          filtersAttachToUrl.forEach(element => {
+          filtersAttachToUrl.forEach((element:any) => {
             console.log(element)
             if (element.type === 'single') {
               if (urlParams.has(element.url)) {
