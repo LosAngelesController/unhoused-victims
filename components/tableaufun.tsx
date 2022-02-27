@@ -58,7 +58,7 @@ const TableauEmbedFunc = (props:any) => {
              // @ts-ignore: Unreachable code error
           document.querySelector('.tableauembed > iframe').style.height = '100%'
             // @ts-ignore: Unreachable code error
-            var elementtohide = document.querySelector('.loadinginfo')
+            var elementtohide:any = document.querySelector('.loadinginfo')
             elementtohide.remove()
             console.log("Run this code when the viz has finished loading.");
           },
