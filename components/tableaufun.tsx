@@ -52,7 +52,7 @@ const TableauEmbedFunc = (props:any) => {
         } else {
           deviceType = 'desktop'
         }
-        var options = {
+        var options:any = {
           hideTabs: true,
           onFirstInteractive: function () {
              // @ts-ignore: Unreachable code error
