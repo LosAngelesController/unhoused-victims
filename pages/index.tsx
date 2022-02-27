@@ -26,7 +26,7 @@ const Home: NextPage = () => {
 
   var [hasStartedControls, setHasStartedControls] = useState(false)
 
-  function getRadius() {
+  function getRadius():any {
     if (window.innerWidth < 640) {
       return [
         "interpolate",
