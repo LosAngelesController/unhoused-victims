@@ -24,7 +24,7 @@ type TableauType = React.Component<MyProps, MyState> & {vizContainer: any}
 
 const TableauEmbedFunc = (props:any) => {
 
-  var vizContainer;
+  var vizContainer: any;
  // var viz;
   
 
@@ -32,7 +32,7 @@ const TableauEmbedFunc = (props:any) => {
   useEffect(() => {
 
     if (typeof window !== 'undefined') {
-      if (process.browser) {
+      if (true) {
 
         console.log("current time", Date.now())
 
