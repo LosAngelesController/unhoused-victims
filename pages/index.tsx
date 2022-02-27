@@ -19,9 +19,256 @@ import * as turf from '@turf/turf'
 
        import { assertDeclareExportAllDeclaration } from '@babel/types';
 
+
+
+
 const Home: NextPage = () => {
 
   var [hasStartedControls, setHasStartedControls] = useState(false)
+
+  function getRadius() {
+    if (window.innerWidth < 640) {
+      return [
+        "interpolate",
+        ["linear"],
+        ["zoom"],
+        0.66,
+        [
+          "interpolate",
+          ["linear"],
+          [
+            "to-number",
+            [
+              "get",
+              "Affordable Units"
+            ]
+          ],
+          0,
+          3,
+          1000,
+          30
+        ],
+        6.924,
+        [
+          "interpolate",
+          ["linear"],
+          [
+            "to-number",
+            [
+              "get",
+              "Affordable Units"
+            ]
+          ],
+          0,
+          2.5,
+          1000,
+          60
+        ],
+        9.882,
+        [
+          "interpolate",
+          ["linear"],
+          [
+            "to-number",
+            [
+              "get",
+              "Affordable Units"
+            ]
+          ],
+          0,
+          2.2,
+          1000,
+          75
+        ],
+        11.312,
+        [
+          "interpolate",
+          ["linear"],
+          [
+            "to-number",
+            [
+              "get",
+              "Affordable Units"
+            ]
+          ],
+          0,
+          4,
+          1000,
+          80
+        ],
+        14,
+        [
+          "*",
+          [
+            "interpolate",
+            ["linear"],
+            [
+              "to-number",
+              [
+                "get",
+                "Affordable Units"
+              ]
+            ],
+            0,
+            4,
+            1000,
+            80
+          ],
+          1.2
+        ],
+        18,
+        [
+          "*",
+          [
+            "interpolate",
+            ["linear"],
+            [
+              "to-number",
+              [
+                "get",
+                "Affordable Units"
+              ]
+            ],
+            0,
+            6,
+            2000,
+            80
+          ],
+          4
+        ]
+      ]
+    } else {
+      return [
+        "interpolate",
+        ["linear"],
+        ["zoom"],
+        0.66,
+        [
+          "interpolate",
+          ["linear"],
+          [
+            "to-number",
+            [
+              "get",
+              "Affordable Units"
+            ]
+          ],
+          0,
+          3,
+          1000,
+          30
+        ],
+        6.924,
+        [
+          "interpolate",
+          ["linear"],
+          [
+            "to-number",
+            [
+              "get",
+              "Affordable Units"
+            ]
+          ],
+          0,
+          2.5,
+          1000,
+          50
+        ],
+        9.882,
+        [
+          "interpolate",
+          ["linear"],
+          [
+            "to-number",
+            [
+              "get",
+              "Affordable Units"
+            ]
+          ],
+          0,
+          2.5,
+          1000,
+          60
+        ],
+        11.312,
+        [
+          "interpolate",
+          ["linear"],
+          [
+            "to-number",
+            [
+              "get",
+              "Affordable Units"
+            ]
+          ],
+          0,
+          4,
+          1000,
+          80
+        ],
+        14,
+        [
+          "*",
+          [
+            "interpolate",
+            ["linear"],
+            [
+              "to-number",
+              [
+                "get",
+                "Affordable Units"
+              ]
+            ],
+            0,
+            4,
+            1000,
+            80
+          ],
+          1.2
+        ],
+        18,
+        [
+          "*",
+          [
+            "interpolate",
+            ["linear"],
+            [
+              "to-number",
+              [
+                "get",
+                "Affordable Units"
+              ]
+            ],
+            0,
+            6,
+            2000,
+            80
+          ],
+          4
+        ],
+        25,
+        [
+          "*",
+          [
+            "interpolate",
+            ["linear"],
+            [
+              "to-number",
+              [
+                "get",
+                "Affordable Units"
+              ]
+            ],
+            0,
+            6,
+            2000,
+            80
+          ],
+          4
+        ]
+      ]
+    }
+  }
 
   function checkHideOrShowTopRightGeocoder() {
     var toprightbox = document.querySelector(".mapboxgl-ctrl-top-right")
@@ -76,7 +323,7 @@ const debugParam = urlParams.get('debug');
 
 var mapparams:any = {
   container: divRef.current, // container ID
-  style: 'mapbox://styles/comradekyler/cl03amxb2002g14p5mwo6nmqi', // style URL
+  style: 'mapbox://styles/comradekyler/cl03amxb2002g14p5mwo6nmqi?optimize=true', // style URL
   center: [-118.41,34], // starting position [lng, lat]
   zoom: formulaForZoom() // starting zoom
 }
@@ -244,115 +491,10 @@ map.on('load', () => {
         1,
         "#16a34a"
       ],
-      'circle-radius': [
-        "interpolate",
-        ["linear"],
-        ["zoom"],
-        0.66,
-        [
-          "interpolate",
-          ["linear"],
-          [
-            "to-number",
-            [
-              "get",
-              "Affordable Units"
-            ]
-          ],
-          0,
-          3,
-          1000,
-          30
-        ],
-        6.924,
-        [
-          "interpolate",
-          ["linear"],
-          [
-            "to-number",
-            [
-              "get",
-              "Affordable Units"
-            ]
-          ],
-          0,
-          2.5,
-          1000,
-          60
-        ],
-        9.882,
-        [
-          "interpolate",
-          ["linear"],
-          [
-            "to-number",
-            [
-              "get",
-              "Affordable Units"
-            ]
-          ],
-          0,
-          2.5,
-          1000,
-          75
-        ],
-        11.312,
-        [
-          "interpolate",
-          ["linear"],
-          [
-            "to-number",
-            [
-              "get",
-              "Affordable Units"
-            ]
-          ],
-          0,
-          4,
-          1000,
-          80
-        ],
-        14,
-        [
-          "*",
-          [
-            "interpolate",
-            ["linear"],
-            [
-              "to-number",
-              [
-                "get",
-                "Affordable Units"
-              ]
-            ],
-            0,
-            4,
-            1000,
-            80
-          ],
-          1.2
-        ],
-        18,
-        [
-          "*",
-          [
-            "interpolate",
-            ["linear"],
-            [
-              "to-number",
-              [
-                "get",
-                "Affordable Units"
-              ]
-            ],
-            0,
-            6,
-            2000,
-            80
-          ],
-          4
-        ]
-      ],
+      'circle-radius': getRadius(),
+    //'circle-radius': 20,
+      "circle-pitch-scale": "viewport",
+      "circle-pitch-alignment": "viewport",
       'circle-stroke-width': [
         "interpolate",
         ["linear"],
@@ -381,6 +523,7 @@ const popup = new mapboxgl.Popup({
   // Copy coordinates array.
   const coordinates = e.features[0].geometry.coordinates.slice();
   const description = `<b>${e.features[0].properties["Address"]}</b> ${e.features[0].properties["Zip Code"]}<br>
+  Council District <strong>${e.features[0].properties["councildist"]}</strong> <br>
   <strong>${e.features[0].properties["Affordable Units"]}</strong> Affordable Units<br>
   <strong>${e.features[0].properties["Total Units"]}</strong> Total Units<br>
   <strong>Covenant Year</strong> ${e.features[0].properties["Year of Covenant"]}
@@ -519,7 +662,7 @@ map.on('dragstart', (e) => {
       <Head>
      <meta charSet="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
-<title>Affordable Housing Covenants - 2010 to May 2021 | Map</title>
+<title>Affordable Housing Covenants - 2010 to 2021 | Map</title>
       <meta property="og:type" content="website"/>
       <meta name="twitter:site" content="@kennethmejiala" />
         <meta name="twitter:creator" content="@kennethmejiala" />
@@ -548,7 +691,7 @@ map.on('dragstart', (e) => {
     >
 
 
-  <div className='titleBox  fixed mt-[3.8em] ml-2 md:mt-[3.8em] md:ml-3 break-words bg-gray-100'>Affordable Housing Covenants - 2010 to Dec 2021</div>
+  <div className='titleBox  fixed mt-[3.8em] ml-2 md:mt-[3.8em] md:ml-3 break-words bg-gray-100'>Affordable Housing Covenants - 2010 to 2021</div>
 
   <div
     className={`geocoder md:hidden mt-[7.5em] xs:text-sm sm:text-base md:text-lg`} id='geocoder'></div>
