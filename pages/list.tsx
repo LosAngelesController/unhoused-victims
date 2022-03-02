@@ -43,11 +43,7 @@ function Payroll() {
     <div suppressHydrationWarning={true} className='height100'>
       <React.StrictMode>
         <Nav/>
-        <TableauEmbedFunc
-          key='payroll1'
-          url='https://public.tableau.com/views/AffordableHousingLA/sheet?:language=en-US&:display_count=n&:origin=viz_share_link'
-        />
-       
+
   </React.StrictMode>
       <div className='p-2'>
       </div>
