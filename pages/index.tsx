@@ -673,7 +673,7 @@ map.on('dragstart', (e) => {
       <meta name="twitter:site" content="@kennethmejiala" />
         <meta name="twitter:creator" content="@kennethmejiala" />
 <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:title" key='twittertitle' content="Affordable Housing Covenants - 2010 to May 2021 | Map"></meta>
+    <meta name="twitter:title" key='twittertitle' content="Affordable Housing Covenants - 2010 to 2021 | Map"></meta>
 <meta name="twitter:description"  key='twitterdesc' content="Browse and Search Affordable Housing in Los Angeles"></meta>
       <meta name="twitter:image" key='twitterimg' content="https://data.mejiaforcontroller.com/affordablehousingpic.png"></meta>
       <meta name="twitter:image:alt" content="Where is LA's Affordable Housing? | Kenneth Mejia for LA City Controller" />
@@ -681,7 +681,7 @@ map.on('dragstart', (e) => {
 
       <meta property="og:url"                content="https://affordablehousing.mejiaforcontroller.com/" />
 <meta property="og:type"               content="website" />
-<meta property="og:title"              content="Affordable Housing Covenants - 2010 to May 2021 | Map" />
+<meta property="og:title"              content="Affordable Housing Covenants - 2010 to 2021 | Map" />
 <meta property="og:description"        content="Browse and Search Affordable Housing in Los Angeles" />
 <meta property="og:image"              content="https://data.mejiaforcontroller.com/affordablehousingpic.png" />
 
@@ -697,10 +697,10 @@ map.on('dragstart', (e) => {
     >
 
 
-  <div className='titleBox  fixed mt-[3.8em] ml-2 md:mt-[3.8em] md:ml-3 break-words bg-gray-100'>Affordable Housing Covenants - 2010 to 2021</div>
+  <div className='titleBox fixed text-sm md:text-base mt-[3.8em] ml-2 md:mt-[3.8em] md:ml-3 break-words bg-gray-100'>Affordable Housing Covenants - 2010 to 2021</div>
 
   <div
-    className={`geocoder md:hidden mt-[7.5em] xs:text-sm sm:text-base md:text-lg`} id='geocoder'></div>
+    className={`geocoder md:hidden mt-[5.5em] xs:text-sm sm:text-base md:text-lg`} id='geocoder'></div>
 </div>
 
 <div ref={divRef} style={{

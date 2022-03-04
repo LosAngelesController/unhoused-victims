@@ -21,6 +21,7 @@
     .mapboxgl-ctrl-geocoder--input {
       background-color: #171717;
       border-radius: 16px;
+      border: #ffffff;
       color: white;
     }
   

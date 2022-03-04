@@ -74,14 +74,13 @@
   padding: 6px 12px;
   z-index: 1;
   width:fit-content;
-  border-radius: 4px;  font-size: 16px;
+  border-radius: 4px;
 }
 
 .outsideTitle {
   /* background-color: #212121ee;
    color: #fff;*/
    color: #ffffff;
-   font-family: monospace;
    z-index: 1;
    position: absolute;
    top: 0;
