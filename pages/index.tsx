@@ -522,14 +522,14 @@ const popup = new mapboxgl.Popup({
    
   // Copy coordinates array.
   const coordinates = e.features[0].geometry.coordinates.slice();
-  const description = `<b>${e.features[0].properties["Address"]}</b> ${e.features[0].properties["Zip Code"]}<br>
-  Council District <strong>${e.features[0].properties["councildist"]}</strong> <br>
-  <strong>${e.features[0].properties["Affordable Units"]}</strong> Affordable Units<br>
-  <strong>${e.features[0].properties["Total Units"]}</strong> Total Units<br>
-  <strong>Covenant Year</strong> ${e.features[0].properties["Year of Covenant"]}
-  ${e.features[0].properties["Certificate of Occupancy"] ? `<br><b> Certificate of Occupancy</b> ${e.features[0].properties["Certificate of Occupancy"]}` : `<br><b> Certificate of Occupancy</b> None in Data`}
-  ${e.features[0].properties["Type"] ? `<br>${e.features[0].properties["Type"]}` : ""}
-  ${e.features[0].properties["Type2"] ? `<br>${e.features[0].properties["Type2"]}` : ""}
+  const description = `<b>Address</b> ${e.features[0].properties["Address"]}<br><b>Zip Code</b> ${e.features[0].properties["Zip Code"]}<br>
+  <b>Council District</b> ${e.features[0].properties["councildist"]}<br>
+  <b>${e.features[0].properties["Affordable Units"]}</b> Affordable Units<br>
+  <b>${e.features[0].properties["Total Units"]}</b> Total Units<br>
+  <b>Covenant Year</strong> ${e.features[0].properties["Year of Covenant"]}
+  ${e.features[0].properties["Certificate of Occupancy"] ? `<br><b> Certificate of Occupancy</b> ${e.features[0].properties["Certificate of Occupancy"]}` : `<br><b> Certificate of Occupancy</b> Not in Data`}
+  <br><strong>Type</strong> ${e.features[0].properties["Type"] ? `${e.features[0].properties["Type"]}` : "None"}
+  <br><strong>Type2</strong> ${e.features[0].properties["Type2"] ? `${e.features[0].properties["Type2"]}` : "None"}
   `;
    
 //console.log(e.features)
@@ -697,7 +697,7 @@ map.on('dragstart', (e) => {
     >
 
 
-  <div className='titleBox fixed text-sm md:text-base mt-[3.8em] ml-2 md:mt-[3.8em] md:ml-3 break-words bg-gray-100'>Affordable Housing Covenants - 2010 to 2021</div>
+  <div className='titleBox fixed text-sm bold md:text-base mt-[3.8em] ml-2 md:mt-[3.8em] md:ml-3 break-words bg-gray-100'>Affordable Housing Covenants - 2010 to 2021</div>
 
   <div
     className={`geocoder md:hidden mt-[5.5em] xs:text-sm sm:text-base md:text-lg`} id='geocoder'></div>
