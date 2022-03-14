@@ -710,8 +710,6 @@ map.on('dragstart', (e) => {
       </Head>
    
 
-    <div className='text-white bg-black bg-opacity-40 text-xs fixed bottom-0 left-0 px-1 z-50 hidden md:block'>Paid for by Mejia for City Controller 2022, FPPC ID#: 1435234 1001 Wilshire Blvd. Suite 102, Los Angeles, CA, 90017. Additional information is available at ethics.lacity.org.</div>
-
   <div className='flex-none'>
     <Nav/>
   </div>
