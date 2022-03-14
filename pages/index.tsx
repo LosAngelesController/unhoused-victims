@@ -1,7 +1,8 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-
+import { Dialog, Transition } from '@headlessui/react'
+import { Fragment} from 'react'
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import MapboxLanguage from '@mapbox/mapbox-gl-language';
 
@@ -23,6 +24,16 @@ import * as turf from '@turf/turf'
 
 
 const Home: NextPage = () => {
+
+  let [disclaimerOpen, setDisclaimerOpen] = useState(false)
+
+  function closeModal() {
+    setDisclaimerOpen(false)
+  }
+
+  function openModal() {
+    setDisclaimerOpen(true)
+  }
 
   var [hasStartedControls, setHasStartedControls] = useState(false)
 
@@ -611,7 +622,17 @@ map.addControl(
   checkHideOrShowTopRightGeocoder()
 });
 
+var getmapboxlogo:any = document.querySelector('.mapboxgl-ctrl-logo')
+
+if (getmapboxlogo) {
+  getmapboxlogo.remove()
+}
+
+
+
 var mapname = 'housingv2'
+
+
 
 map.on('dragstart', (e) => {
   uploadMapboxTrack({
@@ -688,6 +709,9 @@ map.on('dragstart', (e) => {
 <script defer={true} src="https://helianthus.mejiaforcontroller.com/index.js"></script>
       </Head>
    
+
+    <div className='text-white bg-black bg-opacity-40 text-xs fixed bottom-0 left-0 px-1 z-50 hidden md:block'>Paid for by Mejia for City Controller 2022, FPPC ID#: 1435234 1001 Wilshire Blvd. Suite 102, Los Angeles, CA, 90017. Additional information is available at ethics.lacity.org.</div>
+
   <div className='flex-none'>
     <Nav/>
   </div>
@@ -708,11 +732,86 @@ map.on('dragstart', (e) => {
 }} className="map-container w-full h-full " />
         
      
+        <>
+      <p
+       onClick={openModal}
+       className='bg-black bg-opacity-40 text-white underline fixed bottom-0 z-50 right-0 mb-2 mr-2'
+      >
+        Disclaimer</p>
+
+      <Transition appear show={disclaimerOpen} as={Fragment}>
+        <Dialog
+          as="div"
+          className="fixed inset-0 z-10 overflow-y-auto"
+          onClose={closeModal}
+        >
+          <div className="min-h-screen px-4 text-center">
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <Dialog.Overlay className="fixed inset-0" />
+            </Transition.Child>
+
+            {/* This element is to trick the browser into centering the modal contents. */}
+            <span
+              className="inline-block h-screen align-middle"
+              aria-hidden="true"
+            >
+              &#8203;
+            </span>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0 scale-95"
+              enterTo="opacity-100 scale-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100 scale-100"
+              leaveTo="opacity-0 scale-95"
+            >
+              <div className="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-gray-800 shadow-xl rounded-2xl">
+                <Dialog.Title
+                  as="h3"
+                  className="text-lg font-medium leading-6 text-gray-50"
+                >
+                  LA Ethics Disclaimer
+                </Dialog.Title>
+                <div className="mt-2">
+                  <p className="text-sm text-gray-100">
+                  Paid for by Mejia for City Controller 2022, FPPC ID#: 1435234 1001 Wilshire Blvd. Suite 102, Los Angeles, CA, 90017.<br></br> Additional information is available at <a href='https://ethics.lacity.org'>ethics.lacity.org</a>.
+                  </p>
+                </div>
+
+                <div className="mt-4">
+                  <button
+                    type="button"
+                    className="inline-flex justify-center px-4 py-2 text-sm font-medium text-blue-900 bg-blue-100 border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
+                    onClick={closeModal}
+                  >
+                    Got it, thanks!
+                  </button>
+                </div>
+              </div>
+            </Transition.Child>
+          </div>
+        </Dialog>
+      </Transition>
+    </>
+
      <div className={`absolute md:mx-auto z-9 bottom-2 left-1 md:left-1/2 md:transform md:-translate-x-1/2`}>
 <a href='https://MejiaForController.com/' target="_blank" rel="noreferrer">
     
   
-                  <img src='/mejia-watermark-smol.png' className='h-9 md:h-10' alt="Kenneth Mejia for LA City Controller Logo"/>
+                  <img src='/mejia-watermark-smol.png' className='h-9 md:h-10 z-40' alt="Kenneth Mejia for LA City Controller Logo"/>
+
+                  
+
+               
                   
     </a>
   

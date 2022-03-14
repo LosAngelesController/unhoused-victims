@@ -108,5 +108,9 @@ scroll-margin-right: 3px;
 /* CSS  for geocoder */
 
 .mapboxgl-ctrl-logo {
-  display: 'none'
+  display: none
+}
+
+.mapboxgl-ctrl-bottom-right {
+  display: none
 }
