@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@datadog/browser-rum": "^4.1.0",
-    "@headlessui/react": "^1.5.0",
+    "@headlessui/react": "^0.0.0-insiders.63383c4",
     "@heroicons/react": "^1.0.6",
     "@mapbox/mapbox-gl-geocoder": "^5.0.0",
     "@mapbox/mapbox-gl-language": "^1.0.0",
