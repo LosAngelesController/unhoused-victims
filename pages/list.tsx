@@ -1,5 +1,4 @@
 //import TableauEmbed from '../components/tableau'
-import TableauEmbedFunc from '../components/tableaufun'
 //import BasicEmbed from '../components/basicembed'
 //import Disclaimer from '../components/disclaimer'
 
