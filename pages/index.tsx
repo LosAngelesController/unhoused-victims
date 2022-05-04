@@ -37,6 +37,10 @@ const Home: NextPage = () => {
     setDisclaimerOpen(true)
   }
 
+  const closeHousingPopup = () => {
+    setInstructionsOpen(false)
+  }
+
   var [hasStartedControls, setHasStartedControls] = useState(false)
 
   function getRadius():any {
@@ -754,12 +758,12 @@ map.on('dragstart', (e) => {
 </div>
 
 
-<div className={`${instructionsOpen ? '' : 'hidden'} bg-[#212121] text-white mt-2 border-gray-400 border-2 rounded-xl px-2 py-1 relative`}>
+<div className={`${instructionsOpen ? '' : 'hidden'} max-w-sm bg-[#212121] text-white mt-2 border-gray-400 border-2 rounded-xl px-2 py-1 relative`}>
 <h2 className={`font-medium`}>Instructions to get Housing</h2>
 <CloseButton
-        onClose={setInstructionsOpen}
+        onClose={closeHousingPopup}
         />
-<p className=''>
+<p className='text-sm'>
 1) Use Google to search the address of the location<br/>
 2) See if it's built<br/>
 3) Get contact information<br/>
