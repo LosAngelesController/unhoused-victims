@@ -7,6 +7,8 @@ import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import MapboxLanguage from '@mapbox/mapbox-gl-language';
 
 import { uploadMapboxTrack } from '../components/mapboxtrack';
+
+import {CloseButton} from '../components/CloseButton'
 import Nav from '../components/nav'
 
 import React, {useEffect, useState} from 'react';
@@ -25,6 +27,7 @@ import {DisclaimerPopup} from '../components/Disclaimer'
 const Home: NextPage = () => {
 
   let [disclaimerOpen, setDisclaimerOpen] = useState(false)
+  let [instructionsOpen, setInstructionsOpen] = useState(false)
 
   function closeModal() {
     setDisclaimerOpen(false)
@@ -448,14 +451,27 @@ if (geocoderId) {
   }
 
 
-geocoder.on('result', (event:any) => {
+geocoder2.on('result', (event:any) => {
   var singlePointSet:any = map.getSource('single-point')
   singlePointSet.setData(event.result.geometry);
   console.log('event.result.geometry',event.result.geometry)
   console.log('geocoderesult', event)
 });
 
-geocoder.on('select', function(object:any){
+geocoder2.on('select', function(object:any){
+  var coord = object.feature.geometry.coordinates;
+  var singlePointSet:any = map.getSource('single-point')
+  singlePointSet.setData(object.feature.geometry);
+});
+
+geocoder3.on('result', (event:any) => {
+  var singlePointSet:any = map.getSource('single-point')
+  singlePointSet.setData(event.result.geometry);
+  console.log('event.result.geometry',event.result.geometry)
+  console.log('geocoderesult', event)
+});
+
+geocoder3.on('select', function(object:any){
   var coord = object.feature.geometry.coordinates;
   var singlePointSet:any = map.getSource('single-point')
   singlePointSet.setData(object.feature.geometry);
@@ -714,14 +730,49 @@ map.on('dragstart', (e) => {
   </div>
            
   <div
-      className='flex-initial h-content outsideTitle flex-col flex z-50'
+      className='flex-initial h-content flex-col flex z-50'
     >
 
-
-  <div className='titleBox fixed text-sm bold md:text-base mt-[3.8em] ml-2 md:mt-[3.8em] md:ml-3 break-words bg-gray-100'>Affordable Housing Covenants - 2010 to 2021</div>
+<div
+      className='absolute mt-[3.8em] md:[3.8em] md:ml-3 top-0 left-1 max-h-screen flex-col flex z-5'
+    >
+  <div className='titleBox  text-sm bold md:text-base break-words bg-gray-100'>Affordable Housing Covenants - 2010 to 2021</div>
 
   <div
-    className={`geocoder md:hidden mt-[5.5em] xs:text-sm sm:text-base md:text-lg`} id='geocoder'></div>
+    className={`geocoder mt-0 left-0  md:hidden xs:text-sm sm:text-base md:text-lg`} id='geocoder'></div>
+
+<div>
+<button
+          
+          onClick={() => {
+           setInstructionsOpen(true)
+          }}
+        className={`mt-1.5 rounded-full px-3 pb-1.5 pt-0.5 text-sm bold md:text-base bg-[#212121] bg-opacity-95 text-white border-white border-2 w-content ${instructionsOpen ? 'hidden': ''}`}><span className='my-auto align-middle w-content'>
+       
+
+          Instructions to get Housing</span></button>
+</div>
+
+
+<div className={`${instructionsOpen ? '' : 'hidden'} bg-[#212121] text-white mt-2 border-gray-400 border-2 rounded-xl px-2 py-1 relative`}>
+<h2 className={`font-medium`}>Instructions to get Housing</h2>
+<CloseButton
+        onClose={setInstructionsOpen}
+        />
+<p className=''>
+1) Use Google to search the address of the location<br/>
+2) See if it's built<br/>
+3) Get contact information<br/>
+4) Call landlord or property manager and tell them that you saw that the LA Housing Dept shows X amount of units for low income housing at this location<br/>
+5) Ask them if they have any availability<br/>
+6) Ask for application to apply<br/>
+</p>
+</div>
+
+</div>
+
+
+
 </div>
 
 <div ref={divRef} style={{

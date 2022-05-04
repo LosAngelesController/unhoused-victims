@@ -107,7 +107,7 @@
   
     .geocoder .mapboxgl-ctrl-geocoder {
       max-width: 80vw;
-      margin-left: 6px;
+  
       margin-right: 4px;
       margin-top: 8px;
     }
@@ -157,4 +157,12 @@
 
 .mapboxgl-ctrl-logo {
     display: 'none'
+}
+
+.mapboxgl-ctrl-geocoder--input:focus-visible {
+  border-style: solid !important;
+}
+
+.mapboxgl-ctrl-geocoder--input {
+  border-style: solid !important;
 }
