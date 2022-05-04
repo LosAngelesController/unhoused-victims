@@ -765,7 +765,7 @@ map.on('dragstart', (e) => {
         />
 <p className='text-sm'>
 1) Use Google to search the address of the location<br/>
-2) See if it's built<br/>
+2) See if it&apos;s built<br/>
 3) Get contact information<br/>
 4) Call landlord or property manager and tell them that you saw that the LA Housing Dept shows X amount of units for low income housing at this location<br/>
 5) Ask them if they have any availability<br/>
