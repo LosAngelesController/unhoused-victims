@@ -2,11 +2,11 @@
   "name": "parking",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "export": "next build && next export"
+    "dev": "export SET NODE_OPTIONS=--openssl-legacy-provider && next dev",
+    "build": "export SET NODE_OPTIONS=--openssl-legacy-provider && next build",
+    "start": "export SET NODE_OPTIONS=--openssl-legacy-provider && next start",
+    "lint": "export SET NODE_OPTIONS=--openssl-legacy-provider && next lint",
+    "export": "export SET NODE_OPTIONS=--openssl-legacy-provider && next build && next export"
   },
   "dependencies": {
     "@babel/types": "^7.17.0",
@@ -16,6 +16,7 @@
     "@mapbox/mapbox-gl-geocoder": "^5.0.0",
     "@mapbox/mapbox-gl-language": "^1.0.0",
     "@types/turf": "^3.5.32",
+    "mapbox": "^1.0.0-beta10",
     "mapbox-gl": "^2.6.1",
     "next": "^12.1.0",
     "randomstring": "^1.2.2",
