@@ -24,6 +24,17 @@ import * as turf from '@turf/turf'
 
 import {DisclaimerPopup} from '../components/Disclaimer'
 
+function isTouchScreen() {
+  return window.matchMedia('(hover: none)').matches;
+}
+
+function isTouchDevice() {
+  return (('ontouchstart' in window) ||
+     (navigator.maxTouchPoints > 0) ||
+     (navigator.msMaxTouchPoints > 0));
+}
+
+
 const Home: NextPage = () => {
 
   let [disclaimerOpen, setDisclaimerOpen] = useState(false)
@@ -696,14 +707,12 @@ const popup = new mapboxgl.Popup({
     sethousingaddyopen(true);
     var affordablepoint: any = map.getSource('selected-home-point')
     affordablepoint.setData(e.features[0].geometry);
-
-
     
     map.setLayoutProperty("points-affordable-housing", 'visibility', 'visible');
   })
    
   map.on('mousemove', 'housinglayer', (e:any) => {
-    if (window.matchMedia("(any-hover: none)").matches) {
+    if (window.matchMedia("(any-hover: none)").matches || isTouchDevice()) {
       console.log(
         'no hover'
       )
