@@ -728,6 +728,10 @@ const popup = new mapboxgl.Popup({
       }
     }
 
+    if (window.innerWidth < 700 || window.innerHeight < 700) {
+        isntblockedfrompopup = false;
+    }
+
     if (isntblockedfrompopup) {
       if (window.matchMedia("(any-hover: none)").matches) {
         console.log(
@@ -967,7 +971,17 @@ map.on('dragstart', (e) => {
 </p>
 </div>
 
-<div className={`text-sm ${housingaddyopen ? 'px-3 pt-2 pb-3 fixed sm:relative  top-auto bottom-0 left-0 right-0 w-full sm:static sm:mt-2 sm:w-auto sm:top-auto sm:bottom-auto sm:left-auto sm:right-auto bg-[#212121] sm:rounded-xl  bg-opacity-90 sm:bg-opacity-80 text-white border-t-2 border-gray-200 sm:border sm:border-gray-400' : 'hidden'}`}>
+<div className={`text-sm ${housingaddyopen ? `px-3 pt-2 pb-3 fixed sm:relative 
+
+ top-auto bottom-0 left-0 right-0
+  w-full sm:static sm:mt-2 sm:w-auto 
+  sm:top-auto sm:bottom-auto sm:left-auto 
+  sm:right-auto bg-[#212121] sm:rounded-xl 
+   bg-opacity-90 sm:bg-opacity-80 text-white 
+   border-t-2 border-gray-200 sm:border sm:border-gray-400
+  
+   
+   ` : 'hidden'}`}>
 <CloseButton
         onClose={() => {closeHouseClickedPopup();
         
@@ -986,7 +1000,18 @@ map.on('dragstart', (e) => {
     houseClickedData.properties && (
     <>
       <p className='pr-4'>
- <b>Address</b> {houseClickedData.properties["Address"]}<br/><b>Zip Code</b> {houseClickedData.properties["Zip Code"]}<br/>
+ <b>Address</b> {houseClickedData.properties["Address"]}
+ 
+ {
+
+  window.innerHeight > 500 && (
+   <>
+    <br/><b>Zip Code</b> 
+    </>
+  )
+ }
+ 
+ <span>  </span>{houseClickedData.properties["Zip Code"]}<br/>
 
       </p>
 
@@ -994,7 +1019,23 @@ map.on('dragstart', (e) => {
          
    
 <b>Council District</b> {houseClickedData.properties["councildist"]}<br/>
-<b>{houseClickedData.properties["Affordable Units"]}</b> Affordable Units<br/>
+<b>{houseClickedData.properties["Affordable Units"]}</b> Affordable Units
+{
+
+window.innerHeight > 500 && (
+ <>
+  <br/>
+  </>
+)
+}
+{
+
+window.innerHeight <= 500 && (
+ <>
+  <span> </span>
+  </>
+)
+}
 <b>{houseClickedData.properties["Total Units"]}</b> Total Units<br/>
 <strong>Covenant Year</strong> {houseClickedData.properties["Year of Covenant"]}
 <br/><b> Certificate of Occupancy </b>
