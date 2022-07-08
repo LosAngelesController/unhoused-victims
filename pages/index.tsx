@@ -939,7 +939,7 @@ map.on('dragstart', (e) => {
 </p>
 </div>
 
-<div className={`text-sm ${housingaddyopen ? 'px-3 py-2 fixed sm:relative  top-auto bottom-0 left-0 right-0 w-full sm:static sm:mt-2 sm:w-auto sm:top-auto sm:bottom-auto sm:left-auto sm:right-auto bg-[#212121] sm:rounded-xl  bg-opacity-90 sm:bg-opacity-80 text-white border-t-2 border-gray-200 sm:border sm:border-gray-400' : 'hidden'}`}>
+<div className={`text-sm ${housingaddyopen ? 'px-3 pt-2 pb-3 fixed sm:relative  top-auto bottom-0 left-0 right-0 w-full sm:static sm:mt-2 sm:w-auto sm:top-auto sm:bottom-auto sm:left-auto sm:right-auto bg-[#212121] sm:rounded-xl  bg-opacity-90 sm:bg-opacity-80 text-white border-t-2 border-gray-200 sm:border sm:border-gray-400' : 'hidden'}`}>
 <CloseButton
         onClose={() => {closeHouseClickedPopup();
         
@@ -981,9 +981,11 @@ map.on('dragstart', (e) => {
   )
 }
 <br/><strong>Type</strong> {houseClickedData.properties["Type"] ? `${houseClickedData.properties["Type"]}` : "None"}
-<br/><strong>Type2</strong> {houseClickedData.properties["Type2"] ? `${houseClickedData.properties["Type2"]}` : "None"}<br/>
+<br/><strong>Type2</strong> {houseClickedData.properties["Type2"] ? `${houseClickedData.properties["Type2"]}` : "None"}
 
+<br/> 
 
+<a className='mt-2 sm:mt-3 rounded-full px-2 pb-1 pt-0.5 text-white bg-blue-500' href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${houseClickedData.properties["Address"]} ${houseClickedData.properties["Zip Code"]}`)}`}>View on Google Maps</a>
 </p>
     </>
     )
