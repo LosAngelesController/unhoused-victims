@@ -33,7 +33,7 @@ const Home: NextPage = () => {
 
   let [disclaimerOpen, setDisclaimerOpen] = useState(false)
   let [instructionsOpen, setInstructionsOpen] = useState(false)
-  const touchref = useRef(null);
+  const touchref = useRef<any>(null);
   let [boxPrimed, setBoxPrimed] = useState(false)
   let [houseClickedData, setHouseClickedData]:any = useState(null)
   let [housingaddyopen,sethousingaddyopen] = useState(false);
