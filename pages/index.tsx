@@ -28,12 +28,6 @@ function isTouchScreen() {
   return window.matchMedia('(hover: none)').matches;
 }
 
-function isTouchDevice() {
-  return (('ontouchstart' in window) ||
-     (navigator.maxTouchPoints > 0) ||
-     (navigator.msMaxTouchPoints > 0));
-}
-
 
 const Home: NextPage = () => {
 
@@ -712,7 +706,7 @@ const popup = new mapboxgl.Popup({
   })
    
   map.on('mousemove', 'housinglayer', (e:any) => {
-    if (window.matchMedia("(any-hover: none)").matches || isTouchDevice()) {
+    if (window.matchMedia("(any-hover: none)").matches) {
       console.log(
         'no hover'
       )
