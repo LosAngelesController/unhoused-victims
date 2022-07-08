@@ -33,7 +33,7 @@ const Home: NextPage = () => {
 
   let [disclaimerOpen, setDisclaimerOpen] = useState(false)
   let [instructionsOpen, setInstructionsOpen] = useState(false)
-  
+  const touchref = useRef(null);
   let [boxPrimed, setBoxPrimed] = useState(false)
   let [houseClickedData, setHouseClickedData]:any = useState(null)
   let [housingaddyopen,sethousingaddyopen] = useState(false);
@@ -704,41 +704,66 @@ const popup = new mapboxgl.Popup({
     
     map.setLayoutProperty("points-affordable-housing", 'visibility', 'visible');
   })
+
+  map.on('touchstart', 'housinglayer', (e:any) => {
+    popup.remove();
+    touchref.current = {
+      lngLat: e.lngLat,
+      time: Date.now()
+    }
+  })
    
   map.on('mousemove', 'housinglayer', (e:any) => {
-    if (window.matchMedia("(any-hover: none)").matches) {
-      console.log(
-        'no hover'
-      )
-    } else {
-      // device supports hovering
-        // Change the cursor style as a UI indicator.
-  map.getCanvas().style.cursor = 'pointer';
-   
-  // Copy coordinates array.
-  const coordinates = e.features[0].geometry.coordinates.slice();
-  const description = `<b>Address</b> ${e.features[0].properties["Address"]}<br><b>Zip Code</b> ${e.features[0].properties["Zip Code"]}<br>
-  <b>Council District</b> ${e.features[0].properties["councildist"]}<br>
-  <b>${e.features[0].properties["Affordable Units"]}</b> Affordable Units<br>
-  <b>${e.features[0].properties["Total Units"]}</b> Total Units<br>
-  <b>Covenant Year</strong> ${e.features[0].properties["Year of Covenant"]}
-  ${e.features[0].properties["Certificate of Occupancy"] ? `<br><b> Certificate of Occupancy</b> ${e.features[0].properties["Certificate of Occupancy"]}` : `<br><b> Certificate of Occupancy</b> Not in Data`}
-  <br><strong>Type</strong> ${e.features[0].properties["Type"] ? `${e.features[0].properties["Type"]}` : "None"}
-  <br><strong>Type2</strong> ${e.features[0].properties["Type2"] ? `${e.features[0].properties["Type2"]}` : "None"}<br><b>Click for more info.</b>`;
-   
-//console.log(e.features)
 
-  // Ensure that if the map is zoomed out such that multiple
-  // copies of the feature are visible, the popup appears
-  // over the copy being pointed to.
-  while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-  coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-  }
-   
-  // Populate the popup and set its coordinates
-  // based on the feature found.
-  popup.setLngLat(coordinates).setHTML(description).addTo(map);
+    var isntblockedfrompopup = true;
+
+    if (touchref) {
+      if (touchref.current) {
+        if (touchref.current.time === Date.now() &&
+         touchref.current.lngLat.lng === e.lngLat.lng
+          && touchref.current.lngLat.lat === e.lngLat.lat) {
+          console.log('time is same, block');
+          isntblockedfrompopup = false;
+        }
+      }
     }
+
+    if (isntblockedfrompopup) {
+      if (window.matchMedia("(any-hover: none)").matches) {
+        console.log(
+          'no hover'
+        )
+      } else {
+        // device supports hovering
+          // Change the cursor style as a UI indicator.
+    map.getCanvas().style.cursor = 'pointer';
+     
+    // Copy coordinates array.
+    const coordinates = e.features[0].geometry.coordinates.slice();
+    const description = `<b>Address</b> ${e.features[0].properties["Address"]}<br><b>Zip Code</b> ${e.features[0].properties["Zip Code"]}<br>
+    <b>Council District</b> ${e.features[0].properties["councildist"]}<br>
+    <b>${e.features[0].properties["Affordable Units"]}</b> Affordable Units<br>
+    <b>${e.features[0].properties["Total Units"]}</b> Total Units<br>
+    <b>Covenant Year</strong> ${e.features[0].properties["Year of Covenant"]}
+    ${e.features[0].properties["Certificate of Occupancy"] ? `<br><b> Certificate of Occupancy</b> ${e.features[0].properties["Certificate of Occupancy"]}` : `<br><b> Certificate of Occupancy</b> Not in Data`}
+    <br><strong>Type</strong> ${e.features[0].properties["Type"] ? `${e.features[0].properties["Type"]}` : "None"}
+    <br><strong>Type2</strong> ${e.features[0].properties["Type2"] ? `${e.features[0].properties["Type2"]}` : "None"}<br><b>Click for more info.</b>`;
+     
+  //console.log(e.features)
+  
+    // Ensure that if the map is zoomed out such that multiple
+    // copies of the feature are visible, the popup appears
+    // over the copy being pointed to.
+    while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+    coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+    }
+     
+    // Populate the popup and set its coordinates
+    // based on the feature found.
+    popup.setLngLat(coordinates).setHTML(description).addTo(map);
+      }
+    }
+  
 
   });
    
