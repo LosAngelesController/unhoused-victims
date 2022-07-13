@@ -689,6 +689,8 @@ const popup = new mapboxgl.Popup({
     // get the title name from the source's "title" property
     'text-allow-overlap': true,
     "icon-allow-overlap": true,
+    'icon-ignore-placement': true,
+    'text-ignore-placement': true,
     
    'icon-size': 0.4,
    "icon-text-fit": 'both',
