@@ -58,6 +58,7 @@ var councilBounds: any = {
   type: "FeatureCollection"
 }
 
+const [showtotalarea, setshowtotalarea] = useState(true)
   let [disclaimerOpen, setDisclaimerOpen] = useState(false)
   let [instructionsOpen, setInstructionsOpen] = useState(false)
   const touchref = useRef<any>(null);
@@ -641,7 +642,7 @@ map.on('dragstart', (e) => {
   
   <div className='flex flex-col h-screen w-screen absolute'>
       <Head>
-      <script src="https://cdn-1bo.pages.dev/newrelicmainsite.js" async></script>
+     
       <link rel="icon" href="https://mejiaforcontroller.com/wp-content/uploads/2020/12/cropped-favicon-1-32x32.png" sizes="32x32"/>
 <link rel="icon" href="https://mejiaforcontroller.com/wp-content/uploads/2020/12/cropped-favicon-1-192x192.png" sizes="192x192"/>
 <link rel="apple-touch-icon" href="https://mejiaforcontroller.com/wp-content/uploads/2020/12/cropped-favicon-1-180x180.png"/> 
@@ -685,15 +686,33 @@ map.on('dragstart', (e) => {
   <div className='titleBox  text-base bold md:semi-bold break-words bg-[#212121]'
   style={
    {
-    backgroundColor: '#313131',
-    color: "#fff",
+    backgroundColor: '#41ffca55',
+    color: "#ffffff",
    }
   }
-  >Los Angeles Parks</div>
+  ><strong className='hidden sm:block'>City of Los Angeles Parks</strong>
+  <strong className='sm:hidden'>City of LA Parks</strong>
+  </div>
 
-  <div className="text-white bg-gray-800 border-2 border-teal-500 rounded-xl sm:mt-2 bg-opacity-70 px-3 py-1">
 
-  <p className='text-white bold'>{metric ? 'km' : 'mi'}<sup>2</sup> of parks in each district</p>
+
+  <div className={`text-white bg-gray-800
+fixed bottom-0 w-full
+
+sm:w-auto  sm:top-auto sm:static sm:bottom-auto
+   border-t-2 sm:border-2 border-teal-500 sm:rounded-xl
+
+   
+    sm:mt-2 bg-opacity-90 sm:bg-opacity-70 px-3 py-1 ${showtotalarea === true ? "" : "hidden"}`}>
+
+
+<div className='flex flex-row relative'> <p className='text-white bold'>{metric ? 'km' : 'mi'}<sup>2</sup> of parks in each district
+  
+ 
+  </p>
+<div className='pl-7'><CloseButton overrideButtonClass='mt-0.5 mr-0' onClose={() => {setshowtotalarea(false)}}/></div></div>
+  
+ 
 
   {
     Object.entries(councilAreas).map((eachEntry:any) => (
@@ -702,7 +721,7 @@ map.on('dragstart', (e) => {
   className='flex flex-row'
   key={eachEntry[0]}
   >
-  <div className='w-3 inline'>{eachEntry[0]}</div>
+  <div className='w-5 inline'>{eachEntry[0]}</div>
 
 <div
 
@@ -716,6 +735,9 @@ backgroundColor: '#41ffca',
 }
 className='mt-auto mb-auto ml-2'
 ></div>
+
+
+
 
 
 <p className='ml-2'>
@@ -748,9 +770,16 @@ onClick={(e) => {
 
   </div>
 
+  
+
+
   <div
     className={`geocoder mt-0 left-0  md:hidden xs:text-sm sm:text-base md:text-lg`} id='geocoder'></div>
 
+<div className='w-content'><button 
+onClick={(e) => {setshowtotalarea(true)}}
+className={'text-white mt-2 px-2 py-1 bg-gray-900 bg-opacity-70 border-2 rounded-full border-teal-500' + `${showtotalarea === true ? "hidden" : ""}`}>
+    Park area per Council District</button></div>
 
 
 
