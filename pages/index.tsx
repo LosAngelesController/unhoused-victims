@@ -778,7 +778,7 @@ onClick={(e) => {
 
 <div className='w-content'><button 
 onClick={(e) => {setshowtotalarea(true)}}
-className={'text-white mt-2 px-2 py-1 bg-gray-900 bg-opacity-70 border-2 rounded-full border-teal-500' + `${showtotalarea === true ? "hidden" : ""}`}>
+className={'text-white mt-2 px-2 py-1 bg-gray-900 bg-opacity-70 border-2 rounded-full border-teal-500 ' + `${showtotalarea === true ? " hidden " : ""}`}>
     Park area per Council District</button></div>
 
 
