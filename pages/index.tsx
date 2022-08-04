@@ -5,6 +5,7 @@ import { Dialog, Transition } from '@headlessui/react'
 import { Fragment,createRef} from 'react'
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import MapboxLanguage from '@mapbox/mapbox-gl-language';
+import parks from './outputparks.json'
 
 import { uploadMapboxTrack } from '../components/mapboxtrack';
 
@@ -12,6 +13,8 @@ import {CloseButton} from '../components/CloseButton'
 import Nav from '../components/nav'
 
 import React, {useEffect, useState, useRef} from 'react';
+
+import CouncilDist from './CouncilDistricts.json'
  
 const councildistricts = require('./CouncilDistricts.json')
 const citybounds = require('./citybounds.json')
@@ -28,8 +31,32 @@ function isTouchScreen() {
   return window.matchMedia('(hover: none)').matches;
 }
 
+var councilAreas = {
+ "1":	3404687.144,
+"2":	1922218.2,
+"3":	974038.8685,
+"4":	19502642.53,
+"5":	1491687.759,
+"6":	6526483.609,
+"7":	8854372.079,
+"8":	330407.8904,
+"9":	429111.0699,
+"10":	383493.7587,
+"11":	5663984.515,
+"12":	8126663.964,
+"13":	1439393.563,
+"14":	1781216.65,
+"15":	3173394.591
+}
 
-const Home: NextPage = () => {
+const Home: NextPage = () => { 
+
+var parksGeojson:any = parks;
+
+var councilBounds: any = {
+  features: CouncilDist.features,
+  type: "FeatureCollection"
+}
 
   let [disclaimerOpen, setDisclaimerOpen] = useState(false)
   let [instructionsOpen, setInstructionsOpen] = useState(false)
@@ -39,6 +66,7 @@ const Home: NextPage = () => {
   let [housingaddyopen,sethousingaddyopen] = useState(false);
   var mapref:any = useRef(null);
   const okaydeletepoints:any = useRef(null);
+  var [metric,setmetric] = useState(false);
 
   function closeModal() {
     setDisclaimerOpen(false)
@@ -54,285 +82,10 @@ const Home: NextPage = () => {
     setDisclaimerOpen(true)
   }
 
-  const closeHouseClickedPopup = () => {
-
-    console.log('mapref.current', mapref.current);
-    console.log('mapref.current.getSource selected-home-point', mapref.current.getSource('selected-home-point'));
-
-
-
-    var affordablepoint: any = mapref.current.getSource('selected-home-point')
-        affordablepoint.setData(null);
-
-        
-    mapref.current.setLayoutProperty("points-affordable-housing", 'visibility', 'none');
-    sethousingaddyopen(false);
-    if (mapref) {
-      if (mapref.current) {
-        var affordablepoint: any = mapref.current.getSource('selected-home-point')
-        affordablepoint.setData(null);
-      } else {
-        console.log('no current ref')
-      }
-    }else {
-      console.log('no ref')
-    }
-
-   if ( okaydeletepoints.current) {
-    okaydeletepoints.current()
-   }
-   
-  }
-
-  const closeHousingPopup = () => {
-    setInstructionsOpen(false)
-  }
-
+ 
+ 
   var [hasStartedControls, setHasStartedControls] = useState(false)
 
-  function getRadius():any {
-    if (window.innerWidth < 640) {
-      return [
-        "interpolate",
-        ["linear"],
-        ["zoom"],
-        0.66,
-        [
-          "interpolate",
-          ["linear"],
-          [
-            "to-number",
-            [
-              "get",
-              "Affordable Units"
-            ]
-          ],
-          0,
-          2,
-          1000,
-          10
-        ],
-        6.924,
-        [
-          "interpolate",
-          ["linear"],
-          [
-            "to-number",
-            [
-              "get",
-              "Affordable Units"
-            ]
-          ],
-          0,
-          2.5,
-          1000,
-          60
-        ],
-        9.882,
-        [
-          "interpolate",
-          ["linear"],
-          [
-            "to-number",
-            [
-              "get",
-              "Affordable Units"
-            ]
-          ],
-          0,
-          2.2,
-          1000,
-          75
-        ],
-        11.312,
-        [
-          "interpolate",
-          ["linear"],
-          [
-            "to-number",
-            [
-              "get",
-              "Affordable Units"
-            ]
-          ],
-          0,
-          4,
-          1000,
-          80
-        ],
-        14,
-        [
-          "*",
-          [
-            "interpolate",
-            ["linear"],
-            [
-              "to-number",
-              [
-                "get",
-                "Affordable Units"
-              ]
-            ],
-            0,
-            4,
-            1000,
-            80
-          ],
-          1.2
-        ],
-        18,
-        [
-          "*",
-          [
-            "interpolate",
-            ["linear"],
-            [
-              "to-number",
-              [
-                "get",
-                "Affordable Units"
-              ]
-            ],
-            0,
-            6,
-            2000,
-            80
-          ],
-          4
-        ]
-      ]
-    } else {
-      return [
-        "interpolate",
-        ["linear"],
-        ["zoom"],
-        0.66,
-        [
-          "interpolate",
-          ["linear"],
-          [
-            "to-number",
-            [
-              "get",
-              "Affordable Units"
-            ]
-          ],
-          0,
-          3,
-          1000,
-          30
-        ],
-        6.924,
-        [
-          "interpolate",
-          ["linear"],
-          [
-            "to-number",
-            [
-              "get",
-              "Affordable Units"
-            ]
-          ],
-          0,
-          2.5,
-          1000,
-          50
-        ],
-        9.882,
-        [
-          "interpolate",
-          ["linear"],
-          [
-            "to-number",
-            [
-              "get",
-              "Affordable Units"
-            ]
-          ],
-          0,
-          2.5,
-          1000,
-          60
-        ],
-        11.312,
-        [
-          "interpolate",
-          ["linear"],
-          [
-            "to-number",
-            [
-              "get",
-              "Affordable Units"
-            ]
-          ],
-          0,
-          4,
-          1000,
-          80
-        ],
-        14,
-        [
-          "*",
-          [
-            "interpolate",
-            ["linear"],
-            [
-              "to-number",
-              [
-                "get",
-                "Affordable Units"
-              ]
-            ],
-            0,
-            4,
-            1000,
-            80
-          ],
-          1.2
-        ],
-        18,
-        [
-          "*",
-          [
-            "interpolate",
-            ["linear"],
-            [
-              "to-number",
-              [
-                "get",
-                "Affordable Units"
-              ]
-            ],
-            0,
-            6,
-            2000,
-            80
-          ],
-          4
-        ],
-        25,
-        [
-          "*",
-          [
-            "interpolate",
-            ["linear"],
-            [
-              "to-number",
-              [
-                "get",
-                "Affordable Units"
-              ]
-            ],
-            0,
-            6,
-            2000,
-            80
-          ],
-          4
-        ]
-      ]
-    }
-  }
 
   function checkHideOrShowTopRightGeocoder() {
     var toprightbox = document.querySelector(".mapboxgl-ctrl-top-right")
@@ -387,7 +140,7 @@ const debugParam = urlParams.get('debug');
 var mapparams:any = {
   container: divRef.current, // container ID
   //affordablehousing2022-dev-copy
- style: 'mapbox://styles/comradekyler/cl03amxb2002g14p5mwo6nmqi?optimize=true', // style URL
+ style: 'mapbox://styles/comradekyler/cl6e22kp6000015lgg641oz9q', // style URL
   //mapbox://styles/comradekyler/cl5c3eukn00al15qxpq4iugtn
     //affordablehousing2022-dev-copy-copy
   //  style: 'mapbox://styles/comradekyler/cl5c3eukn00al15qxpq4iugtn?optimize=true', // style URL
@@ -430,7 +183,40 @@ catch (error) {
 
 window.addEventListener('resize',  handleResize);  
 
+
 map.on('load', () => {
+
+  map.addSource('parks', {
+    type: 'geojson',
+    data: parksGeojson
+    });
+
+    console.log('maps parks source', map.getSource('parks'))
+
+    map.addLayer({
+    id: 'parks',
+    type: 'fill',
+    source: 'parks',
+    paint: { 
+      'fill-color': '#41ffca',
+      'fill-opacity': 0.2
+    }
+
+    });
+
+    map.addLayer({
+      id: 'parksoutline',
+      type: 'line',
+      source: 'parks',
+      paint: { 
+        'line-color': '#41ffca',
+        'line-opacity': 1,
+        'line-width': 2
+      }
+  
+      });
+
+    console.log('maps parks layer', map.getLayer('parks'))
 
   okaydeletepoints.current = () => {
     try {
@@ -601,55 +387,13 @@ map.on('load', () => {
     map.showTerrainWireframe = true;
   }
 
-  map.addSource('housingvector', {
-    'type': 'vector',
-    'url': 'mapbox://comradekyler.ckzxdlka74tqd27p9n2r3a08p-0dvs5'
-    });
-
-    map.addLayer({
-      'id': 'housinglayer',
-      'type': 'circle',
-      'source': 'housingvector',
-      'source-layer': 'export-housing-2022-v7',
-      'paint': {
-      'circle-color': [
-        "interpolate",
-        ["linear"],
-        [
-          "to-number",
-          ["get", "Affordable %"]
-        ],
-        0,
-        "#fde047",
-        1,
-        "#16a34a"
-      ],
-      'circle-radius': getRadius(),
-    //'circle-radius': 20,
-      "circle-pitch-scale": "viewport",
-      "circle-pitch-alignment": "viewport",
-      'circle-stroke-width': [
-        "interpolate",
-        ["linear"],
-        ["zoom"],
-        5,
-        1.2,
-        8,
-        1.7,
-        17,
-        1.8
-      ],
-      'circle-stroke-color': "#111111"
-      }
-      });
-
       // Create a popup, but don't add it to the map yet.
 const popup = new mapboxgl.Popup({
   closeButton: false,
   closeOnClick: false
   });
 
-  map.addSource('selected-home-point', {
+  map.addSource('selected-park-point', {
     type: 'geojson',
     data: {
       type: 'FeatureCollection',
@@ -658,8 +402,8 @@ const popup = new mapboxgl.Popup({
   });
 
   map.addLayer({
-    id: 'selected-affordable-housing-point',
-    source: 'selected-home-point',
+    id: 'selected-park-point',
+    source: 'selected-park-point',
     type: 'circle',
     paint: {
       'circle-radius': 5,
@@ -677,9 +421,9 @@ const popup = new mapboxgl.Popup({
     map.addImage('map-marker', image);
 
   map.addLayer({
-    'id': 'points-affordable-housing',
+    'id': 'points-park',
     'type': 'symbol',
-    'source': 'selected-home-point',
+    'source': 'selected-park-point',
     'paint': {
    'icon-color': "#f0abfc",
    "icon-translate": [0, -13]
@@ -796,7 +540,7 @@ if (! document.querySelector(".mapboxgl-ctrl-top-right > .mapboxgl-ctrl-geocoder
       data:  citybounds
     },
     paint: {
-      "line-color": '#41ffca',
+      "line-color": '#dddddd',
       'line-opacity': 1,
       'line-width': 3
     }
@@ -846,7 +590,7 @@ if (getmapboxlogo) {
 
 
 
-var mapname = 'housingv2'
+var mapname = 'parks'
 
 
 
@@ -906,7 +650,7 @@ map.on('dragstart', (e) => {
 
      <meta charSet="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
-<title>Affordable Housing Covenants - 2010 to 2021 | Map</title>
+<title>LA Parks | Map</title>
       <meta property="og:type" content="website"/>
       <meta name="twitter:site" content="@kennethmejiala" />
         <meta name="twitter:creator" content="@kennethmejiala" />
@@ -938,41 +682,77 @@ map.on('dragstart', (e) => {
 <div
       className='absolute mt-[3.8em] md:[3.8em] md:ml-3 top-0 left-1 max-h-screen flex-col flex z-5'
     >
-  <div className='titleBox  text-sm bold md:text-base break-words bg-gray-100'>Affordable Housing Covenants - 2010 to 2021</div>
+  <div className='titleBox  text-base bold md:semi-bold break-words bg-[#212121]'
+  style={
+   {
+    backgroundColor: '#313131',
+    color: "#fff",
+   }
+  }
+  >Los Angeles Parks</div>
+
+  <div className="text-white bg-gray-800 border-2 border-teal-500 rounded-xl sm:mt-2 bg-opacity-70 px-3 py-1">
+
+  <p className='text-white bold'>{metric ? 'km' : 'mi'}<sup>2</sup> of parks in each district</p>
+
+  {
+    Object.entries(councilAreas).map((eachEntry:any) => (
+
+  <div
+  className='flex flex-row'
+  key={eachEntry[0]}
+  >
+  <div className='w-3 inline'>{eachEntry[0]}</div>
+
+<div
+
+
+style={
+  {
+width: `${eachEntry[1]/200000}%`,
+height: 5,
+backgroundColor: '#41ffca',
+  }
+}
+className='mt-auto mb-auto ml-2'
+></div>
+
+
+<p className='ml-2'>
+  
+  {metric === false && (
+    ((eachEntry[1]/1000000)*0.386102).toPrecision(3)
+  )}
+  {
+metric === true && (
+
+(eachEntry[1]/1000000).toPrecision(3)
+)
+}</p>
+
+  </div>
+
+    ))
+  }
+
+<button className='underline border rounded-xl px-3 py-0.75' style={
+ { color: '#41ffca',
+backgroundColor: '#41ffca15',
+borderColor: '#41ffca'
+}
+}
+onClick={(e) => {
+  setmetric(!metric)
+}}
+>View in {metric ? 'mi' : 'km'}<sup>2</sup></button>
+
+  </div>
 
   <div
     className={`geocoder mt-0 left-0  md:hidden xs:text-sm sm:text-base md:text-lg`} id='geocoder'></div>
 
-<div>
-<button
-          
-          onClick={() => {
-           setInstructionsOpen(true)
-          }}
-        className={`mt-1.5 rounded-full px-3 pb-1.5 pt-0.5 text-sm bold md:text-base bg-[#212121] bg-opacity-95 text-white border-white border-2 w-content ${instructionsOpen ? 'hidden': ''}`}><span className='my-auto align-middle w-content'>
-       
-
-          Instructions to get Housing</span></button>
-</div>
 
 
-<div className={`${instructionsOpen ? '' : 'hidden'} max-w-sm bg-[#212121] text-white mt-2 border-gray-400 border-2 rounded-xl px-2 py-1 relative`}>
-
-
-
-<h2 className={`font-medium`}>Instructions to get Housing</h2>
-<CloseButton
-        onClose={closeHousingPopup}
-        />
-<p className='text-sm'>
-1) Use Google to search the address of the location<br/>
-2) See if it&apos;s built<br/>
-3) Get contact information<br/>
-4) Call landlord or property manager and tell them that you saw that the LA Housing Dept shows X amount of units for low income housing at this location<br/>
-5) Ask them if they have any availability<br/>
-6) Ask for application to apply<br/>
-</p>
-</div>
 
 <div className={`text-sm ${housingaddyopen ? `px-3 pt-2 pb-3 fixed sm:relative 
 
@@ -985,19 +765,7 @@ map.on('dragstart', (e) => {
   
    
    ` : 'hidden'}`}>
-<CloseButton
-        onClose={() => {closeHouseClickedPopup();
-        
-         if (mapref.current) {
-          var affordablepoint: any = mapref.current.getSource('selected-home-point')
-          if (affordablepoint) {
-           affordablepoint.setData(null);
-          } 
-         }else {
-          console.log('no ref current')   
-        }
-        }}
-        />
+
 {
   houseClickedData && (
     houseClickedData.properties && (

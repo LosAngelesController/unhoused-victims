@@ -1,6 +1,7 @@
 {
   "name": "parking",
   "private": true,
+  "eslintIgnore": ["processparks/"],
   "scripts": {
     "dev": "next dev",
     "build": " next build",
@@ -16,6 +17,7 @@
     "@heroicons/react": "^1.0.6",
     "@mapbox/mapbox-gl-geocoder": "^5.0.0",
     "@mapbox/mapbox-gl-language": "^1.0.0",
+    "@turf/turf": "^6.5.0",
     "@types/turf": "^3.5.32",
     "mapbox": "^1.0.0-beta10",
     "mapbox-gl": "^2.9.1",
