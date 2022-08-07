@@ -61,8 +61,13 @@ export function DisclaimerPopup(props:interfaceDisclaimerProps) {
                 </Dialog.Title>
                 <div className="mt-2">
                   <p className="text-sm text-gray-100">
-                  Paid for by Mejia for City Controller 2022, FPPC ID#: 1435234 1001 Wilshire Blvd. Suite 102, Los Angeles, CA, 90017.<br></br> Additional information is available at <a href='https://ethics.lacity.org' className='border-0 underline text-green-200'>ethics.lacity.org</a>.
+                  Paid for by Mejia for City Controller 2022, FPPC ID#: 1435234 1001 Wilshire Blvd. Suite 102, Los Angeles, CA, 90017.<br></br> Additional information is available at <a href='https://ethics.lacity.org' className='border-0 underline text-teal-300'>ethics.lacity.org</a>.
                   </p>
+                </div>
+<br></br>
+                <div className='text-white text-sm'>
+                <div>This software is licensed under GPL3.0 license and was made by Mejia for Controller. Please credit us if you use this!</div>
+                <a className='underline text-teal-300' href='https://github.com/mejia-for-controller/parks'>Source code: https://github.com/mejia-for-controller/parks</a>
                 </div>
 
                 <div className="mt-4">

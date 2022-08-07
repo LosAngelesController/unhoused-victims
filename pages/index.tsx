@@ -58,12 +58,21 @@ var councilBounds: any = {
   type: "FeatureCollection"
 }
 
-const [showtotalarea, setshowtotalarea] = useState(true)
+const calculateifboxisvisible = () => {
+  if (typeof window != "undefined") {
+    return window.innerWidth > 640;
+  } else {
+    return true;
+  }
+}
+
+const [showtotalarea, setshowtotalarea] = useState(calculateifboxisvisible())
   let [disclaimerOpen, setDisclaimerOpen] = useState(false)
   let [instructionsOpen, setInstructionsOpen] = useState(false)
   const touchref = useRef<any>(null);
   let [boxPrimed, setBoxPrimed] = useState(false)
   let [houseClickedData, setHouseClickedData]:any = useState(null)
+  let [parkClickedData, setParkClickedData]:any = useState(null);
   let [housingaddyopen,sethousingaddyopen] = useState(false);
   var mapref:any = useRef(null);
   const okaydeletepoints:any = useRef(null);
@@ -656,13 +665,12 @@ map.on('dragstart', (e) => {
       <meta name="twitter:site" content="@kennethmejiala" />
         <meta name="twitter:creator" content="@kennethmejiala" />
 <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:title" key='twittertitle' content="Affordable Housing Covenants - 2010 to 2021 | Map"></meta>
-<meta name="twitter:description"  key='twitterdesc' content="Browse and Search Affordable Housing in Los Angeles  with instructions to apply."></meta>
+    <meta name="twitter:title" key='twittertitle' content="City of LA Parks | Map and land analysis"></meta>
+<meta name="twitter:description"  key='twitterdesc' content="City of LA Parks visualized. See all parks and observe inequities in park distribution."></meta>
       <meta name="twitter:image" key='twitterimg' content="https://data.mejiaforcontroller.com/affordablehousingpic.png"></meta>
-      <meta name="twitter:image:alt" content="Where is LA's Affordable Housing? | Kenneth Mejia for LA City Controller" />
-      <meta name="description" content="A Map of Affordable Housing in Los Angeles. Find Housing near you. Instructions to apply." />
+      <meta name="description" content="City of LA Parks visualized. See all parks and observe inequities in park distribution." />
 
-      <meta property="og:url"                content="https://affordablehousing.mejiaforcontroller.com/" />
+      <meta property="og:url"                content="https://parks.mejiaforcontroller.com/" />
 <meta property="og:type"               content="website" />
 <meta property="og:title"              content="Affordable Housing Covenants - 2010 to 2021 | Map" />
 <meta property="og:description"        content="Browse and Search Affordable Housing in Los Angeles with instructions to apply." />
