@@ -411,14 +411,32 @@ const popup = new mapboxgl.Popup({
     }
   });
 
+  map.addSource("selected-park-area", {
+    type: 'geojson',
+    data: {
+      type: 'FeatureCollection',
+      features: []
+    }
+  })
+
   map.addLayer({
-    id: 'selected-park-point',
-    source: 'selected-park-point',
-    type: 'circle',
+    id: 'selected-park-areas',
+    source: 'selected-park-area',
+    type: 'line',
     paint: {
-      'circle-radius': 5,
-      'circle-color': '#f0abfc',
-      'circle-opacity': 0.1
+      'line-color': '#7dd3fc',
+      'line-width': 5,
+      'line-blur': 0
+    }
+  });
+
+  map.addLayer({
+    id: 'selected-park-areasfill',
+    source: 'selected-park-area',
+    type: 'fill',
+    paint: {
+      'fill-color': '#7dd3fc',
+      'fill-opacity': 0.2
     }
   });
 
@@ -452,13 +470,56 @@ const popup = new mapboxgl.Popup({
     });
   });
 
-  map.on('mousedown', 'housinglayer', (e:any) => {
-    setHouseClickedData(e.features[0]);
+  map.on('mousedown', 'parks', (e:any) => {
+
+var dataToWrite = null;
+
+    console.log(e.lngLat);
+
+    var pointturf = turf.point([e.lngLat.lng, e.lngLat.lat]);
+
+    console.log(e.features);
+
+    var arrayOfFeatures = parksGeojson.features.filter((eachPark:any) => {
+      var parkMultiPolygon = turf.multiPolygon(eachPark.geometry.coordinates);
+
+
+
+      return turf.booleanPointInPolygon(pointturf, parkMultiPolygon);
+    });
+
+    console.log('click inside these parks', arrayOfFeatures)
+
+    if (arrayOfFeatures > 1) {
+
+      
+      var smallestParkClicked = arrayOfFeatures.reduce((prev:any, curr:any) => {
+
+        // if previous item is bigger park, then the current item is the smallest park
+        if (prev.properties.area > curr.properties.area) {
+          //return current item which is smaller park
+          return curr;
+        } else {
+          return prev;
+        }
+        
+      })
+
+      setParkClickedData(smallestParkClicked);
+      dataToWrite = smallestParkClicked;
+    } else {
+    setParkClickedData(arrayOfFeatures[0]);
+    dataToWrite = arrayOfFeatures[0];
+    }
     sethousingaddyopen(true);
-    var affordablepoint: any = map.getSource('selected-home-point')
-    affordablepoint.setData(e.features[0].geometry);
+   var affordablepoint: any = map.getSource('selected-park-area')
+
+   if (dataToWrite) {
     
-    map.setLayoutProperty("points-affordable-housing", 'visibility', 'visible');
+   affordablepoint.setData(dataToWrite.geometry);
+   }
+    
+  //  map.setLayoutProperty("areasparks", 'visibility', 'visible');
   })
 
   map.on('touchstart', 'housinglayer', (e:any) => {
@@ -467,7 +528,7 @@ const popup = new mapboxgl.Popup({
       lngLat: e.lngLat,
       time: Date.now()
     }
-  })
+  });
    
   map.on('mousemove', 'housinglayer', (e:any) => {
 
@@ -714,7 +775,11 @@ sm:w-auto  sm:top-auto sm:static sm:bottom-auto
     sm:mt-2 bg-opacity-90 sm:bg-opacity-70 px-3 py-1 ${showtotalarea === true ? "" : "hidden"}`}>
 
 
-<div className='flex flex-row relative'> <p className='text-white bold'>{metric ? 'km' : 'mi'}<sup>2</sup> of parks in each district
+<div className='flex flex-row relative'> <p className='text-white bold'>
+View in {metric ? 'km' : 'sq mi'}
+{metric === true && (
+  <sup>2</sup>
+)} of parks in each district
   
  
   </p>
@@ -765,7 +830,7 @@ metric === true && (
     ))
   }
 
-<button className='underline border rounded-xl px-3 py-0.75' style={
+<button className='underline border rounded-xl px-3 py-0.75 text-sm' style={
  { color: '#41ffca',
 backgroundColor: '#41ffca15',
 borderColor: '#41ffca'
@@ -774,7 +839,11 @@ borderColor: '#41ffca'
 onClick={(e) => {
   setmetric(!metric)
 }}
->View in {metric ? 'mi' : 'km'}<sup>2</sup></button>
+>View in {metric ? 'sq mi' : 'km'}
+{metric === false && (
+  <sup>2</sup>
+)}
+</button>
 
   </div>
 
@@ -796,9 +865,9 @@ className={'text-white mt-2 px-2 py-1 bg-gray-900 bg-opacity-70 border-2 rounded
  top-auto bottom-0 left-0 right-0
   w-full sm:static sm:mt-2 sm:w-auto 
   sm:top-auto sm:bottom-auto sm:left-auto 
-  sm:right-auto bg-[#212121] sm:rounded-xl 
-   bg-opacity-90 sm:bg-opacity-80 text-white 
-   border-t-2 border-gray-200 sm:border sm:border-gray-400
+  sm:right-auto bg-gray-900 sm:rounded-xl 
+   bg-opacity-80 sm:bg-opacity-80 text-white 
+   border-t-2  sm:border border-teal-500 sm:border-grey-500
   
    
    ` : 'hidden'}`}>
@@ -871,6 +940,60 @@ window.innerHeight <= 500 && (
 }
   
 
+  {parkClickedData && (
+<>
+
+<p className='text-bold font-bold'>{parkClickedData.properties.name}</p>
+<p className='text-bold'>{parkClickedData.properties.address}</p>
+{
+  metric ? (
+<>
+{
+  parkClickedData.properties.area && (
+    parkClickedData.properties.area > 1000000 ? (
+      <p>{(parkClickedData.properties.area/1000000).toFixed(3)} km<sup>2</sup></p>
+    ) : (
+      <p>{Math.round(parkClickedData.properties.area)} m<sup>2</sup></p>
+    )
+  )
+
+}
+</>
+  ) : (
+    <>
+{
+  parkClickedData.properties.area && (
+    parkClickedData.properties.area > (2600000) ? (
+      <p>{(parkClickedData.properties.area/2589988).toFixed(3)} sq mi</p>
+    ) : (
+      <p>{(Math.round(parkClickedData.properties.area) * (0.000247105)).toFixed(2)} acres</p>
+    )
+  )
+
+}
+</>
+  )
+}
+
+</>
+
+
+
+  )}
+<button className='underline border rounded-xl px-3 py-0.75 text-sm' style={
+ { color: '#41ffca',
+backgroundColor: '#41ffca15',
+borderColor: '#41ffca'
+}
+}
+onClick={(e) => {
+  setmetric(!metric)
+}}
+>View in {metric ? 'sq mi' : 'km'}
+{metric === false && (
+  <sup>2</sup>
+)}
+</button>
 
 
 </div>
