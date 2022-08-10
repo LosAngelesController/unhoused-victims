@@ -483,8 +483,7 @@ var dataToWrite = null;
     var arrayOfFeatures = parksGeojson.features.filter((eachPark:any) => {
       var parkMultiPolygon = turf.multiPolygon(eachPark.geometry.coordinates);
 
-
-
+       // @ts-ignore: Unreachable code error
       return turf.booleanPointInPolygon(pointturf, parkMultiPolygon);
     });
 
