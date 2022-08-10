@@ -18,6 +18,7 @@ import CouncilDist from './CouncilDistricts.json'
  
 const councildistricts = require('./CouncilDistricts.json')
 const citybounds = require('./citybounds.json')
+// @ts-ignore: Unreachable code error
 import * as turf from '@turf/turf'
 
     // added the following 6 lines.
