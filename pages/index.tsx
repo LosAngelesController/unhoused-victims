@@ -67,7 +67,7 @@ const calculateifboxisvisible = () => {
   }
 }
 
-const [showtotalarea, setshowtotalarea] = useState(calculateifboxisvisible())
+const [showtotalarea, setshowtotalarea] = useState(false)
   let [disclaimerOpen, setDisclaimerOpen] = useState(false)
   let [instructionsOpen, setInstructionsOpen] = useState(false)
   const touchref = useRef<any>(null);
@@ -196,6 +196,8 @@ window.addEventListener('resize',  handleResize);
 
 
 map.on('load', () => {
+
+  setshowtotalarea(window.innerWidth > 640 ? true : false)
 
   map.addSource('parks', {
     type: 'geojson',
@@ -812,7 +814,7 @@ View in {metric ? 'km' : 'sq mi'}
     }/></div></div>
   
  
-
+<div className={`leading-tight md:leading-normal`}>
   {
     Object.entries(councilAreas).map((eachEntry:any) => (
 
@@ -855,6 +857,7 @@ metric === true && (
 
     ))
   }
+  </div>
 
 <button className='underline border rounded-xl px-3 py-0.75 text-sm' style={
  { color: '#41ffca',
