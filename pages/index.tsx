@@ -790,7 +790,7 @@ sm:w-auto  sm:top-auto sm:static sm:bottom-auto
 <div className={`text-sm md:text-base flex flex-row relative
 ${showtotalarea === true ?  "  " : "  hidden"}
 `}> <p className='text-white bold'>
-View in {metric ? 'km' : 'sq mi'}
+{metric ? 'km' : 'Sq miles'}
 {metric === true && (
   <sup>2</sup>
 )} of parks in each district
@@ -892,7 +892,7 @@ onClick={(e) => {
 }
 }
 className={'text-white mt-2 px-2 py-1 ml-2  bg-gray-900 bg-opacity-70 border-2 rounded-full border-teal-500 ' + `${showtotalarea === true ? " hidden " : ""}`}>
-    Park area per Council District</button></div>
+    Park Area per Council District</button></div>
 
 
 
