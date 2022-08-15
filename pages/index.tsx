@@ -512,6 +512,13 @@ var dataToWrite = null;
     dataToWrite = arrayOfFeatures[0];
     }
     sethousingaddyopen(true);
+
+    if (window.innerWidth < 768) {
+//on mobile, close the other popup of cd park areas
+setshowtotalarea(false);
+
+    }
+
    var affordablepoint: any = map.getSource('selected-park-area')
 
    if (dataToWrite) {
@@ -750,9 +757,9 @@ map.on('dragstart', (e) => {
     >
 
 <div
-      className='absolute mt-[3.8em] md:[3.8em] md:ml-3 top-0 left-1 max-h-screen flex-col flex z-5'
+      className='absolute mt-[3.8em] md:[3.8em] md:ml-3 top-0 max-h-screen flex-col flex z-5'
     >
-  <div className='titleBox  text-base bold md:semi-bold break-words bg-[#212121]'
+  <div className='titleBox  ml-2 text-base bold md:semi-bold break-words bg-[#212121]'
   style={
    {
     backgroundColor: '#41ffca55',
@@ -760,22 +767,27 @@ map.on('dragstart', (e) => {
    }
   }
   ><strong className='hidden sm:block'>City of Los Angeles Parks</strong>
-  <strong className='sm:hidden'>City of LA Parks</strong>
+  <strong className='sm:hidden '>City of LA Parks</strong>
   </div>
 
 
+  <div
+    className={`geocoder mt-0 ml-2 left-1 md:hidden xs:text-sm sm:text-base md:text-lg`} id='geocoder'></div>
 
-  <div className={`text-white bg-gray-800
+
+  <div className={`text-white bg-gray-800 md:left-1
 fixed bottom-0 w-full
 
 sm:w-auto  sm:top-auto sm:static sm:bottom-auto
    border-t-2 sm:border-2 border-teal-500 sm:rounded-xl
 
    
-    sm:mt-2 bg-opacity-90 sm:bg-opacity-70 px-3 py-1 ${showtotalarea === true ? "" : "hidden"}`}>
+    sm:mt-2 bg-opacity-90 sm:bg-opacity-70 px-3 py-1 ${showtotalarea === true ? "  " : " hidden "}`}>
 
 
-<div className='flex flex-row relative'> <p className='text-white bold'>
+<div className={`flex flex-row relative
+${showtotalarea === true ?  "  " : "  hidden"}
+`}> <p className='text-white bold'>
 View in {metric ? 'km' : 'sq mi'}
 {metric === true && (
   <sup>2</sup>
@@ -783,7 +795,21 @@ View in {metric ? 'km' : 'sq mi'}
   
  
   </p>
-<div className='pl-7'><CloseButton overrideButtonClass='mt-0.5 mr-0' onClose={() => {setshowtotalarea(false)}}/></div></div>
+<div className='pl-7'>
+  <CloseButton 
+  overrideButtonClass='mt-0.5 mr-0'
+   onClose={() => {
+
+    if (window.innerWidth < 768) {
+    if (parkClickedData === true) {
+      sethousingaddyopen(true);
+    }}
+    console.log('close area')
+    setshowtotalarea(false)}
+    
+    
+
+    }/></div></div>
   
  
 
@@ -847,16 +873,26 @@ onClick={(e) => {
 
   </div>
 
+  <div className='w-content'>
+    
+    {/*Button opens up area per CD chart*/}
+    <button 
+onClick={(e) => {
   
-
-
-  <div
-    className={`geocoder mt-0 left-0  md:hidden xs:text-sm sm:text-base md:text-lg`} id='geocoder'></div>
-
-<div className='w-content'><button 
-onClick={(e) => {setshowtotalarea(true)}}
-className={'text-white mt-2 px-2 py-1 bg-gray-900 bg-opacity-70 border-2 rounded-full border-teal-500 ' + `${showtotalarea === true ? " hidden " : ""}`}>
+  //on mobile, hide the other box 
+  if (window.innerWidth < 768) {
+  
+  sethousingaddyopen(false);
+  }
+  
+  setshowtotalarea(true);
+}
+}
+className={'text-white mt-2 px-2 py-1 ml-2  bg-gray-900 bg-opacity-70 border-2 rounded-full border-teal-500 ' + `${showtotalarea === true ? " hidden " : ""}`}>
     Park area per Council District</button></div>
+
+
+
 
 
 
@@ -871,78 +907,24 @@ className={'text-white mt-2 px-2 py-1 bg-gray-900 bg-opacity-70 border-2 rounded
   
    
    ` : 'hidden'}`}>
-
-{
-  houseClickedData && (
-    houseClickedData.properties && (
-    <>
-      <p className='pr-4'>
- <b>Address</b> {houseClickedData.properties["Address"]}
- 
- {
-
-  window.innerHeight > 500 && (
-   <>
-    <br/><b>Zip Code</b> 
-    </>
-  )
- }
- 
- <span>  </span>{houseClickedData.properties["Zip Code"]}<br/>
-
-      </p>
-
-    <p>
-         
-   
-<b>Council District</b> {houseClickedData.properties["councildist"]}<br/>
-<b>{houseClickedData.properties["Affordable Units"]}</b> Affordable Units
-{
-
-window.innerHeight > 500 && (
- <>
-  <br/>
-  </>
-)
-}
-{
-
-window.innerHeight <= 500 && (
- <>
-  <span> </span>
-  </>
-)
-}
-<b>{houseClickedData.properties["Total Units"]}</b> Total Units<br/>
-<strong>Covenant Year</strong> {houseClickedData.properties["Year of Covenant"]}
-<br/><b> Certificate of Occupancy </b>
-{
-  houseClickedData.properties["Certificate of Occupancy"] && (
-    houseClickedData.properties["Certificate of Occupancy"]
-  )
-}
-{
-  !(houseClickedData.properties["Certificate of Occupancy"]) && (
-    "Not in Data"
-  )
-}
-<br/><strong>Type</strong> {houseClickedData.properties["Type"] ? `${houseClickedData.properties["Type"]}` : "None"}
-<br/><strong>Type2</strong> {houseClickedData.properties["Type2"] ? `${houseClickedData.properties["Type2"]}` : "None"}
-
-<br/> 
-
-<a  target="_blank"   rel="noreferrer" className='mt-2 sm:mt-3 rounded-full px-2 pb-1 pt-0.5 text-white bg-blue-500' href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${houseClickedData.properties["Address"]} ${houseClickedData.properties["Zip Code"]}`)}`}>View on Google Maps</a>
-</p>
-    </>
-    )
-
-  )
-}
   
 
   {parkClickedData && (
 <>
+<CloseButton onClose={() => {
+  //close the box of the clicked park
 
+    setParkClickedData(null);
+    sethousingaddyopen(false);
+    var singlePointSet:any = mapref.current.getSource('selected-park-area');
+    
+    //clear the datapoint
+    singlePointSet.setData({
+      "type": "FeatureCollection",
+      "features": []
+      });
+   
+}}></CloseButton>
 <p className='text-bold font-bold'>{parkClickedData.properties.name}</p>
 <p className='text-bold'>{parkClickedData.properties.address}</p>
 {
@@ -974,12 +956,6 @@ window.innerHeight <= 500 && (
 </>
   )
 }
-
-</>
-
-
-
-  )}
 <button className='underline border rounded-xl px-3 py-0.75 text-sm' style={
  { color: '#41ffca',
 backgroundColor: '#41ffca15',
@@ -994,6 +970,12 @@ onClick={(e) => {
   <sup>2</sup>
 )}
 </button>
+</>
+
+
+
+  )}
+
 
 
 </div>
