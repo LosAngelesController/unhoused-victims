@@ -759,7 +759,7 @@ map.on('dragstart', (e) => {
     >
 
 <div
-      className='absolute mt-[3.8em] md:[3.8em] md:ml-3 top-0 max-h-screen flex-col flex z-5'
+      className='absolute mt-[3.1em] md:mt-[3.8em] md:ml-3 top-0 max-h-screen flex-col flex z-5'
     >
   <div className='titleBox  ml-2 text-base bold md:semi-bold break-words bg-[#212121]'
   style={
@@ -787,7 +787,7 @@ sm:w-auto  sm:top-auto sm:static sm:bottom-auto
     sm:mt-2 bg-opacity-90 sm:bg-opacity-70 px-3 py-1 ${showtotalarea === true ? "  " : " hidden "}`}>
 
 
-<div className={`flex flex-row relative
+<div className={`text-sm md:text-base flex flex-row relative
 ${showtotalarea === true ?  "  " : "  hidden"}
 `}> <p className='text-white bold'>
 View in {metric ? 'km' : 'sq mi'}
