@@ -54,6 +54,17 @@ const Home: NextPage = () => {
 
 var parksGeojson:any = parks;
 
+var dogparksGeojson:any = {
+  "type": "FeatureCollection",
+"features": parks.features
+.filter((eachPark:any) => 
+{
+  var addresscontaindog = eachPark.properties.name.toLowerCase().includes("dog");
+
+  return addresscontaindog;
+})
+};
+
 var councilBounds: any = {
   features: CouncilDist.features,
   type: "FeatureCollection"
@@ -204,6 +215,11 @@ map.on('load', () => {
     data: parksGeojson
     });
 
+    map.addSource('dogparks', {
+      type: 'geojson',
+      data:dogparksGeojson
+      });
+
     console.log('maps parks source', map.getSource('parks'))
 
     map.addLayer({
@@ -228,6 +244,37 @@ map.on('load', () => {
       }
   
       });
+
+      map.loadImage(
+        '/dog512.png',
+        (error, image:any) => {
+        if (error) throw error;
+         
+        // Add the image to the map style.
+        map.addImage('superdog', image);
+        
+        map.addLayer({
+          id: 'littledogs',
+          type: 'symbol',
+          source: 'dogparks',
+          layout: { 
+            'icon-image': 'superdog',
+            'icon-size': [
+              "interpolate", ["linear"], ["zoom"],
+              // zoom is 10 (or greater) -
+              7, 0.1,
+              10, 0.1,
+              20, 0.2
+          ],
+            'icon-rotate': 0,
+            'icon-allow-overlap': true
+          }
+      
+          });
+
+        });
+
+     
 
     console.log('maps parks layer', map.getLayer('parks'))
 
@@ -637,7 +684,7 @@ if (! document.querySelector(".mapboxgl-ctrl-top-right > .mapboxgl-ctrl-geocoder
       'fill-color': '#dddddd',
       'fill-opacity': 0.02
     }
-  })
+  });
 }
 
 if ( hasStartedControls === false ) {
