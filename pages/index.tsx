@@ -784,14 +784,14 @@ map.on('dragstart', (e) => {
 <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:title" key='twittertitle' content="City of LA Parks | Map and land analysis"></meta>
 <meta name="twitter:description"  key='twitterdesc' content="City of LA Parks visualized. See all parks and observe inequities in park distribution."></meta>
-      <meta name="twitter:image" key='twitterimg' content="https://data.mejiaforcontroller.com/affordablehousingpic.png"></meta>
+      <meta name="twitter:image" key='twitterimg' content="https://github.com/Mejia-For-Controller/cdn/blob/main/thumbnailforparksmap.png?raw=true"></meta>
       <meta name="description" content="City of LA Parks visualized. See all parks and observe inequities in park distribution." />
 
       <meta property="og:url"                content="https://parks.mejiaforcontroller.com/" />
 <meta property="og:type"               content="website" />
-<meta property="og:title"              content="Affordable Housing Covenants - 2010 to 2021 | Map" />
-<meta property="og:description"        content="Browse and Search Affordable Housing in Los Angeles with instructions to apply." />
-<meta property="og:image"              content="https://data.mejiaforcontroller.com/affordablehousingpic.png" />
+<meta property="og:title"              content="City of LA Parks | Map and land analysis" />
+<meta property="og:description"        content="City of LA Parks visualized. See all parks and observe inequities in park distribution." />
+<meta property="og:image"              content="https://github.com/Mejia-For-Controller/cdn/blob/main/thumbnailforparksmap.png?raw=true" />
 
 <script defer={true} src="https://helianthus.mejiaforcontroller.com/index.js"></script>
       </Head>
