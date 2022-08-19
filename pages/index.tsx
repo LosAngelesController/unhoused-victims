@@ -530,11 +530,10 @@ var dataToWrite = null;
 
     console.log(e.features);
 
-    var arrayOfFeatures = parksGeojson.features.filter((eachPark:any) => {
-      var parkMultiPolygon = turf.multiPolygon(eachPark.geometry.coordinates);
+    const namesofparks = e.features.map((feature:any) => feature.properties.name);
 
-       // @ts-ignore: Unreachable code error
-      return turf.booleanPointInPolygon(pointturf, parkMultiPolygon);
+    var arrayOfFeatures = parksGeojson.features.filter((eachPark:any) => {
+      return namesofparks.includes(eachPark.properties.name);
     });
 
     console.log('click inside these parks', arrayOfFeatures)
@@ -576,78 +575,37 @@ setshowtotalarea(false);
    }
     
   //  map.setLayoutProperty("areasparks", 'visibility', 'visible');
+  });
+
+  map.on('mousedown', 'littledogs', (e:any) => {
+    console.log("dog clicked");
+    console.log(e);
+    console.log(e.features[0]);
+
+    console.log('coords', e.features[0].geometry.coordinates)
+
+    if (e.features[0].geometry.coordinates.length > 3) {
+      var coordtoflyto = turf.center(turf.polygon(e.features[0].geometry.coordinates));
+
+      console.log('coords to fly to', coordtoflyto);
+  
+      console.log(coordtoflyto.geometry.coordinates);
+  
+      map.easeTo({center: [0, 0], zoom: 9, duration: 5000});
+  
+      console.log('fly complete')
+    }
+
+   
+    /*
+    map.flyTo({
+      center: [coordtoflyto.geometry.coordinates[0], coordtoflyto.geometry.coordinates[1]],
+      zoom: 9,
+      speed: 0.2
+      });*/
+
+     
   })
-
-  map.on('touchstart', 'housinglayer', (e:any) => {
-    popup.remove();
-    touchref.current = {
-      lngLat: e.lngLat,
-      time: Date.now()
-    }
-  });
-   
-  map.on('mousemove', 'housinglayer', (e:any) => {
-
-    var isntblockedfrompopup = true;
-
-    if (touchref) {
-      if (touchref.current) {
-        if (touchref.current.time === Date.now() &&
-         touchref.current.lngLat.lng === e.lngLat.lng
-          && touchref.current.lngLat.lat === e.lngLat.lat) {
-          console.log('time is same, block');
-          isntblockedfrompopup = false;
-        }
-      }
-    }
-
-    if (window.innerWidth < 700 || window.innerHeight < 700) {
-        isntblockedfrompopup = false;
-    }
-
-    if (isntblockedfrompopup) {
-      if (window.matchMedia("(any-hover: none)").matches) {
-        console.log(
-          'no hover'
-        )
-      } else {
-        // device supports hovering
-          // Change the cursor style as a UI indicator.
-    map.getCanvas().style.cursor = 'pointer';
-     
-    // Copy coordinates array.
-    const coordinates = e.features[0].geometry.coordinates.slice();
-    const description = `<b>Address</b> ${e.features[0].properties["Address"]}<br><b>Zip Code</b> ${e.features[0].properties["Zip Code"]}<br>
-    <b>Council District</b> ${e.features[0].properties["councildist"]}<br>
-    <b>${e.features[0].properties["Affordable Units"]}</b> Affordable Units<br>
-    <b>${e.features[0].properties["Total Units"]}</b> Total Units<br>
-    <b>Covenant Year</strong> ${e.features[0].properties["Year of Covenant"]}
-    ${e.features[0].properties["Certificate of Occupancy"] ? `<br><b> Certificate of Occupancy</b> ${e.features[0].properties["Certificate of Occupancy"]}` : `<br><b> Certificate of Occupancy</b> Not in Data`}
-    <br><strong>Type</strong> ${e.features[0].properties["Type"] ? `${e.features[0].properties["Type"]}` : "None"}
-    <br><strong>Type2</strong> ${e.features[0].properties["Type2"] ? `${e.features[0].properties["Type2"]}` : "None"}<br><b>Click for more info.</b>`;
-     
-  //console.log(e.features)
-  
-    // Ensure that if the map is zoomed out such that multiple
-    // copies of the feature are visible, the popup appears
-    // over the copy being pointed to.
-    while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-    coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-    }
-     
-    // Populate the popup and set its coordinates
-    // based on the feature found.
-    popup.setLngLat(coordinates).setHTML(description).addTo(map);
-      }
-    }
-  
-
-  });
-   
-  map.on('mouseleave', 'housinglayer', () => {
-  map.getCanvas().style.cursor = '';
-  popup.remove();
-  });
 
 if (! document.querySelector(".mapboxgl-ctrl-top-right > .mapboxgl-ctrl-geocoder")) {
   map.addControl(
@@ -815,8 +773,8 @@ map.on('dragstart', (e) => {
     color: "#ffffff",
    }
   }
-  ><strong className='hidden sm:block'>City of Los Angeles Parks</strong>
-  <strong className='sm:hidden '>City of LA Parks</strong>
+  >
+  <strong className=''>City of LA Parks & Dog Parks</strong>
   </div>
 
 

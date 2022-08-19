@@ -14,9 +14,19 @@ var parksGeojsonInit: any = parks
 console.log('initparks', parks)
 
 var parksGeojsonarea: any = {...parksGeojsonInit, features: parksGeojsonInit.features.map((eachPolygon:any) => {
-  var objToReturn: any = {...eachPolygon}
+  var objToReturn: any = {...eachPolygon};
 
-  var area = turf.area(turf.multiPolygon(eachPolygon.geometry.coordinates));
+  var turfPolygonThing;
+
+  if (eachPolygon.geometry.type == 'Polygon') {
+      
+    turfPolygonThing = turf.polygon(eachPolygon.geometry.coordinates);
+
+  } else {
+    turfPolygonThing = turf.multiPolygon(eachPolygon.geometry.coordinates);
+  }
+
+  var area = turf.area(turfPolygonThing);
 
   objToReturn.properties.area = area;
 
