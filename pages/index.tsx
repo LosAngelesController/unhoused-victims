@@ -64,7 +64,8 @@ var dogparksGeojson:any = {
 "features": parks.features
 .filter((eachPark:any) => 
 {
-  var addresscontaindog = eachPark.properties.name.toLowerCase().includes("dog") || eachPark.properties.name.toLowerCase().includes("Glen Alla");
+  var addresscontaindog = eachPark.properties.name.toLowerCase().includes("dog") || 
+  eachPark.properties.name.toLowerCase().includes("glen alla");
 
   return addresscontaindog;
 })
