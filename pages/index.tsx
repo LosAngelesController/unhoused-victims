@@ -32,6 +32,10 @@ function isTouchScreen() {
   return window.matchMedia('(hover: none)').matches;
 }
 
+var cacheofcdsfromnames = {
+
+}
+
 var councilAreas = {
  "1":	3404687.144,
 "2":	1922218.2,
@@ -94,10 +98,58 @@ const [showtotalarea, setshowtotalarea] = useState(false)
     setDisclaimerOpen(false)
   }
 
+  function checkIfRingsNeedToBeCorrected(polygon:any) {
 
+    console.log('checking if rings need to be corrected', polygon)
 
-  function sendAnalyticsData(props:any) {
+    var polygontoreturn = polygon;
+
+    if (polygon.geometry.type == "Polygon") {
+      if (polygon.geometry.coordinates.length <= 3) {
+        polygontoreturn.geometry.coordinates = [...polygon.geometry.coordinates, [polygon.geometry.coordinates[0][0] + 0.00000001, polygon.geometry.coordinates[0][1]]];
+      } else {
+       
+      }
+    } else {
     
+    }
+
+    return polygontoreturn;
+  }
+
+  function turfify(polygon:any) { 
+    var turffedpolygon;
+
+    console.log('polygon on line 100', polygon)
+    
+    if (polygon.geometry.type == "Polygon") { 
+      turffedpolygon = turf.polygon(polygon.geometry.coordinates)
+    } else {
+      turffedpolygon = turf.multiPolygon(polygon.geometry.coordinates)
+    }
+
+   
+
+    return turffedpolygon;
+  }
+
+  function polygonInWhichCd(polygon:any) {
+
+    if (cacheofcdsfromnames[polygon.properties.name]) {
+      return cacheofcdsfromnames[polygon.properties.name];
+    } else {
+      var turffedpolygon = turfify(polygon);
+
+    const answerToReturn = councildistricts.features.find(eachItem => {
+
+      return turf.booleanIntersects(turfify(eachItem), turffedpolygon);
+
+    });
+
+    cacheofcdsfromnames[polygon.properties.name] = answerToReturn;
+
+    return answerToReturn;
+    }
   }
 
   function openModal() {
@@ -208,7 +260,9 @@ window.addEventListener('resize',  handleResize);
 
 map.on('load', () => {
 
-  setshowtotalarea(window.innerWidth > 640 ? true : false)
+  setshowtotalarea(window.innerWidth > 640 ? true : false);
+
+  
 
   map.addSource('parks', {
     type: 'geojson',
@@ -582,18 +636,45 @@ setshowtotalarea(false);
     console.log(e);
     console.log(e.features[0]);
 
-    console.log('coords', e.features[0].geometry.coordinates)
+    console.log('coords', e.features[0].geometry.coordinates);
 
-    if (e.features[0].geometry.coordinates.length > 3) {
-      var coordtoflyto = turf.center(turf.polygon(e.features[0].geometry.coordinates));
+    var dogparkfound = 
+    parksGeojson.features.filter((eachPark:any) => {
+      return eachPark.properties.name === e.features[0].properties.name;
+    });
+
+    sethousingaddyopen(true);
+
+    setParkClickedData(dogparkfound[0]);
+
+    var affordablepoint: any = map.getSource('selected-park-area')
+
+    affordablepoint.setData(dogparkfound[0].geometry);
+
+    if (dogparkfound[0]) {
+
+      var polygonOrMulti = turfify(dogparkfound[0])
+
+      var coordtoflyto = turf.center(polygonOrMulti);
 
       console.log('coords to fly to', coordtoflyto);
   
       console.log(coordtoflyto.geometry.coordinates);
+
+      var coordinates:[number,number] = [coordtoflyto.geometry.coordinates[0], coordtoflyto.geometry.coordinates[1]];
   
-      map.easeTo({center: [0, 0], zoom: 9, duration: 5000});
+      console.log('final fly to coords', coordinates);
+
+      setTimeout(() => {
+        map.flyTo({
+          center: coordinates,
+          zoom: 15,
+          essential: true // this animation is considered essential with respect to prefers-reduced-motion
+          });
+
+      }, 100)
   
-      console.log('fly complete')
+      console.log('fly complete');
     }
 
    
@@ -879,6 +960,7 @@ onClick={(e) => {
 )}
 </button>
 
+
   </div>
 
   <div className='w-content'>
@@ -935,6 +1017,16 @@ className={'text-white mt-2 px-2 py-1 ml-2  bg-gray-900 bg-opacity-70 border-2 r
 }}></CloseButton>
 <p className='text-bold font-bold'>{parkClickedData.properties.name}</p>
 <p className='text-bold'>{parkClickedData.properties.address}</p>
+
+{
+  polygonInWhichCd(parkClickedData) && (
+   <>
+   <span>Council District </span>
+   { polygonInWhichCd(parkClickedData).properties.district}
+   </>
+  )
+}
+
 {
   metric ? (
 <>
@@ -964,6 +1056,7 @@ className={'text-white mt-2 px-2 py-1 ml-2  bg-gray-900 bg-opacity-70 border-2 r
 </>
   )
 }
+<div className='flex flex-row gap-x-3'>
 <button className='underline border rounded-xl px-3 py-0.75 text-sm' style={
  { color: '#41ffca',
 backgroundColor: '#41ffca15',
@@ -978,6 +1071,21 @@ onClick={(e) => {
   <sup>2</sup>
 )}
 </button>
+
+<a target="_blank" href={`https://www.google.com/maps/search/?api=1&query=${encodeURI(`${parkClickedData.properties.name} Los Angeles CA`)}`}><button className='underline border rounded-xl px-3 py-0.75 text-sm' style={
+ { color: '#7dd3fc',
+backgroundColor: '#38bdf815',
+borderColor: '#38bdf8'
+}
+}
+
+>Google Maps
+
+</button></a>
+
+
+</div>
+
 </>
 
 
