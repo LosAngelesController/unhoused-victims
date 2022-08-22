@@ -27,6 +27,7 @@ import * as turf from '@turf/turf'
        import { assertDeclareExportAllDeclaration } from '@babel/types';
 
 import {DisclaimerPopup} from '../components/Disclaimer'
+import { GeoJsonProperties, MultiPolygon, Polygon } from 'geojson'
 
 function isTouchScreen() {
   return window.matchMedia('(hover: none)').matches;
@@ -142,7 +143,9 @@ const [showtotalarea, setshowtotalarea] = useState(false)
         var turffedpolygon = turfify(polygon);
   
       const answerToReturn = councildistricts.features.find((eachItem:any) => {
-  
+        //turf sucks for not having type checking, bypasses compile error Property 'booleanIntersects' does not exist on type 'TurfStatic'.
+        //yes it works!!!! it's just missing types
+  // @ts-ignore: Unreachable code error
         return turf.booleanIntersects(turfify(eachItem), turffedpolygon);
   
       });
@@ -656,7 +659,8 @@ setshowtotalarea(false);
 
     if (dogparkfound[0]) {
 
-      var polygonOrMulti = turfify(dogparkfound[0])
+      var polygonOrMulti: any
+      = turfify(dogparkfound[0])
 
       var coordtoflyto = turf.center(polygonOrMulti);
 
@@ -1075,7 +1079,10 @@ onClick={(e) => {
 )}
 </button>
 
-<a target="_blank" href={`https://www.google.com/maps/search/?api=1&query=${encodeURI(`${parkClickedData.properties.name} Los Angeles CA`)}`}><button className='underline border rounded-xl px-3 py-0.75 text-sm' style={
+<a target="_blank" 
+
+rel="noreferrer"
+href={`https://www.google.com/maps/search/?api=1&query=${encodeURI(`${parkClickedData.properties.name} Los Angeles CA`)}`}><button className='underline border rounded-xl px-3 py-0.75 text-sm' style={
  { color: '#7dd3fc',
 backgroundColor: '#38bdf815',
 borderColor: '#38bdf8'
