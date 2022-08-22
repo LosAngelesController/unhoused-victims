@@ -32,7 +32,7 @@ function isTouchScreen() {
   return window.matchMedia('(hover: none)').matches;
 }
 
-var cacheofcdsfromnames = {
+var cacheofcdsfromnames:any = {
 
 }
 
@@ -135,21 +135,24 @@ const [showtotalarea, setshowtotalarea] = useState(false)
 
   function polygonInWhichCd(polygon:any) {
 
-    if (cacheofcdsfromnames[polygon.properties.name]) {
-      return cacheofcdsfromnames[polygon.properties.name];
-    } else {
-      var turffedpolygon = turfify(polygon);
-
-    const answerToReturn = councildistricts.features.find(eachItem => {
-
-      return turf.booleanIntersects(turfify(eachItem), turffedpolygon);
-
-    });
-
-    cacheofcdsfromnames[polygon.properties.name] = answerToReturn;
-
-    return answerToReturn;
+    if (typeof polygon.properties.name === "string") {
+      if (cacheofcdsfromnames[polygon.properties.name]) {
+        return cacheofcdsfromnames[polygon.properties.name];
+      } else {
+        var turffedpolygon = turfify(polygon);
+  
+      const answerToReturn = councildistricts.features.find((eachItem:any) => {
+  
+        return turf.booleanIntersects(turfify(eachItem), turffedpolygon);
+  
+      });
+  
+      cacheofcdsfromnames[polygon.properties.name] = answerToReturn;
+  
+      return answerToReturn;
+      }
     }
+   
   }
 
   function openModal() {
@@ -823,14 +826,14 @@ map.on('dragstart', (e) => {
 <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:title" key='twittertitle' content="City of LA Parks | Map and land analysis"></meta>
 <meta name="twitter:description"  key='twitterdesc' content="City of LA Parks visualized. See all parks and observe inequities in park distribution."></meta>
-      <meta name="twitter:image" key='twitterimg' content="https://github.com/Mejia-For-Controller/cdn/blob/main/thumbnailforparksmap.png?raw=true"></meta>
+      <meta name="twitter:image" key='twitterimg' content="https://github.com/Mejia-For-Controller/cdn/blob/main/thumbnailforparksmap2.png?raw=true"></meta>
       <meta name="description" content="City of LA Parks visualized. See all parks and observe inequities in park distribution." />
 
       <meta property="og:url"                content="https://parks.mejiaforcontroller.com/" />
 <meta property="og:type"               content="website" />
 <meta property="og:title"              content="City of LA Parks | Map and land analysis" />
 <meta property="og:description"        content="City of LA Parks visualized. See all parks and observe inequities in park distribution." />
-<meta property="og:image"              content="https://github.com/Mejia-For-Controller/cdn/blob/main/thumbnailforparksmap.png?raw=true" />
+<meta property="og:image"              content="https://github.com/Mejia-For-Controller/cdn/blob/main/thumbnailforparksmap2.png?raw=true" />
 
 <script defer={true} src="https://helianthus.mejiaforcontroller.com/index.js"></script>
       </Head>
