@@ -37,6 +37,12 @@ var cacheofcdsfromnames:any = {
 
 }
 
+function getLang() {
+  if (navigator.languages != undefined) 
+    return navigator.languages[0]; 
+  return navigator.language;
+}
+
 var councilAreas = {
  "1":	3404687.144,
 "2":	1922218.2,
@@ -1043,7 +1049,7 @@ className={'text-white mt-2 px-2 py-1 ml-2  bg-gray-900 bg-opacity-70 border-2 r
     parkClickedData.properties.area > 1000000 ? (
       <p>{(parkClickedData.properties.area/1000000).toFixed(3)} km<sup>2</sup></p>
     ) : (
-      <p>{Math.round(parkClickedData.properties.area)} m<sup>2</sup></p>
+      <p>{Math.round(parkClickedData.properties.area).toLocaleString(getLang())} m<sup>2</sup></p>
     )
   )
 
@@ -1053,10 +1059,10 @@ className={'text-white mt-2 px-2 py-1 ml-2  bg-gray-900 bg-opacity-70 border-2 r
     <>
 {
   parkClickedData.properties.area && (
-    parkClickedData.properties.area > (2600000) ? (
+    parkClickedData.properties.area > (1000000) ? (
       <p>{(parkClickedData.properties.area/2589988).toFixed(3)} sq mi</p>
     ) : (
-      <p>{Math.round(parkClickedData.properties.area * 1.19599) + ` Sq yards`} <br></br> {(Math.round(parkClickedData.properties.area) * (0.000247105)).toFixed(2)} acres</p>
+      <p>{Math.round(parkClickedData.properties.area * 1.19599).toLocaleString(getLang()) + ` sq yards (`}{(Math.round(parkClickedData.properties.area) * (0.000247105)).toFixed(2)} acres{`)`}</p>
     )
   )
 
