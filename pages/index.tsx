@@ -1056,7 +1056,7 @@ className={'text-white mt-2 px-2 py-1 ml-2  bg-gray-900 bg-opacity-70 border-2 r
     parkClickedData.properties.area > (2600000) ? (
       <p>{(parkClickedData.properties.area/2589988).toFixed(3)} sq mi</p>
     ) : (
-      <p>{(Math.round(parkClickedData.properties.area) * (0.000247105)).toFixed(2)} acres</p>
+      <p>{Math.round(parkClickedData.properties.area * 1.19599) + ` Sq yards`} <br></br> {(Math.round(parkClickedData.properties.area) * (0.000247105)).toFixed(2)} acres</p>
     )
   )
 
@@ -1074,10 +1074,7 @@ borderColor: '#41ffca'
 onClick={(e) => {
   setmetric(!metric)
 }}
->View in {metric ? 'sq mi' : 'km'}
-{metric === false && (
-  <sup>2</sup>
-)}
+>View in {metric ? 'US units' : 'metric units'}
 </button>
 
 <a target="_blank" 
