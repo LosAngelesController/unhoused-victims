@@ -101,6 +101,7 @@ const [showtotalarea, setshowtotalarea] = useState(false)
   var mapref:any = useRef(null);
   const okaydeletepoints:any = useRef(null);
   var [metric,setmetric] = useState(false);
+  const [showInitInstructions, setshowInitInstructions] = useState(true);
 
   function closeModal() {
     setDisclaimerOpen(false)
@@ -627,6 +628,7 @@ var dataToWrite = null;
     dataToWrite = arrayOfFeatures[0];
     }
     sethousingaddyopen(true);
+    setshowInitInstructions(false);
 
     if (window.innerWidth < 768) {
 //on mobile, close the other popup of cd park areas
@@ -657,6 +659,7 @@ setshowtotalarea(false);
     });
 
     sethousingaddyopen(true);
+    setshowInitInstructions(false);
 
     setParkClickedData(dogparkfound[0]);
 
@@ -901,7 +904,7 @@ ${showtotalarea === true ?  "  " : "  hidden"}
   <CloseButton 
   overrideButtonClass='mt-0.5 mr-0'
    onClose={() => {
-
+    setshowInitInstructions(false);
     if (window.innerWidth < 768) {
     if (parkClickedData === true) {
       sethousingaddyopen(true);
@@ -982,7 +985,7 @@ onClick={(e) => {
     {/*Button opens up area per CD chart*/}
     <button 
 onClick={(e) => {
-  
+  setshowInitInstructions(false);
   //on mobile, hide the other box 
   if (window.innerWidth < 768) {
   
@@ -1119,6 +1122,22 @@ borderColor: '#38bdf8'
 <div ref={divRef} style={{
 
 }} className="map-container w-full h-full " />
+
+
+{
+          showInitInstructions && (
+            <p className=' inline-block s
+    absolute ml-2 sm:mx-auto z-9 text-sm md:text-base sm:left-1/2 sm:transform sm:-translate-x-1/2 
+    w-auto 
+    bottom-12 sm:bottom-5 md:bottom-auto md:top-16 text-black rounded-full px-3'
+              style={{
+                background: "#03002777",
+                color: "#41ffca",
+              }}
+            >Click parks or corgis for more info</p>
+          )
+        }
+
         
      
       
