@@ -1,7 +1,11 @@
-const parks = require('./polygon-parts.json');
+//const parks = require('./polygon-parts.json');
+const parks = require('./parks-new-dissolve-8-23-v2.json');
 const council = require('./CouncilDistricts.json');
 
 import * as turf from '@turf/turf'
+
+
+//const featurecollection = turf.dissolve(parks)
 
 council.features.forEach((feature:any) => {
 

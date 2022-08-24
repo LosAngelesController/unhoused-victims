@@ -44,21 +44,21 @@ function getLang() {
 }
 
 var councilAreas = {
- "1":	3404687.144,
-"2":	1922218.2,
-"3":	974038.8685,
-"4":	19502642.53,
-"5":	1491687.759,
-"6":	6526483.609,
-"7":	8854372.079,
-"8":	330407.8904,
-"9":	429111.0699,
-"10":	383493.7587,
-"11":	5663984.515,
-"12":	8126663.964,
-"13":	1439393.563,
-"14":	1781216.65,
-"15":	3173394.591
+ "1":	3430574.7975400444,
+"2":	 1923198.9864064245,
+"3":	974017.2821210575,
+"4":	 19502619.923980944,
+"5":	 1491713.4892952952,
+"6": 6526478.554288466,
+"7":8854297.434340637,
+"8":	 330403.0240015861,
+"9":	 429067.47679624124,
+"10": 384304.22289439675,
+"11":	 5663731.197031066,
+"12":	 8126630.950297409,
+"13":	 1453265.0670397228,
+"14": 1786240.7465242841,
+"15":	 3173431.1726234294
 }
 
 const Home: NextPage = () => { 
@@ -822,7 +822,7 @@ map.on('dragstart', (e) => {
 
   return (
   
-  <div className='flex flex-col h-screen w-screen absolute'>
+  <div className='flex flex-col h-full w-screen absolute'>
       <Head>
      
       <link rel="icon" href="https://mejiaforcontroller.com/wp-content/uploads/2020/12/cropped-favicon-1-32x32.png" sizes="32x32"/>
@@ -1001,7 +1001,25 @@ className={'text-white mt-2 px-2 py-1 ml-2  bg-gray-900 bg-opacity-70 border-2 r
 
 
 
+  
+    {
+          showInitInstructions && (
+           <div className='md:hidden'
+           //z-9 md:absolute md:transform md:mx-auto md:left-auto md:right-auto md:inset-x-1/2 md:right-auto md:-translate-x-1/2 
+           >
+ <p className=' inline-block 
+ md:left-auto md:right-auto ml-2  z-9 text-sm md:text-sm 
+    w-auto 
+   md:bottom-auto md:top-16 text-black rounded-full px-3 py-1 mt-1'
+              style={{
+                background: "#030027aa",
+                color: "#41ffca",
+              }}
+            >Click parks/corgis for more info</p>
 
+           </div>
+          )
+        }
 
 <div className={`text-sm ${housingaddyopen ? `px-3 pt-2 pb-3 fixed sm:relative 
 
@@ -1014,7 +1032,7 @@ className={'text-white mt-2 px-2 py-1 ml-2  bg-gray-900 bg-opacity-70 border-2 r
   
    
    ` : 'hidden'}`}>
-  
+
 
   {parkClickedData && (
 <>
@@ -1124,20 +1142,23 @@ borderColor: '#38bdf8'
 }} className="map-container w-full h-full " />
 
 
+
 {
           showInitInstructions && (
-            <p className=' inline-block s
-    absolute ml-2 sm:mx-auto z-9 text-sm md:text-base sm:left-1/2 sm:transform sm:-translate-x-1/2 
-    w-auto 
-    bottom-12 sm:bottom-5 md:bottom-auto md:top-16 text-black rounded-full px-3'
-              style={{
-                background: "#03002777",
-                color: "#41ffca",
-              }}
-            >Click parks or corgis for more info</p>
+
+
+                <p className=' inline-block hidden md:block
+        absolute ml-2 sm:mx-auto z-9 md:text-base lg:text-lg sm:left-1/2 sm:transform sm:-translate-x-1/2 w-auto 
+        bottom-12 sm:bottom-5 md:bottom-auto md:top-16  text-black  rounded-full px-3'
+                  style={{
+                    background: "#030027dd",
+                    color: "#41ffca",
+                  }}
+                >Click parks/corgis for more info</p>
+            
+       
           )
         }
-
         
      
       

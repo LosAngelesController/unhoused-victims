@@ -61,7 +61,8 @@ export function DisclaimerPopup(props:interfaceDisclaimerProps) {
                 </Dialog.Title>
                 <div className="mt-2">
                   <p className="text-sm text-gray-100">
-                  Paid for by Mejia for City Controller 2022, FPPC ID#: 1435234 1001 Wilshire Blvd. Suite 102, Los Angeles, CA, 90017.<br></br> Additional information is available at <a href='https://ethics.lacity.org' className='border-0 underline text-teal-300'>ethics.lacity.org</a>.
+                  Paid for by Mejia for City Controller 2022 - General. FPPC ID 1449247<br/>
+1001 Wilshire Blvd. Suite 102, Los Angeles CA 90017.<br></br> Additional information is available at <a href='https://ethics.lacity.org' className='border-0 underline text-teal-300'>ethics.lacity.org</a>.
                   </p>
                 </div>
 <br></br>
