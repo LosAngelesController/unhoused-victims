@@ -601,7 +601,20 @@ var dataToWrite = null;
     const namesofparks = e.features.map((feature:any) => feature.properties.name);
 
     var arrayOfFeatures = parksGeojson.features.filter((eachPark:any) => {
-      return namesofparks.includes(eachPark.properties.name);
+
+      try {
+        var thispark = turfify(eachPark);
+
+        // @ts-ignore: Unreachable code error
+        var intersects = turf.booleanPointInPolygon(pointturf, thispark);
+
+        return intersects;
+        
+      }
+      catch (err:any) {
+        return false;
+      }
+    
     });
 
     console.log('click inside these parks', arrayOfFeatures)
@@ -636,7 +649,7 @@ setshowtotalarea(false);
 
     }
 
-   var affordablepoint: any = map.getSource('selected-park-area')
+   var affordablepoint: any = map.getSource('selected-park-area');
 
    if (dataToWrite) {
     
