@@ -11,7 +11,7 @@ const parks = require("./parksv2.json")
 
 var parksGeojsonInit: any = parks
 
-console.log('initparks', parks)
+//console.log('initparks', parks)
 
 var parksGeojsonarea: any = {...parksGeojsonInit, features: parksGeojsonInit.features.map((eachPolygon:any) => {
   var objToReturn: any = {...eachPolygon};
@@ -41,7 +41,7 @@ var sortFeaturesByArea = parksGeojsonarea.features.sort((a:any, b:any) => {
 
 });
 
-console.log('sorted by area', sortFeaturesByArea)
+//console.log('sorted by area', sortFeaturesByArea)
 
 var sortFeaturesByAreaDup:Array<any> = [...sortFeaturesByArea]
 
@@ -58,11 +58,11 @@ for(var i = 0; i < sortFeaturesByArea.length; i++)
   var parkIterate = sortFeaturesByAreaDup.pop();
 
   
-  console.log('looking item 1', parkIterate.properties.address, Math.round(parkIterate.properties.area), " m^2")
+ // console.log('looking item 1', parkIterate.properties.address, Math.round(parkIterate.properties.area), " m^2")
 
   var thisPolygonBigPark = turf.multiPolygon(parkIterate.geometry.coordinates);
 
-  console.log('valid polygon')
+  //console.log('valid polygon')
 
   lookupTableOfIntersectingParks.push(sortFeaturesByAreaDup
    .filter((eachPolygon:any) => {

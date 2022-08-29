@@ -1,5 +1,5 @@
 //const parks = require('./polygon-parts.json');
-const parks = require('./parks-new-dissolve-8-23-v2.json');
+const parks = require('./export-dissolved-08-29.json');
 const council = require('./CouncilDistricts.json');
 
 import * as turf from '@turf/turf'
@@ -27,6 +27,6 @@ council.features.forEach((feature:any) => {
 
     })
 
-    console.log('Total area of parks in ' + feature.properties.district + ' is ' + total);
+    console.log(`"` + feature.properties.district+ `"` + ': ' + total + ",");
 
 })
