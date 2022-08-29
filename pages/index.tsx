@@ -909,7 +909,7 @@ ${showtotalarea === true ?  "  " : "  hidden"}
 {metric ? 'km' : 'Sq miles'}
 {metric === true && (
   <sup>2</sup>
-)} of parks in per district
+)} of parks per district
   
  
   </p>
@@ -1028,7 +1028,7 @@ className={'text-white mt-2 px-2 py-1 ml-2  bg-gray-900 bg-opacity-70 border-2 r
                 background: "#030027aa",
                 color: "#41ffca",
               }}
-            >Click parks/corgis for more info</p>
+            >Click parks/corgis for info</p>
 
            </div>
           )
