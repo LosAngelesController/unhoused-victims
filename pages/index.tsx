@@ -61,7 +61,7 @@ var councilAreas = {
   "15": 3174782.823397767,
 }
 
-var councilpopulations = {
+var councilpopulations:any = {
   "1": 236931.84,
 "2":252255.69,
 "3":264356.25,
@@ -882,6 +882,8 @@ map.on('dragstart', (e) => {
 <meta property="og:image"              content="https://github.com/Mejia-For-Controller/cdn/blob/main/thumbnailforparksmap2-min_50-min.png?raw=true" />
 
 <script defer={true} src="https://helianthus.mejiaforcontroller.com/index.js"></script>
+
+
       </Head>
    
 
@@ -941,7 +943,7 @@ ${showtotalarea === true ?  "  " : "  hidden"}
   <p>{
   showpop === true && (
 <>
-    <span className="text-amber-500">{metric === true && (
+    <span className="text-amber-300">{metric === true && (
        <>m<sup>2</sup> </>
     )}
     
@@ -999,7 +1001,7 @@ className='mt-auto mb-auto ml-2'
 
 
 
-<p  className={`ml-2 ${showpop === true ? `leading-none` : ``}`}>
+<p  className={`ml-2 ${showpop === true ? `leading-0point8 md:leading-none` : ``}`}>
   
   {metric === false && (
     ((eachEntry[1]/1000000)*0.386102).toPrecision(3)
@@ -1033,7 +1035,7 @@ className='mt-auto mb-auto ml-2'
 
 
 
-<p className={`ml-2 ${showpop === true ? `leading-none` : ``}`}>
+<p className={`ml-2 ${showpop === true ? `leading-0point8 md:leading-none` : ``}`}>
   
   {metric === false && (
     (((eachEntry[1])*1.19599) / councilpopulations[eachEntry[0]]).toPrecision(3)

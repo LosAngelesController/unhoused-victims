@@ -114,3 +114,8 @@ scroll-margin-right: 3px;
 .mapboxgl-ctrl-bottom-right {
   display: none
 }
+
+.leading-0point8 {
+  line-height: 0.8
+  
+  }
