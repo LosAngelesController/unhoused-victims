@@ -61,6 +61,24 @@ var councilAreas = {
   "15": 3174782.823397767,
 }
 
+var councilpopulations = {
+  "1": 236931.84,
+"2":252255.69,
+"3":264356.25,
+"4":248331.03,
+"5":264851.94,
+"6":258000.39,
+"7":260029.70,
+"8":250221.55,
+"9":265957.03,
+"10":244936.64,
+"11":289385.25,
+"12":284395.28,
+"13":252322.31,
+"14":236878.34,
+"15":275486.72,
+}
+
 const Home: NextPage = () => { 
 
 var parksGeojson:any = parks;
@@ -91,6 +109,7 @@ const calculateifboxisvisible = () => {
 }
 
 const [showtotalarea, setshowtotalarea] = useState(false)
+const [showpop, setshowpop] = useState(false)
   let [disclaimerOpen, setDisclaimerOpen] = useState(false)
   let [instructionsOpen, setInstructionsOpen] = useState(false)
   const touchref = useRef<any>(null);
@@ -905,14 +924,35 @@ sm:w-auto  sm:top-auto sm:static sm:bottom-auto
 
 <div className={`text-sm md:text-base flex flex-row relative
 ${showtotalarea === true ?  "  " : "  hidden"}
-`}> <p className='text-white bold'>
+`}> <div>
+
+
+<p className='text-white bold'>
 {metric ? 'km' : 'Sq miles'}
 {metric === true && (
   <sup>2</sup>
 )} of parks per district
-  
+
+
  
   </p>
+  
+
+  <p>{
+  showpop === true && (
+<>
+    <span className="text-amber-500">{metric === true && (
+       <>m<sup>2</sup> </>
+    )}
+    
+    {metric === false && (
+       <>sq yards </>
+    )}
+    per capita</span></>
+  )
+}
+  </p>
+</div>
 <div className='pl-7'>
   <CloseButton 
   overrideButtonClass='mt-0.5 mr-0'
@@ -935,11 +975,13 @@ ${showtotalarea === true ?  "  " : "  hidden"}
     Object.entries(councilAreas).map((eachEntry:any) => (
 
   <div
-  className='flex flex-row'
+  className={`flex flex-row ${showpop === true ? "py-1" : ""}`}
   key={eachEntry[0]}
   >
   <div className='w-5 inline'>{eachEntry[0]}</div>
 
+<div className='flex flex-col w-full'>
+<div className='w-full flex flex-row'>
 <div
 
 
@@ -957,7 +999,7 @@ className='mt-auto mb-auto ml-2'
 
 
 
-<p className='ml-2'>
+<p  className={`ml-2 ${showpop === true ? `leading-none` : ``}`}>
   
   {metric === false && (
     ((eachEntry[1]/1000000)*0.386102).toPrecision(3)
@@ -969,11 +1011,58 @@ metric === true && (
 )
 }</p>
 
+</div>
+
+{
+  showpop === true && (
+<div className='w-full flex flex-row'>
+<div
+
+
+style={
+  {
+width: `${eachEntry[1]/200000}%`,
+height: 5,
+backgroundColor: 'orange',
+  }
+}
+className='mt-auto mb-auto ml-2'
+></div>
+
+
+
+
+
+<p className={`ml-2 ${showpop === true ? `leading-none` : ``}`}>
+  
+  {metric === false && (
+    (((eachEntry[1])*1.19599) / councilpopulations[eachEntry[0]]).toPrecision(3)
+  )}
+  {
+metric === true && (
+
+((eachEntry[1])/ councilpopulations[eachEntry[0]]).toPrecision(3)
+)
+}</p>
+
+</div>
+
+  )
+}
+
+</div>
+
+
+
+
+
   </div>
 
     ))
   }
   </div>
+
+<div className='gap-x-2 flex flex-row'>
 
 <button className='underline border rounded-xl px-3 py-0.75 text-sm' style={
  { color: '#41ffca',
@@ -984,11 +1073,47 @@ borderColor: '#41ffca'
 onClick={(e) => {
   setmetric(!metric)
 }}
->View in {metric ? 'sq mi' : 'km'}
+>Switch to {metric ? 'sq mi' : 'km'}
 {metric === false && (
   <sup>2</sup>
 )}
 </button>
+
+<button className='underline border rounded-xl px-3 py-0.75 text-sm' style={
+ { color: '#f59e0b',
+backgroundColor: '#9a341222',
+borderColor: '#f59e0b'
+}
+}
+onClick={(e) => {
+  setshowpop(!showpop)
+}}
+><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-5 inline">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+  <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+
+{
+ showpop === true && (
+  <path strokeLinecap="round" strokeLinejoin="round" d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.242 4.242L9.88 9.88" />
+
+ )
+}
+  
+</svg>
+<span className='pl-1'>{
+  metric === false && (
+    <span>sq yards</span>
+
+  )
+} {
+
+  metric === true && (
+
+    <span>m<sup>2</sup></span>
+  )
+} per capita</span>
+</button>
+</div>
 
 
   </div>
@@ -1114,7 +1239,7 @@ borderColor: '#41ffca'
 onClick={(e) => {
   setmetric(!metric)
 }}
->View in {metric ? 'US units' : 'metric units'}
+>Switch to {metric ? 'US units' : 'metric units'}
 </button>
 
 <a target="_blank" 
@@ -1167,7 +1292,7 @@ borderColor: '#38bdf8'
                     background: "#030027dd",
                     color: "#41ffca",
                   }}
-                >Click parks/corgis for more info</p>
+                >Click parks/corgis for info</p>
             
        
           )
