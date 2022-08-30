@@ -88,10 +88,16 @@ var dogparksGeojson:any = {
 "features": parks.features
 .filter((eachPark:any) => 
 {
-  var addresscontaindog = eachPark.properties.name.toLowerCase().includes("dog") || 
-  eachPark.properties.name.toLowerCase().includes("glen alla");
-
-  return addresscontaindog;
+  if (eachPark.properties.name) {
+    var addresscontaindog = eachPark.properties.name.toLowerCase().includes("dog") || 
+    eachPark.properties.name.toLowerCase().includes("glen alla");
+  
+    return addresscontaindog;
+  }  else {
+    console.log('no name', eachPark)
+    return false;
+  }
+  
 })
 };
 
@@ -944,7 +950,7 @@ ${showtotalarea === true ?  "  " : "  hidden"}
   showpop === true && (
 <>
     <span className="text-amber-300">
-     District Population</span></>
+     {`(District Population)`}</span></>
   )
 }
   </p>
