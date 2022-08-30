@@ -870,14 +870,14 @@ map.on('dragstart', (e) => {
       <meta name="twitter:site" content="@kennethmejiala" />
         <meta name="twitter:creator" content="@kennethmejiala" />
 <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:title" key='twittertitle' content="City of LA Parks | Map and land analysis"></meta>
+    <meta name="twitter:title" key='twittertitle' content="City of LA Parks and Dog Parks | Map and land analysis"></meta>
 <meta name="twitter:description"  key='twitterdesc' content="City of LA Parks visualized. See all parks and observe inequities in park distribution."></meta>
       <meta name="twitter:image" key='twitterimg' content="https://github.com/Mejia-For-Controller/cdn/blob/main/thumbnailforparksmap2-min_50-min.png?raw=true"></meta>
       <meta name="description" content="City of LA Parks visualized. See all parks and observe inequities in park distribution." />
 
       <meta property="og:url"                content="https://parks.mejiaforcontroller.com/" />
 <meta property="og:type"               content="website" />
-<meta property="og:title"              content="City of LA Parks | Map and land analysis" />
+<meta property="og:title"              content="City of LA Parks and Dog Parks | Map and land analysis" />
 <meta property="og:description"        content="City of LA Parks visualized. See all parks and observe inequities in park distribution." />
 <meta property="og:image"              content="https://github.com/Mejia-For-Controller/cdn/blob/main/thumbnailforparksmap2-min_50-min.png?raw=true" />
 
