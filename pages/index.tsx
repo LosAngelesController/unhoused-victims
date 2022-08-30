@@ -943,14 +943,8 @@ ${showtotalarea === true ?  "  " : "  hidden"}
   <p>{
   showpop === true && (
 <>
-    <span className="text-amber-300">{metric === true && (
-       <>m<sup>2</sup> </>
-    )}
-    
-    {metric === false && (
-       <>sq yards </>
-    )}
-    per capita</span></>
+    <span className="text-amber-300">
+     District Population</span></>
   )
 }
   </p>
@@ -977,7 +971,7 @@ ${showtotalarea === true ?  "  " : "  hidden"}
     Object.entries(councilAreas).map((eachEntry:any) => (
 
   <div
-  className={`flex flex-row ${showpop === true ? "py-1" : ""}`}
+  className={`flex flex-row ${showpop === true ? "" : ""}`}
   key={eachEntry[0]}
   >
   <div className='w-5 inline'>{eachEntry[0]}</div>
@@ -1001,7 +995,7 @@ className='mt-auto mb-auto ml-2'
 
 
 
-<p  className={`ml-2 ${showpop === true ? `leading-0point8 md:leading-none` : ``}`}>
+<p  className={`ml-2 `}>
   
   {metric === false && (
     ((eachEntry[1]/1000000)*0.386102).toPrecision(3)
@@ -1011,12 +1005,36 @@ metric === true && (
 
 (eachEntry[1]/1000000).toPrecision(3)
 )
-}</p>
+}
+{
+  showpop === true && (
+
+
+<span className='text-amber-400'>{` (`}  
+    {Math.round((councilpopulations[eachEntry[0]]/1000))}
+{`k)`}
+
+{/*
+{` (`}  {metric === false && (
+    (((eachEntry[1])*1.19599) / councilpopulations[eachEntry[0]]).toPrecision(3)
+  )}
+  {
+metric === true && (
+
+((eachEntry[1])/ councilpopulations[eachEntry[0]]).toPrecision(3)
+)
+}{`)`}
+*/}
+</span>
+
+  )
+}
+</p>
 
 </div>
 
 {
-  showpop === true && (
+  false && (
 <div className='w-full flex flex-row'>
 <div
 
@@ -1035,7 +1053,7 @@ className='mt-auto mb-auto ml-2'
 
 
 
-<p className={`ml-2 ${showpop === true ? `leading-0point8 md:leading-none` : ``}`}>
+<p className={`ml-2 `}>
   
   {metric === false && (
     (((eachEntry[1])*1.19599) / councilpopulations[eachEntry[0]]).toPrecision(3)
@@ -1102,18 +1120,7 @@ onClick={(e) => {
 }
   
 </svg>
-<span className='pl-1'>{
-  metric === false && (
-    <span>sq yards</span>
-
-  )
-} {
-
-  metric === true && (
-
-    <span>m<sup>2</sup></span>
-  )
-} per capita</span>
+<span className='pl-1'>District Population</span>
 </button>
 </div>
 
@@ -1304,11 +1311,15 @@ borderColor: '#38bdf8'
       
  {(housingaddyopen === false || window.innerWidth >= 640) && (
    <>
-      <DisclaimerPopup
-      open={disclaimerOpen}
-      openModal={openModal}
-      closeModal={closeModal}
-      />
+     {
+      (showtotalarea === false && !parkClickedData)&& (
+        <DisclaimerPopup
+        open={disclaimerOpen}
+        openModal={openModal}
+        closeModal={closeModal}
+        />
+      )
+     }
 
    <div className={`absolute md:mx-auto z-9 bottom-2 left-1 md:left-1/2 md:transform md:-translate-x-1/2`}>
 <a href='https://MejiaForController.com/' target="_blank" rel="noreferrer">
