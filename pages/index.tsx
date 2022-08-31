@@ -1033,8 +1033,8 @@ metric === true && (
 
 <span className='text-blue-300'>
 
-{` (`}{((eachEntry[1] / councilareasdistrict[eachEntry[0]]) * 100).toFixed(1)}% {`of ${metric ? (councilareasdistrict[eachEntry[0]] / 1000000).toPrecision(3) :
- ((councilareasdistrict[eachEntry[0]] / 1000000)*0.386102).toFixed(1)})`}
+{` (`}{((eachEntry[1] / councilareasdistrict[eachEntry[0]]) * 100).toFixed(0)}% {`of ${metric ? (councilareasdistrict[eachEntry[0]] / 1000000).toFixed(0) :
+ ((councilareasdistrict[eachEntry[0]] / 1000000)*0.386102).toFixed(0)})`}
 
 </span>
 
