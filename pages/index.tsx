@@ -61,6 +61,24 @@ var councilAreas = {
   "15": 3174782.823397767,
 }
 
+var councilareasdistrict:any = {
+  "1": 39172374.513557486,
+  "2": 56028687.75752604,
+  "3": 91323827.86998883,
+  "4": 127051659.05853269,
+  "5": 85492955.75895034,
+  "6": 70583244.58359845,
+  "7": 140330608.52718654,
+  "8": 41642747.81303825,
+  "9": 33854278.76005373,
+  "10": 38455731.29742687,
+  "11": 165241605.83628467,
+  "12": 149947134.17462063,
+  "13": 42095086.21254906,
+  "14": 63974277.0096737,
+  "15": 83429528.39743595,
+}
+
 var councilpopulations:any = {
   "1": 236931.84,
 "2":252255.69,
@@ -936,10 +954,10 @@ ${showtotalarea === true ?  "  " : "  hidden"}
 
 
 <p className='text-white bold'>
-{metric ? 'km' : 'Sq miles'}
+{metric ? 'Km' : 'Sq Miles'}
 {metric === true && (
   <sup>2</sup>
-)} of parks per district
+)} of City Parks Per District
 
 
  
@@ -1012,6 +1030,14 @@ metric === true && (
 (eachEntry[1]/1000000).toPrecision(3)
 )
 }
+
+<span className='text-blue-300'>
+
+{` (`}{((eachEntry[1] / councilareasdistrict[eachEntry[0]]) * 100).toFixed(1)}% {`of ${metric ? (councilareasdistrict[eachEntry[0]] / 1000000).toPrecision(3) :
+ ((councilareasdistrict[eachEntry[0]] / 1000000)*0.386102).toFixed(1)})`}
+
+</span>
+
 {
   showpop === true && (
 
@@ -1149,7 +1175,7 @@ onClick={(e) => {
 }
 }
 className={'text-white mt-2 px-2 py-1 ml-2  bg-gray-900 bg-opacity-70 border-2 rounded-full border-teal-500 ' + `${showtotalarea === true ? " hidden " : ""}`}>
-    Park Area per Council District</button></div>
+    Park Area Per Council District</button></div>
 
 
 
