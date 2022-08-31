@@ -1022,12 +1022,12 @@ className='mt-auto mb-auto ml-2'
 <p  className={`ml-2 `}>
   
   {metric === false && (
-    ((eachEntry[1]/1000000)*0.386102).toPrecision(3)
+    ((eachEntry[1]/1000000)*0.386102).toFixed(2)
   )}
   {
 metric === true && (
 
-(eachEntry[1]/1000000).toPrecision(3)
+(eachEntry[1]/1000000).toFixed(2)
 )
 }
 
