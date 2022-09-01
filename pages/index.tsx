@@ -271,7 +271,7 @@ const debugParam = urlParams.get('debug');
 var mapparams:any = {
   container: divRef.current, // container ID
   //affordablehousing2022-dev-copy
- style: 'mapbox://styles/comradekyler/cl6e22kp6000015lgg641oz9q', // style URL
+ style: 'mapbox://styles/comradekyler/cl6e22kp6000015lgg641oz9q', // style URL (THIS IS STREET VIEW)
   //mapbox://styles/comradekyler/cl5c3eukn00al15qxpq4iugtn
     //affordablehousing2022-dev-copy-copy
   //  style: 'mapbox://styles/comradekyler/cl5c3eukn00al15qxpq4iugtn?optimize=true', // style URL
