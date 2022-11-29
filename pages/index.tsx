@@ -108,7 +108,7 @@ var dogparksGeojson:any = {
 {
   if (eachPark.properties.name) {
     var addresscontaindog = eachPark.properties.name.toLowerCase().includes("dog") || 
-    eachPark.properties.name.toLowerCase().includes("glen alla");
+    eachPark.properties.name.toLowerCase().includes("glen alla") || eachPark.properties.name.toLowerCase().includes('ross snyder');
   
     return addresscontaindog;
   }  else {
