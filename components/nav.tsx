@@ -10,8 +10,8 @@ const navigationPayroll = [
     'newtab': true
   },
   {
-    'name': "Mejia for Controller",
-    'url': "https://mejiaforcontroller.com",
+    'name': "Los Angeles Controller",
+    'url': "https://controller.lacity.gov",
     'newtab': true
   }
 ]

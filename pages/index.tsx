@@ -854,8 +854,8 @@ map.on('dragstart', (e) => {
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
 <title>LA Parks | Map</title>
       <meta property="og:type" content="website"/>
-      <meta name="twitter:site" content="@kennethmejiala" />
-        <meta name="twitter:creator" content="@kennethmejiala" />
+      <meta name="twitter:site" content="@lacontroller" />
+        <meta name="twitter:creator" content="@lacontroller" />
 <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:title" key='twittertitle' content="City of LA Parks and Dog Parks | Map and Land Analysis"></meta>
 <meta name="twitter:description"  key='twitterdesc' content="City of LA Parks visualized. See all parks and observe inequities in park distribution."></meta>
@@ -868,7 +868,6 @@ map.on('dragstart', (e) => {
 <meta property="og:description"        content="City of LA Parks visualized. See all parks and observe inequities in park distribution." />
 <meta property="og:image"              content="https://github.com/Mejia-For-Controller/cdn/blob/main/thumbnailforparksmap2-min_50-min.png?raw=true" />
 
-<script defer={true} src="https://helianthus.mejiaforcontroller.com/index.js"></script>
 
 
       </Head>
@@ -1064,9 +1063,9 @@ borderColor: '#38bdf8'
      }
 
    <div className={`absolute md:mx-auto z-9 bottom-2 left-1 md:left-1/2 md:transform md:-translate-x-1/2`}>
-<a href='https://MejiaForController.com/' target="_blank" rel="noreferrer">
+<a href='https://controller.lacontroller.gov/' target="_blank" rel="noreferrer">
   
-    <img src='/mejia-watermark-smol.png' className='h-9 md:h-10 z-40' alt="Kenneth Mejia for LA City Controller Logo"/>
+    <img src='https://lacontroller.io/images/KennethMejia-logo-white-elect.png' className='h-9 md:h-10 z-40' alt="Kenneth Mejia LA City Controller Logo"/>
 
                   
 
