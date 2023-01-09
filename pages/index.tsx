@@ -271,7 +271,7 @@ const debugParam = urlParams.get('debug');
 var mapparams:any = {
   container: divRef.current, // container ID
   //affordablehousing2022-dev-copy
- style: 'mapbox://styles/comradekyler/cl926hmr1000t14ljulm08vij', // style URL (THIS IS STREET VIEW)
+ style: 'mapbox://styles/comradekyler/clcpb467y001i15khm4wwj4dr', // style URL (THIS IS STREET VIEW)
   //mapbox://styles/comradekyler/cl5c3eukn00al15qxpq4iugtn
     //affordablehousing2022-dev-copy-copy
   //  style: 'mapbox://styles/comradekyler/cl5c3eukn00al15qxpq4iugtn?optimize=true', // style URL
@@ -333,28 +333,8 @@ map.on('load', () => {
 
     console.log('maps parks source', map.getSource('parks'))
 
-    map.addLayer({
-    id: 'parks',
-    type: 'fill',
-    source: 'parks',
-    paint: { 
-      'fill-color': '#41ffca',
-      'fill-opacity': 0.2
-    }
-
-    });
-
-    map.addLayer({
-      id: 'parksoutline',
-      type: 'line',
-      source: 'parks',
-      paint: { 
-        'line-color': '#41ffca',
-        'line-opacity': 1,
-        'line-width': 2
-      }
   
-      });
+
 
       map.loadImage(
         '/dog512.png',
@@ -364,24 +344,7 @@ map.on('load', () => {
         // Add the image to the map style.
         map.addImage('superdog', image);
         
-        map.addLayer({
-          id: 'littledogs',
-          type: 'symbol',
-          source: 'dogparks',
-          layout: { 
-            'icon-image': 'superdog',
-            'icon-size': [
-              "interpolate", ["linear"], ["zoom"],
-              // zoom is 10 (or greater) -
-              7, 0.1,
-              10, 0.1,
-              20, 0.2
-          ],
-            'icon-rotate': 0,
-            'icon-allow-overlap': true
-          }
-      
-          });
+     
 
         });
 
@@ -930,7 +893,7 @@ map.on('dragstart', (e) => {
    }
   }
   >
-  <strong className=''>City of LA Parks & Dog Parks</strong>
+  <strong className=''>Unhoused Victims in LA</strong>
   </div>
 
 
@@ -938,226 +901,6 @@ map.on('dragstart', (e) => {
     className={`geocoder mt-0 ml-2 left-1 md:hidden xs:text-sm sm:text-base md:text-lg`} id='geocoder'></div>
 
 
-  <div className={`text-white bg-gray-800 md:left-1
-fixed bottom-0 w-full
-
-sm:w-auto  sm:top-auto sm:static sm:bottom-auto
-   border-t-2 sm:border-2 border-teal-500 sm:rounded-xl
-
-   
-    sm:mt-2 bg-opacity-90 sm:bg-opacity-70 px-3 py-1 ${showtotalarea === true ? "  " : " hidden "}`}>
-
-
-<div className={`text-sm md:text-base flex flex-row relative
-${showtotalarea === true ?  "  " : "  hidden"}
-`}> <div>
-
-
-<p className='text-white bold'>
-{metric ? 'Km' : 'Sq Miles'}
-{metric === true && (
-  <sup>2</sup>
-)} of City Parks Per District
-
-
- 
-  </p>
-  
-
-  <p>{
-  showpop === true && (
-<>
-    <span className="text-amber-300">
-     {`(District Population)`}</span></>
-  )
-}
-  </p>
-</div>
-<div className='pl-7'>
-  <CloseButton 
-  overrideButtonClass='mt-0.5 mr-0'
-   onClose={() => {
-    setshowInitInstructions(false);
-    if (window.innerWidth < 768) {
-    if (parkClickedData === true) {
-      sethousingaddyopen(true);
-    }}
-    console.log('close area')
-    setshowtotalarea(false)}
-    
-    
-
-    }/></div></div>
-  
- 
-<div className={`leading-tight md:leading-normal`}>
-  {
-    Object.entries(councilAreas).map((eachEntry:any) => (
-
-  <div
-  className={`flex flex-row ${showpop === true ? "" : ""}`}
-  key={eachEntry[0]}
-  >
-  <div className='w-5 inline'>{eachEntry[0]}</div>
-
-<div className='flex flex-col w-full'>
-<div className='w-full flex flex-row'>
-<div
-
-
-style={
-  {
-width: `${eachEntry[1]/200000}%`,
-height: 5,
-backgroundColor: '#41ffca',
-  }
-}
-className='mt-auto mb-auto ml-2'
-></div>
-
-
-
-
-
-<p  className={`ml-2 `}>
-  
-  {metric === false && (
-    ((eachEntry[1]/1000000)*0.386102).toFixed(2)
-  )}
-  {
-metric === true && (
-
-(eachEntry[1]/1000000).toFixed(2)
-)
-}
-
-<span className='text-blue-300'>
-
-{` (`}{((eachEntry[1] / councilareasdistrict[eachEntry[0]]) * 100).toFixed(0)}% {`of ${metric ? (councilareasdistrict[eachEntry[0]] / 1000000).toFixed(0) :
- ((councilareasdistrict[eachEntry[0]] / 1000000)*0.386102).toFixed(0)})`}
-
-</span>
-
-{
-  showpop === true && (
-
-
-<span className='text-amber-400'>{` (`}  
-    {Math.round((councilpopulations[eachEntry[0]]/1000))}
-{`k)`}
-
-{/*
-{` (`}  {metric === false && (
-    (((eachEntry[1])*1.19599) / councilpopulations[eachEntry[0]]).toPrecision(3)
-  )}
-  {
-metric === true && (
-
-((eachEntry[1])/ councilpopulations[eachEntry[0]]).toPrecision(3)
-)
-}{`)`}
-*/}
-</span>
-
-  )
-}
-</p>
-
-</div>
-
-{
-  false && (
-<div className='w-full flex flex-row'>
-<div
-
-
-style={
-  {
-width: `${eachEntry[1]/200000}%`,
-height: 5,
-backgroundColor: 'orange',
-  }
-}
-className='mt-auto mb-auto ml-2'
-></div>
-
-
-
-
-
-<p className={`ml-2 `}>
-  
-  {metric === false && (
-    (((eachEntry[1])*1.19599) / councilpopulations[eachEntry[0]]).toPrecision(3)
-  )}
-  {
-metric === true && (
-
-((eachEntry[1])/ councilpopulations[eachEntry[0]]).toPrecision(3)
-)
-}</p>
-
-</div>
-
-  )
-}
-
-</div>
-
-
-
-
-
-  </div>
-
-    ))
-  }
-  </div>
-
-<div className='gap-x-2 flex flex-row'>
-
-<button className='underline border rounded-xl px-3 py-0.75 text-sm' style={
- { color: '#41ffca',
-backgroundColor: '#41ffca15',
-borderColor: '#41ffca'
-}
-}
-onClick={(e) => {
-  setmetric(!metric)
-}}
->Switch to {metric ? 'sq mi' : 'km'}
-{metric === false && (
-  <sup>2</sup>
-)}
-</button>
-
-<button className='underline border rounded-xl px-3 py-0.75 text-sm' style={
- { color: '#f59e0b',
-backgroundColor: '#9a341222',
-borderColor: '#f59e0b'
-}
-}
-onClick={(e) => {
-  setshowpop(!showpop)
-}}
-><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-5 inline">
-  <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
-  <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-
-{
- showpop === true && (
-  <path strokeLinecap="round" strokeLinejoin="round" d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.242 4.242L9.88 9.88" />
-
- )
-}
-  
-</svg>
-<span className='pl-1'>District Population</span>
-</button>
-</div>
-
-
-  </div>
 
   <div className='w-content'>
     
@@ -1181,24 +924,7 @@ className={'text-white mt-2 px-2 py-1 ml-2  bg-gray-900 bg-opacity-70 border-2 r
 
 
   
-    {
-          showInitInstructions && (
-           <div className='md:hidden'
-           //z-9 md:absolute md:transform md:mx-auto md:left-auto md:right-auto md:inset-x-1/2 md:right-auto md:-translate-x-1/2 
-           >
- <p className=' inline-block 
- md:left-auto md:right-auto ml-2  z-9 text-sm md:text-sm 
-    w-auto 
-   md:bottom-auto md:top-16 text-black rounded-full px-3 py-1 mt-1'
-              style={{
-                background: "#030027aa",
-                color: "#41ffca",
-              }}
-            >Click parks/corgis for info</p>
 
-           </div>
-          )
-        }
 
 <div className={`text-sm ${housingaddyopen ? `px-3 pt-2 pb-3 fixed sm:relative 
 
@@ -1322,22 +1048,6 @@ borderColor: '#38bdf8'
 
 
 
-{
-          showInitInstructions && (
-
-
-                <p className=' inline-block hidden md:block
-        absolute ml-2 sm:mx-auto z-9 md:text-base lg:text-lg sm:left-1/2 sm:transform sm:-translate-x-1/2 w-auto 
-        bottom-12 sm:bottom-5 md:bottom-auto md:top-16  text-black  rounded-full px-3'
-                  style={{
-                    background: "#030027dd",
-                    color: "#41ffca",
-                  }}
-                >Click parks/corgis for info</p>
-            
-       
-          )
-        }
         
      
       
