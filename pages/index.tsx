@@ -889,13 +889,13 @@ map.on('dragstart', (e) => {
 
      <meta charSet="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
-<title>LA Parks | Map</title>
+<title>Unhoused Crime Victims Statistics</title>
       <meta property="og:type" content="website"/>
       <meta name="twitter:site" content="@lacontroller" />
         <meta name="twitter:creator" content="@lacontroller" />
 <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:title" key='twittertitle' content="City of LA Parks and Dog Parks | Map and Land Analysis"></meta>
-<meta name="twitter:description"  key='twitterdesc' content="City of LA Parks visualized. See all parks and observe inequities in park distribution."></meta>
+    <meta name="twitter:title" key='twittertitle' content="Unhoused Crime Victims Statistics"></meta>
+<meta name="twitter:description"  key='twitterdesc' content="Unhoused Crime Victims Statistics. See all parks and observe inequities in park distribution."></meta>
       <meta name="twitter:image" key='twitterimg' content="https://github.com/Mejia-For-Controller/cdn/blob/main/thumbnailforparksmap2-min_50-min.png?raw=true"></meta>
       <meta name="description" content="City of LA Parks visualized. See all parks and observe inequities in park distribution." />
 
@@ -929,7 +929,7 @@ map.on('dragstart', (e) => {
    }
   }
   >
-  <strong className=''>City of LA Parks & Dog Parks</strong>
+  <strong className=''>Unhoused Crime Victims Statistics</strong>
   </div>
 
 
