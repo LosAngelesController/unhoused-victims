@@ -10,7 +10,16 @@
     "homebuild": "export SET NODE_OPTIONS=--openssl-legacy-provider",
     "start": "next start",
     "lint": "next lint",
-    "export": "next build && next export"
+    "export": "next build && next export",
+    "lint:fix": "eslint src --fix && yarn format",
+    "lint:strict": "eslint src",
+    "typecheck": "tsc --noEmit --incremental false",
+    "test:watch": "jest --watch",
+    "test": "jest",
+    "format": "prettier -w .",
+    "format:check": "prettier -c .",
+    "postbuild": "next-sitemap --config next-sitemap.config.js",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@babel/types": "^7.17.0",
