@@ -810,14 +810,14 @@ var mapname = 'parks'
         <meta name="twitter:creator" content="@lacontroller" />
 <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:title" key='twittertitle' content="Unhoused Crime Victims Statistics"></meta>
-<meta name="twitter:description"  key='twitterdesc' content="Unhoused Crime Victims Statistics. See all parks and observe inequities in park distribution."></meta>
+<meta name="twitter:description"  key='twitterdesc' content="Unhoused Crime Victims Statistics. View which areas our unhoused community are victims of crime."></meta>
       <meta name="twitter:image" key='twitterimg' content="https://github.com/Mejia-For-Controller/cdn/blob/main/thumbnailforparksmap2-min_50-min.png?raw=true"></meta>
-      <meta name="description" content="City of LA Parks visualized. See all parks and observe inequities in park distribution." />
+      <meta name="description" content="Unhoused Crime Victims Statistics. View which areas our unhoused community are victims of crime." />
 
       <meta property="og:url"                content="https://parks.mejiaforcontroller.com/" />
 <meta property="og:type"               content="website" />
-<meta property="og:title"              content="City of LA Parks and Dog Parks | Map and Land Analysis" />
-<meta property="og:description"        content="City of LA Parks visualized. See all parks and observe inequities in park distribution." />
+<meta property="og:title"              content="Unhoused Crime Victims | Map and Statistics" />
+<meta property="og:description"        content="Unhoused Crime Victims Statistics. View which areas our unhoused community are victims of crime." />
 <meta property="og:image"              content="https://github.com/Mejia-For-Controller/cdn/blob/main/thumbnailforparksmap2-min_50-min.png?raw=true" />
 
 
