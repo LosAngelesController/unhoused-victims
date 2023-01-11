@@ -894,15 +894,7 @@ var mapname = 'parks'
       
  {(housingaddyopen === false || window.innerWidth >= 640) && (
    <>
-     {
-      (showtotalarea === false && !parkClickedData)&& (
-        <DisclaimerPopup
-        open={disclaimerOpen}
-        openModal={openModal}
-        closeModal={closeModal}
-        />
-      )
-     }
+  
 
    <div className={`absolute md:mx-auto z-9 bottom-2 left-1 md:left-1/2 md:transform md:-translate-x-1/2`}>
 <a href='https://controller.lacontroller.gov/' target="_blank" rel="noreferrer">
