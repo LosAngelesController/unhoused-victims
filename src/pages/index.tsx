@@ -876,98 +876,7 @@ var mapname = 'parks'
    ` : 'hidden'}`}>
 
 
-  {parkClickedData && (
-<>
-<CloseButton onClose={() => {
-  //close the box of the clicked park
-
-    setParkClickedData(null);
-    sethousingaddyopen(false);
-    var singlePointSet:any = mapref.current.getSource('selected-park-area');
-    
-    //clear the datapoint
-    singlePointSet.setData({
-      "type": "FeatureCollection",
-      "features": []
-      });
-   
-}}></CloseButton>
-<p className='text-bold font-bold'>{parkClickedData.properties.name}</p>
-<p className='text-bold'>{parkClickedData.properties.address}</p>
-
-{
-  polygonInWhichCd(parkClickedData) && (
-   <>
-   <span>Council District </span>
-   { polygonInWhichCd(parkClickedData).properties.district}
-   </>
-  )
-}
-
-{
-  metric ? (
-<>
-{
-  parkClickedData.properties.area && (
-    parkClickedData.properties.area > 1000000 ? (
-      <p>{(parkClickedData.properties.area/1000000).toFixed(3)} km<sup>2</sup></p>
-    ) : (
-      <p>{Math.round(parkClickedData.properties.area).toLocaleString(getLang())} m<sup>2</sup></p>
-    )
-  )
-
-}
-</>
-  ) : (
-    <>
-{
-  parkClickedData.properties.area && (
-    parkClickedData.properties.area > (1000000) ? (
-      <p>{(parkClickedData.properties.area/2589988).toFixed(3)} sq mi</p>
-    ) : (
-      <p>{Math.round(parkClickedData.properties.area * 1.19599).toLocaleString(getLang()) + ` sq yards (`}{(Math.round(parkClickedData.properties.area) * (0.000247105)).toFixed(2)} acres{`)`}</p>
-    )
-  )
-
-}
-</>
-  )
-}
-<div className='flex flex-row gap-x-3'>
-<button className='underline border rounded-xl px-3 py-0.75 text-sm' style={
- { color: '#41ffca',
-backgroundColor: '#41ffca15',
-borderColor: '#41ffca'
-}
-}
-onClick={(e) => {
-  setmetric(!metric)
-}}
->Switch to {metric ? 'US units' : 'metric units'}
-</button>
-
-<a target="_blank" 
-
-rel="noreferrer"
-href={`https://www.google.com/maps/search/?api=1&query=${encodeURI(`${parkClickedData.properties.name} Los Angeles CA`)}`}><button className='underline border rounded-xl px-3 py-0.75 text-sm' style={
- { color: '#7dd3fc',
-backgroundColor: '#38bdf815',
-borderColor: '#38bdf8'
-}
-}
-
->Google Maps
-
-</button></a>
-
-
-</div>
-
-</>
-
-
-
-  )}
+ 
 
 
 
@@ -982,11 +891,6 @@ borderColor: '#38bdf8'
 <div ref={divRef} style={{
 
 }} className="map-container w-full h-full " />
-
-
-
-
-     
       
  {(housingaddyopen === false || window.innerWidth >= 640) && (
    <>
