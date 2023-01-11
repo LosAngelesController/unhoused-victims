@@ -271,7 +271,7 @@ const debugParam = urlParams.get('debug');
 var mapparams:any = {
   container: divRef.current, // container ID
   //affordablehousing2022-dev-copy
- style: 'mapbox://styles/comradekyler/cl926hmr1000t14ljulm08vij', // style URL (THIS IS STREET VIEW)
+ style: 'mapbox://styles/comradekyler/clcpb467y001i15khm4wwj4dr', // style URL (THIS IS STREET VIEW)
   //mapbox://styles/comradekyler/cl5c3eukn00al15qxpq4iugtn
     //affordablehousing2022-dev-copy-copy
   //  style: 'mapbox://styles/comradekyler/cl5c3eukn00al15qxpq4iugtn?optimize=true', // style URL
@@ -333,57 +333,11 @@ map.on('load', () => {
 
     console.log('maps parks source', map.getSource('parks'))
 
-    map.addLayer({
-    id: 'parks',
-    type: 'fill',
-    source: 'parks',
-    paint: { 
-      'fill-color': '#41ffca',
-      'fill-opacity': 0.2
-    }
+   
 
-    });
+ 
 
-    map.addLayer({
-      id: 'parksoutline',
-      type: 'line',
-      source: 'parks',
-      paint: { 
-        'line-color': '#41ffca',
-        'line-opacity': 1,
-        'line-width': 2
-      }
-  
-      });
-
-      map.loadImage(
-        '/dog512.png',
-        (error, image:any) => {
-        if (error) throw error;
-         
-        // Add the image to the map style.
-        map.addImage('superdog', image);
-        
-        map.addLayer({
-          id: 'littledogs',
-          type: 'symbol',
-          source: 'dogparks',
-          layout: { 
-            'icon-image': 'superdog',
-            'icon-size': [
-              "interpolate", ["linear"], ["zoom"],
-              // zoom is 10 (or greater) -
-              7, 0.1,
-              10, 0.1,
-              20, 0.2
-          ],
-            'icon-rotate': 0,
-            'icon-allow-overlap': true
-          }
-      
-          });
-
-        });
+   
 
      
 
@@ -833,45 +787,6 @@ var mapname = 'parks'
 
 
 
-map.on('dragstart', (e) => {
-  uploadMapboxTrack({
-    mapname,
-    eventtype: 'dragstart',
-    globallng: map.getCenter().lng,
-    globallat: map.getCenter().lat,
-    globalzoom: map.getZoom()
-  })
-  })
-  
-  map.on('dragend', (e) => {
-    uploadMapboxTrack({
-      mapname,
-      eventtype: 'dragend',
-      globallng: map.getCenter().lng,
-      globallat: map.getCenter().lat,
-      globalzoom: map.getZoom()
-    })
-    })
-  
-    map.on('zoomstart', (e) => {
-      uploadMapboxTrack({
-        mapname,
-        eventtype: 'dragstart',
-        globallng: map.getCenter().lng,
-        globallat: map.getCenter().lat,
-        globalzoom: map.getZoom()
-      })
-      })
-  
-      map.on('zoomend', (e) => {
-        uploadMapboxTrack({
-          mapname,
-          eventtype: 'zoomend',
-          globallng: map.getCenter().lng,
-          globallat: map.getCenter().lat,
-          globalzoom: map.getZoom()
-        })
-        })
          
 
   }, [])
@@ -895,14 +810,14 @@ map.on('dragstart', (e) => {
         <meta name="twitter:creator" content="@lacontroller" />
 <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:title" key='twittertitle' content="Unhoused Crime Victims Statistics"></meta>
-<meta name="twitter:description"  key='twitterdesc' content="Unhoused Crime Victims Statistics. See all parks and observe inequities in park distribution."></meta>
+<meta name="twitter:description"  key='twitterdesc' content="Unhoused Crime Victims Statistics. View which areas our unhoused community are victims of crime."></meta>
       <meta name="twitter:image" key='twitterimg' content="https://github.com/Mejia-For-Controller/cdn/blob/main/thumbnailforparksmap2-min_50-min.png?raw=true"></meta>
-      <meta name="description" content="City of LA Parks visualized. See all parks and observe inequities in park distribution." />
+      <meta name="description" content="Unhoused Crime Victims Statistics. View which areas our unhoused community are victims of crime." />
 
       <meta property="og:url"                content="https://parks.mejiaforcontroller.com/" />
 <meta property="og:type"               content="website" />
-<meta property="og:title"              content="City of LA Parks and Dog Parks | Map and Land Analysis" />
-<meta property="og:description"        content="City of LA Parks visualized. See all parks and observe inequities in park distribution." />
+<meta property="og:title"              content="Unhoused Crime Victims | Map and Statistics" />
+<meta property="og:description"        content="Unhoused Crime Victims Statistics. View which areas our unhoused community are victims of crime." />
 <meta property="og:image"              content="https://github.com/Mejia-For-Controller/cdn/blob/main/thumbnailforparksmap2-min_50-min.png?raw=true" />
 
 
@@ -937,210 +852,16 @@ map.on('dragstart', (e) => {
     className={`geocoder mt-0 ml-2 left-1 md:hidden xs:text-sm sm:text-base md:text-lg`} id='geocoder'></div>
 
 
-  <div className={`text-white bg-gray-800 md:left-1
-fixed bottom-0 w-full
 
-sm:w-auto  sm:top-auto sm:static sm:bottom-auto
-   border-t-2 sm:border-2 border-teal-500 sm:rounded-xl
-
-   
-    sm:mt-2 bg-opacity-90 sm:bg-opacity-70 px-3 py-1 ${showtotalarea === true ? "  " : " hidden "}`}>
-
-
-<div className={`text-sm md:text-base flex flex-row relative
-${showtotalarea === true ?  "  " : "  hidden"}
-`}> <div>
-
-
-<p className='text-white bold'>
-{metric ? 'Km' : 'Sq Miles'}
-{metric === true && (
-  <sup>2</sup>
-)} of City Parks Per District
-
-
- 
-  </p>
-  
-
-  <p>{
-  showpop === true && (
-<>
-    <span className="text-amber-300">
-     {`(District Population)`}</span></>
-  )
-}
-  </p>
-</div>
-<div className='pl-7'>
-  <CloseButton 
-  overrideButtonClass='mt-0.5 mr-0'
-   onClose={() => {
-    setshowInitInstructions(false);
-    if (window.innerWidth < 768) {
-    if (parkClickedData === true) {
-      sethousingaddyopen(true);
-    }}
-    console.log('close area')
-    setshowtotalarea(false)}
-    
-    
-
-    }/></div></div>
-  
- 
-<div className={`leading-tight md:leading-normal`}>
-  {
-    Object.entries(councilAreas).map((eachEntry:any) => (
-
-  <div
-  className={`flex flex-row ${showpop === true ? "" : ""}`}
-  key={eachEntry[0]}
-  >
-  <div className='w-5 inline'>{eachEntry[0]}</div>
-
-<div className='flex flex-col w-full'>
-<div className='w-full flex flex-row'>
-<div
-
-
-style={
-  {
-width: `${eachEntry[1]/200000}%`,
-height: 5,
-backgroundColor: '#41ffca',
-  }
-}
-className='mt-auto mb-auto ml-2'
-></div>
-
-
-
-
-
-<p  className={`ml-2 `}>
-  
-  {metric === false && (
-    ((eachEntry[1]/1000000)*0.386102).toFixed(2)
-  )}
-  {
-metric === true && (
-
-(eachEntry[1]/1000000).toFixed(2)
-)
-}
-
-<span className='text-blue-300'>
-
-{` (`}{((eachEntry[1] / councilareasdistrict[eachEntry[0]]) * 100).toFixed(0)}% {`of ${metric ? (councilareasdistrict[eachEntry[0]] / 1000000).toFixed(0) :
- ((councilareasdistrict[eachEntry[0]] / 1000000)*0.386102).toFixed(0)})`}
-
-</span>
-
-{
-  showpop === true && (
-
-
-<span className='text-amber-400'>{` (`}  
-    {Math.round((councilpopulations[eachEntry[0]]/1000))}
-{`k)`}
-
-{/*
-{` (`}  {metric === false && (
-    (((eachEntry[1])*1.19599) / councilpopulations[eachEntry[0]]).toPrecision(3)
-  )}
-  {
-metric === true && (
-
-((eachEntry[1])/ councilpopulations[eachEntry[0]]).toPrecision(3)
-)
-}{`)`}
-*/}
-</span>
-
-  )
-}
-</p>
-
-</div>
-
-{
-  false && (
-<div className='w-full flex flex-row'>
-<div
-
-
-style={
-  {
-width: `${eachEntry[1]/200000}%`,
-height: 5,
-backgroundColor: 'orange',
-  }
-}
-className='mt-auto mb-auto ml-2'
-></div>
-
-
-
-
-
-<p className={`ml-2 `}>
-  
-  {metric === false && (
-    (((eachEntry[1])*1.19599) / councilpopulations[eachEntry[0]]).toPrecision(3)
-  )}
-  {
-metric === true && (
-
-((eachEntry[1])/ councilpopulations[eachEntry[0]]).toPrecision(3)
-)
-}</p>
-
-</div>
-
-  )
-}
-
-</div>
-
-
-
-
-
-  </div>
-
-    ))
-  }
-  </div>
-
-
-
-
-  </div>
 
   <div className='w-content'>
     
-    {/*Button opens up area per CD chart*/}
-    <button 
-onClick={(e) => {
-  setshowInitInstructions(false);
-  //on mobile, hide the other box 
-  if (window.innerWidth < 768) {
-  
-  sethousingaddyopen(false);
-  }
-  
-  setshowtotalarea(true);
-}
-}
-className={'text-white mt-2 px-2 py-1 ml-2  bg-gray-900 bg-opacity-70 border-2 rounded-full border-teal-500 ' + `${showtotalarea === true ? " hidden " : ""}`}>
-    Park Area Per Council District</button></div>
+</div>
 
 
 
 
   
-
 
 <div className={`text-sm ${housingaddyopen ? `px-3 pt-2 pb-3 fixed sm:relative 
 
@@ -1264,23 +985,7 @@ borderColor: '#38bdf8'
 
 
 
-{
-          showInitInstructions && (
 
-
-                <p className=' inline-block hidden md:block
-        absolute ml-2 sm:mx-auto z-9 md:text-base lg:text-lg sm:left-1/2 sm:transform sm:-translate-x-1/2 w-auto 
-        bottom-12 sm:bottom-5 md:bottom-auto md:top-16  text-black  rounded-full px-3'
-                  style={{
-                    background: "#030027dd",
-                    color: "#41ffca",
-                  }}
-                >Click parks/corgis for info</p>
-            
-       
-          )
-        }
-        
      
       
  {(housingaddyopen === false || window.innerWidth >= 640) && (
