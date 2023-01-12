@@ -10,6 +10,7 @@ WORKDIR /usr/app
 COPY . .
 
 # Install production dependencies.
+RUN npm install -g husky
 
 # If you add a package-lock.json, speed your build by switching to 'npm ci'.
 RUN npm install --save-dev
