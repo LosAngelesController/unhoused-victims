@@ -780,7 +780,7 @@ const Home: NextPage = () => {
         <meta
           name="twitter:image"
           key="twitterimg"
-          content="https://github.com/Mejia-For-Controller/cdn/blob/main/thumbnailforparksmap2-min_50-min.png?raw=true"
+          content=""
         ></meta>
         <meta
           name="description"
@@ -802,7 +802,7 @@ const Home: NextPage = () => {
         />
         <meta
           property="og:image"
-          content="https://github.com/Mejia-For-Controller/cdn/blob/main/thumbnailforparksmap2-min_50-min.png?raw=true"
+          content=""
         />
       </Head>
 
