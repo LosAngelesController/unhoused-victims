@@ -1,21 +1,21 @@
-
-import { Fragment, useCallback} from 'react'
-import { Dialog, Transition } from '@headlessui/react'
+import { Fragment, useCallback } from "react";
+import { Dialog, Transition } from "@headlessui/react";
 
 interface interfaceDisclaimerProps {
-    openModal: any;
-    closeModal: any;
-    open: any;
+  openModal: any;
+  closeModal: any;
+  open: any;
 }
 
-export function DisclaimerPopup(props:interfaceDisclaimerProps) {
-    return (
-        <>
+export function DisclaimerPopup(props: interfaceDisclaimerProps) {
+  return (
+    <>
       <p
-       onClick={props.openModal}
-       className='bg-black bg-opacity-40 text-white underline fixed bottom-0 z-50 right-0 mb-2 mr-2'
+        onClick={props.openModal}
+        className="bg-black bg-opacity-40 text-white underline fixed bottom-0 z-50 right-0 mb-2 mr-2"
       >
-        Disclaimer</p>
+        Disclaimer
+      </p>
 
       <Transition appear show={props.open} as={Fragment}>
         <Dialog
@@ -61,14 +61,32 @@ export function DisclaimerPopup(props:interfaceDisclaimerProps) {
                 </Dialog.Title>
                 <div className="mt-2">
                   <p className="text-sm text-gray-100">
-                  Paid for by Mejia for City Controller 2022 - General. FPPC ID 1449247<br/>
-1001 Wilshire Blvd. Suite 102, Los Angeles CA 90017.<br></br> Additional information is available at <a href='https://ethics.lacity.org' className='border-0 underline text-teal-300'>ethics.lacity.org</a>.
+                    Paid for by Mejia for City Controller 2022 - General. FPPC
+                    ID 1449247
+                    <br />
+                    1001 Wilshire Blvd. Suite 102, Los Angeles CA 90017.
+                    <br></br> Additional information is available at{" "}
+                    <a
+                      href="https://ethics.lacity.org"
+                      className="border-0 underline text-teal-300"
+                    >
+                      ethics.lacity.org
+                    </a>
+                    .
                   </p>
                 </div>
-<br></br>
-                <div className='text-white text-sm'>
-                <div>This software is licensed under GPL3.0 license and was made by Mejia for Controller. Please credit us if you use this!</div>
-                <a className='underline text-teal-300' href='https://github.com/mejia-for-controller/parks'>Source code: https://github.com/mejia-for-controller/parks</a>
+                <br></br>
+                <div className="text-white text-sm">
+                  <div>
+                    This software is licensed under GPL3.0 license and was made
+                    by Mejia for Controller. Please credit us if you use this!
+                  </div>
+                  <a
+                    className="underline text-teal-300"
+                    href="https://github.com/mejia-for-controller/parks"
+                  >
+                    Source code: https://github.com/mejia-for-controller/parks
+                  </a>
                 </div>
 
                 <div className="mt-4">
@@ -86,5 +104,5 @@ export function DisclaimerPopup(props:interfaceDisclaimerProps) {
         </Dialog>
       </Transition>
     </>
-    )
+  );
 }

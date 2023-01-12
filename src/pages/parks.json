@@ -1,5 +1,8 @@
 {
-  "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+  "crs": {
+    "type": "name",
+    "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" }
+  },
   "features": [
     {
       "type": "Feature",
@@ -11,10 +14,7 @@
         "cat": "dog"
       },
       "geometry": {
-        "coordinates": [
-          -118.186749,
-          34.141258
-        ],
+        "coordinates": [-118.186749, 34.141258],
         "type": "Point"
       },
       "id": "021ce67a14c3b0c861e2d36c5405c215"
@@ -29,10 +29,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.188922,
-          34.070597
-        ],
+        "coordinates": [-118.188922, 34.070597],
         "type": "Point"
       },
       "id": "03ae331e051f9c20fdda563e35c2ca5a"
@@ -47,10 +44,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.315924,
-          34.270733
-        ],
+        "coordinates": [-118.315924, 34.270733],
         "type": "Point"
       },
       "id": "04e3b9cefed5e3c8f1b5e766ff8f4dcc"
@@ -65,10 +59,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.280252,
-          33.735121
-        ],
+        "coordinates": [-118.280252, 33.735121],
         "type": "Point"
       },
       "id": "070a20fe51c0556a84b390643305160a"
@@ -83,10 +74,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.349664,
-          34.130566
-        ],
+        "coordinates": [-118.349664, 34.130566],
         "type": "Point"
       },
       "id": "0816211ed1e3ec04981de36a2999eaa0"
@@ -101,10 +89,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.291305,
-          33.941639
-        ],
+        "coordinates": [-118.291305, 33.941639],
         "type": "Point"
       },
       "id": "0a19239a8b2a626de4a5447bb40b575f"
@@ -119,10 +104,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.507927,
-          34.236555
-        ],
+        "coordinates": [-118.507927, 34.236555],
         "type": "Point"
       },
       "id": "0d07c79db0133dac92f42554ad807710"
@@ -137,10 +119,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.443143,
-          34.257848
-        ],
+        "coordinates": [-118.443143, 34.257848],
         "type": "Point"
       },
       "id": "0d3363a3049ce36bddf713795199b243"
@@ -155,10 +134,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.296323,
-          33.71007
-        ],
+        "coordinates": [-118.296323, 33.71007],
         "type": "Point"
       },
       "id": "0d925cc81bc4b4511f8662b8b28e7c35"
@@ -173,10 +149,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.603463,
-          34.176109
-        ],
+        "coordinates": [-118.603463, 34.176109],
         "type": "Point"
       },
       "id": "0ebfe711c4a918fd9814ecf0ad126bc8"
@@ -191,10 +164,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.282967,
-          34.154629
-        ],
+        "coordinates": [-118.282967, 34.154629],
         "type": "Point"
       },
       "id": "0ecead7eb2625ce9756abe36e8a9238b"
@@ -209,10 +179,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.429396,
-          34.072918
-        ],
+        "coordinates": [-118.429396, 34.072918],
         "type": "Point"
       },
       "id": "0f0746284f3bb2de478f71bb154eb654"
@@ -227,10 +194,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.543894,
-          34.296249
-        ],
+        "coordinates": [-118.543894, 34.296249],
         "type": "Point"
       },
       "id": "0fadf97eb50782d74f39a9b6249213dd"
@@ -245,10 +209,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.300687,
-          33.7478
-        ],
+        "coordinates": [-118.300687, 33.7478],
         "type": "Point"
       },
       "id": "0fb15784c506f874b3b41db749d1c91c"
@@ -263,10 +224,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.262979,
-          33.947499
-        ],
+        "coordinates": [-118.262979, 33.947499],
         "type": "Point"
       },
       "id": "0fb9097d580a3118f04318275d2dd9d5"
@@ -281,10 +239,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.286774,
-          33.999259
-        ],
+        "coordinates": [-118.286774, 33.999259],
         "type": "Point"
       },
       "id": "0fc313eebcff3668e478834f92dac774"
@@ -299,10 +254,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.238769,
-          34.056557
-        ],
+        "coordinates": [-118.238769, 34.056557],
         "type": "Point"
       },
       "id": "0fde84443ba9ca4794ff38e58085d0f3"
@@ -317,10 +269,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.540336,
-          34.256229
-        ],
+        "coordinates": [-118.540336, 34.256229],
         "type": "Point"
       },
       "id": "10451bcee7e70209aa5213706bd78dc5"
@@ -335,10 +284,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.52579,
-          34.057371
-        ],
+        "coordinates": [-118.52579, 34.057371],
         "type": "Point"
       },
       "id": "10662df037e5e42535762647661d9bef"
@@ -353,10 +299,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.488319,
-          34.161886
-        ],
+        "coordinates": [-118.488319, 34.161886],
         "type": "Point"
       },
       "id": "107519b0e54a6caafa042dc81c323680"
@@ -371,10 +314,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.462386,
-          34.182525
-        ],
+        "coordinates": [-118.462386, 34.182525],
         "type": "Point"
       },
       "id": "11630258105a9d6dc5653f4292693a6b"
@@ -389,10 +329,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.279793,
-          34.031431
-        ],
+        "coordinates": [-118.279793, 34.031431],
         "type": "Point"
       },
       "id": "11f775be441fd2a490d1ce2a11ccbfc0"
@@ -407,10 +344,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.56849,
-          34.288843
-        ],
+        "coordinates": [-118.56849, 34.288843],
         "type": "Point"
       },
       "id": "123f331be59ce9ad333ca0a535cf607c"
@@ -425,10 +359,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.321606,
-          33.718123
-        ],
+        "coordinates": [-118.321606, 33.718123],
         "type": "Point"
       },
       "id": "133bce5e344d862f2398f6d181669c5f"
@@ -443,10 +374,7 @@
         "cat": "dog"
       },
       "geometry": {
-        "coordinates": [
-          -118.349157,
-          34.105385
-        ],
+        "coordinates": [-118.349157, 34.105385],
         "type": "Point"
       },
       "id": "13e9a37f6e231e8b490c43cc78e5b322"
@@ -461,10 +389,7 @@
         "cat": "dog"
       },
       "geometry": {
-        "coordinates": [
-          -118.283001,
-          34.154475
-        ],
+        "coordinates": [-118.283001, 34.154475],
         "type": "Point"
       },
       "id": "14cc17bc2a7767fc60b00fc0f9203d8e"
@@ -479,10 +404,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.276689,
-          34.052752
-        ],
+        "coordinates": [-118.276689, 34.052752],
         "type": "Point"
       },
       "id": "1525c0b8af025f41ba85bc57b38a7cf5"
@@ -497,10 +419,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.268605,
-          33.996562
-        ],
+        "coordinates": [-118.268605, 33.996562],
         "type": "Point"
       },
       "id": "1726671cca647f5b0895cb7955a8cd31"
@@ -515,10 +434,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.508657,
-          34.307816
-        ],
+        "coordinates": [-118.508657, 34.307816],
         "type": "Point"
       },
       "id": "1741182747f44dc7e8be9bf57f70e3ef"
@@ -533,10 +449,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.660411,
-          34.188521
-        ],
+        "coordinates": [-118.660411, 34.188521],
         "type": "Point"
       },
       "id": "1757dfc0764875980ac021e118779b76"
@@ -551,10 +464,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.246031,
-          33.788711
-        ],
+        "coordinates": [-118.246031, 33.788711],
         "type": "Point"
       },
       "id": "19576f10a29d6e539f69cfab133794ef"
@@ -569,10 +479,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.259994,
-          34.073304
-        ],
+        "coordinates": [-118.259994, 34.073304],
         "type": "Point"
       },
       "id": "19866f7e8b6683781aa883881339116d"
@@ -587,10 +494,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.2942,
-          34.136554
-        ],
+        "coordinates": [-118.2942, 34.136554],
         "type": "Point"
       },
       "id": "19da630ea4b02bc3c74c82b0d71a63cd"
@@ -605,10 +509,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.55713,
-          34.289421
-        ],
+        "coordinates": [-118.55713, 34.289421],
         "type": "Point"
       },
       "id": "1a7704b7ea80fd34898c5cf543bde3d7"
@@ -623,10 +524,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.532921,
-          34.285576
-        ],
+        "coordinates": [-118.532921, 34.285576],
         "type": "Point"
       },
       "id": "1af3ba007e2cd28101aef37dbd579098"
@@ -641,10 +539,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.259065,
-          34.065898
-        ],
+        "coordinates": [-118.259065, 34.065898],
         "type": "Point"
       },
       "id": "1affdd37c42614a3410e6cc133598d7e"
@@ -659,10 +554,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.586292,
-          34.157019
-        ],
+        "coordinates": [-118.586292, 34.157019],
         "type": "Point"
       },
       "id": "1b5b13fa1a463bf34705ef39082be88f"
@@ -677,10 +569,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.256885,
-          34.061873
-        ],
+        "coordinates": [-118.256885, 34.061873],
         "type": "Point"
       },
       "id": "1c0d2ef3aee4d6abb40404c863bd4351"
@@ -695,10 +584,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.392938,
-          34.026453
-        ],
+        "coordinates": [-118.392938, 34.026453],
         "type": "Point"
       },
       "id": "1ebdd1185ad65dccffcfa14ddfa9a24a"
@@ -713,10 +599,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.212602,
-          34.090706
-        ],
+        "coordinates": [-118.212602, 34.090706],
         "type": "Point"
       },
       "id": "1f23e7ad28870a26f2f14a385c4ca700"
@@ -731,10 +614,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.282849,
-          34.0841
-        ],
+        "coordinates": [-118.282849, 34.0841],
         "type": "Point"
       },
       "id": "2322f6623ad90b56f9a5c320b4891a36"
@@ -749,10 +629,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.35466,
-          34.075802
-        ],
+        "coordinates": [-118.35466, 34.075802],
         "type": "Point"
       },
       "id": "234decba435fc539dddcb5ba08720217"
@@ -767,10 +644,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.300028,
-          34.016628
-        ],
+        "coordinates": [-118.300028, 34.016628],
         "type": "Point"
       },
       "id": "23727f788d81b335d8fb747e0692be15"
@@ -785,10 +659,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.545879,
-          34.192951
-        ],
+        "coordinates": [-118.545879, 34.192951],
         "type": "Point"
       },
       "id": "2445e68c7b70656d606cd07f307c6be8"
@@ -803,10 +674,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.409852,
-          34.046091
-        ],
+        "coordinates": [-118.409852, 34.046091],
         "type": "Point"
       },
       "id": "24ecd8f8076d417e655434b0f6e0c21a"
@@ -821,10 +689,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.469662,
-          34.32386
-        ],
+        "coordinates": [-118.469662, 34.32386],
         "type": "Point"
       },
       "id": "26906c412782233626838072bff489c4"
@@ -839,10 +704,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.524712,
-          34.282711
-        ],
+        "coordinates": [-118.524712, 34.282711],
         "type": "Point"
       },
       "id": "28608b25b55904faa34587592df00cb3"
@@ -857,10 +719,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.243684,
-          34.052234
-        ],
+        "coordinates": [-118.243684, 34.052234],
         "type": "Point"
       },
       "id": "2a107138b56c0bb496a7617c032e9894"
@@ -875,10 +734,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.468146,
-          34.162194
-        ],
+        "coordinates": [-118.468146, 34.162194],
         "type": "Point"
       },
       "id": "2a4c08098ce9771b98df8a5938d6bd9e"
@@ -893,10 +749,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.408508,
-          34.027956
-        ],
+        "coordinates": [-118.408508, 34.027956],
         "type": "Point"
       },
       "id": "2a4df933dd30e265744fd9d9c6ef9c1d"
@@ -911,10 +764,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.400541,
-          34.191922
-        ],
+        "coordinates": [-118.400541, 34.191922],
         "type": "Point"
       },
       "id": "2a8eefc121532529e95639d0969cb1c9"
@@ -929,10 +779,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.462068,
-          34.272396
-        ],
+        "coordinates": [-118.462068, 34.272396],
         "type": "Point"
       },
       "id": "2bfe9c0237b58d8e64a5da70b8121ad5"
@@ -947,10 +794,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.282596,
-          34.120161
-        ],
+        "coordinates": [-118.282596, 34.120161],
         "type": "Point"
       },
       "id": "2c313ff658999d5b209919cb7718ed60"
@@ -965,10 +809,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.297425,
-          33.725071
-        ],
+        "coordinates": [-118.297425, 33.725071],
         "type": "Point"
       },
       "id": "2c4a28a00f690d78acaf86e38943bbdf"
@@ -983,10 +824,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.272122,
-          34.132805
-        ],
+        "coordinates": [-118.272122, 34.132805],
         "type": "Point"
       },
       "id": "2e0e4b036439fb6778e43950fe84e064"
@@ -1001,10 +839,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.32857,
-          34.040112
-        ],
+        "coordinates": [-118.32857, 34.040112],
         "type": "Point"
       },
       "id": "2e4dc27a78608f24b0f4b76f1584959b"
@@ -1019,10 +854,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.161823,
-          34.079753
-        ],
+        "coordinates": [-118.161823, 34.079753],
         "type": "Point"
       },
       "id": "30090999b480fb9cb4fd88df0df9a099"
@@ -1037,10 +869,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.26052,
-          34.044378
-        ],
+        "coordinates": [-118.26052, 34.044378],
         "type": "Point"
       },
       "id": "31ae3b342378f0c19bcce71516d930b2"
@@ -1055,10 +884,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.370199,
-          34.029507
-        ],
+        "coordinates": [-118.370199, 34.029507],
         "type": "Point"
       },
       "id": "337f1b4336f725e552eb5af897ecfba9"
@@ -1073,10 +899,7 @@
         "cat": "dog"
       },
       "geometry": {
-        "coordinates": [
-          -118.186133,
-          34.104592
-        ],
+        "coordinates": [-118.186133, 34.104592],
         "type": "Point"
       },
       "id": "36961147b0343eb15a7609fe2e35bdcf"
@@ -1091,10 +914,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.285924,
-          34.01735
-        ],
+        "coordinates": [-118.285924, 34.01735],
         "type": "Point"
       },
       "id": "37cf3909b7ca81f5dcdd21e4b73fd0fe"
@@ -1109,10 +929,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.450988,
-          34.236386
-        ],
+        "coordinates": [-118.450988, 34.236386],
         "type": "Point"
       },
       "id": "37edb380a32da7ebc4941fc6e4246820"
@@ -1127,10 +944,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.310395,
-          33.732605
-        ],
+        "coordinates": [-118.310395, 33.732605],
         "type": "Point"
       },
       "id": "399f238b857eba75acd9acae551c75bd"
@@ -1145,10 +959,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.294876,
-          33.783516
-        ],
+        "coordinates": [-118.294876, 33.783516],
         "type": "Point"
       },
       "id": "3aa85b1f971a2dc81073e2a1327844fa"
@@ -1163,10 +974,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.2921,
-          33.712276
-        ],
+        "coordinates": [-118.2921, 33.712276],
         "type": "Point"
       },
       "id": "3aef6709749c54b27171912c74dae92e"
@@ -1181,10 +989,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.273675,
-          34.240688
-        ],
+        "coordinates": [-118.273675, 34.240688],
         "type": "Point"
       },
       "id": "3b074f3d1e6e77bd525f905abb7f8522"
@@ -1199,10 +1004,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.31311,
-          33.992824
-        ],
+        "coordinates": [-118.31311, 33.992824],
         "type": "Point"
       },
       "id": "3c62915988bd66366dd3238213ae3a6d"
@@ -1217,10 +1019,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.293334,
-          33.706306
-        ],
+        "coordinates": [-118.293334, 33.706306],
         "type": "Point"
       },
       "id": "3c804d8bb6a98ef8beb99ce5b304480c"
@@ -1235,10 +1034,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.352038,
-          34.230156
-        ],
+        "coordinates": [-118.352038, 34.230156],
         "type": "Point"
       },
       "id": "3d11eafb70e4a490470937c20882a822"
@@ -1253,10 +1049,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.28965,
-          34.093104
-        ],
+        "coordinates": [-118.28965, 34.093104],
         "type": "Point"
       },
       "id": "3dbb8b635a1041142059da8608937d07"
@@ -1271,10 +1064,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.634572,
-          34.205288
-        ],
+        "coordinates": [-118.634572, 34.205288],
         "type": "Point"
       },
       "id": "3dec9e9bd17d56c3b5ab66700efcb8f0"
@@ -1289,10 +1079,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.217772,
-          34.053528
-        ],
+        "coordinates": [-118.217772, 34.053528],
         "type": "Point"
       },
       "id": "3e02ee3dccdb70eeebbed0e0e54cdd79"
@@ -1307,10 +1094,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.217999,
-          34.040269
-        ],
+        "coordinates": [-118.217999, 34.040269],
         "type": "Point"
       },
       "id": "3fc5a45651f191d94b3b54b32d4dedc0"
@@ -1325,10 +1109,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.30697,
-          34.094195
-        ],
+        "coordinates": [-118.30697, 34.094195],
         "type": "Point"
       },
       "id": "3fff28e063d37ed25040ed8c58f3129f"
@@ -1343,10 +1124,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.314337,
-          34.12133
-        ],
+        "coordinates": [-118.314337, 34.12133],
         "type": "Point"
       },
       "id": "40221bb8b767e9b4f203c6cc29ab3305"
@@ -1361,10 +1139,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.220224,
-          34.082357
-        ],
+        "coordinates": [-118.220224, 34.082357],
         "type": "Point"
       },
       "id": "40296f5ac2d178a1ea825c8ea3b071e7"
@@ -1379,10 +1154,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.289961,
-          33.842024
-        ],
+        "coordinates": [-118.289961, 33.842024],
         "type": "Point"
       },
       "id": "40d5151295598c3bb1510aa9900be3cc"
@@ -1397,10 +1169,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.290663,
-          33.98233
-        ],
+        "coordinates": [-118.290663, 33.98233],
         "type": "Point"
       },
       "id": "40e2deda6dc0aed72f19a61be5c65e5f"
@@ -1415,10 +1184,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.294392,
-          34.1004
-        ],
+        "coordinates": [-118.294392, 34.1004],
         "type": "Point"
       },
       "id": "4276e6a80137f573f5a41eea12443509"
@@ -1433,10 +1199,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.462112,
-          33.978294
-        ],
+        "coordinates": [-118.462112, 33.978294],
         "type": "Point"
       },
       "id": "48ccbc96d3d39c87d7cd9fc8374fe2a5"
@@ -1451,10 +1214,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.571408,
-          34.291928
-        ],
+        "coordinates": [-118.571408, 34.291928],
         "type": "Point"
       },
       "id": "4cb9d08a4b1470fbbf69696f98e2907b"
@@ -1469,10 +1229,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.467198,
-          34.062201
-        ],
+        "coordinates": [-118.467198, 34.062201],
         "type": "Point"
       },
       "id": "4d8e35360e2120e2a85257f68550710f"
@@ -1487,10 +1244,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.297364,
-          34.000356
-        ],
+        "coordinates": [-118.297364, 34.000356],
         "type": "Point"
       },
       "id": "4db6cdb505d92d3dfc7f1a1672fd6f50"
@@ -1505,10 +1259,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.292169,
-          33.746314
-        ],
+        "coordinates": [-118.292169, 33.746314],
         "type": "Point"
       },
       "id": "4e84d3d0ee99a54ef0a41697db91f8e3"
@@ -1523,10 +1274,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.33156,
-          34.057347
-        ],
+        "coordinates": [-118.33156, 34.057347],
         "type": "Point"
       },
       "id": "4f6fb540630668faeea5081ec3dcb4bf"
@@ -1541,10 +1289,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.45633,
-          33.987567
-        ],
+        "coordinates": [-118.45633, 33.987567],
         "type": "Point"
       },
       "id": "51508bafb281fa529f68fcb6a0680d4d"
@@ -1559,10 +1304,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.519968,
-          34.058826
-        ],
+        "coordinates": [-118.519968, 34.058826],
         "type": "Point"
       },
       "id": "5546e09a68a74cfe034534fbb2700fc8"
@@ -1577,10 +1319,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.300439,
-          34.039299
-        ],
+        "coordinates": [-118.300439, 34.039299],
         "type": "Point"
       },
       "id": "58e520aa14f78aca196a5b807de956f2"
@@ -1595,10 +1334,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.354709,
-          34.104873
-        ],
+        "coordinates": [-118.354709, 34.104873],
         "type": "Point"
       },
       "id": "59bb3229ee9e3068ee84809e7cfc4a6a"
@@ -1613,10 +1349,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.239958,
-          34.073851
-        ],
+        "coordinates": [-118.239958, 34.073851],
         "type": "Point"
       },
       "id": "5a1ed1a2c19c86514789884edbed6594"
@@ -1631,10 +1364,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.629048,
-          34.239895
-        ],
+        "coordinates": [-118.629048, 34.239895],
         "type": "Point"
       },
       "id": "5a6656130cbfafb87a1c5d5d4e69c3a5"
@@ -1649,10 +1379,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.30165,
-          34.155758
-        ],
+        "coordinates": [-118.30165, 34.155758],
         "type": "Point"
       },
       "id": "5b071c2d473ec2d07f07894a35c78da7"
@@ -1667,10 +1394,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.618092,
-          34.223337
-        ],
+        "coordinates": [-118.618092, 34.223337],
         "type": "Point"
       },
       "id": "5bfccc2330f3c1d9c1afb8ee96656dce"
@@ -1685,10 +1409,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.445927,
-          33.961134
-        ],
+        "coordinates": [-118.445927, 33.961134],
         "type": "Point"
       },
       "id": "5bfd73d0f7ae36e7646495e1361c8192"
@@ -1703,10 +1424,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.386459,
-          34.035458
-        ],
+        "coordinates": [-118.386459, 34.035458],
         "type": "Point"
       },
       "id": "5c25dd2447035ccde29931e1a9f22ec7"
@@ -1721,10 +1439,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.266219,
-          33.992725
-        ],
+        "coordinates": [-118.266219, 33.992725],
         "type": "Point"
       },
       "id": "5c95b34d0473be5fe3c65afbb9e9a5c4"
@@ -1739,10 +1454,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.419273,
-          34.182448
-        ],
+        "coordinates": [-118.419273, 34.182448],
         "type": "Point"
       },
       "id": "5d3e87f58b17672b16d8c5c91d69a1e1"
@@ -1757,10 +1469,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.35286,
-          34.215336
-        ],
+        "coordinates": [-118.35286, 34.215336],
         "type": "Point"
       },
       "id": "5eac4a434029f52a9bb92477938f5dd4"
@@ -1775,10 +1484,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.189181,
-          34.142689
-        ],
+        "coordinates": [-118.189181, 34.142689],
         "type": "Point"
       },
       "id": "5f345a9767805ee1332820df662be857"
@@ -1793,10 +1499,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.279427,
-          34.058428
-        ],
+        "coordinates": [-118.279427, 34.058428],
         "type": "Point"
       },
       "id": "61805715a59b436a4f336ab54f9ccf91"
@@ -1811,10 +1514,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.351235,
-          34.112406
-        ],
+        "coordinates": [-118.351235, 34.112406],
         "type": "Point"
       },
       "id": "62a6b114387d90c28ec3a861f8a2df9e"
@@ -1829,10 +1529,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.246031,
-          34.085277
-        ],
+        "coordinates": [-118.246031, 34.085277],
         "type": "Point"
       },
       "id": "62c8909a1e1f00db6d81a21fbfc53b15"
@@ -1847,10 +1544,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.299284,
-          33.798444
-        ],
+        "coordinates": [-118.299284, 33.798444],
         "type": "Point"
       },
       "id": "62ec004af9d445c3d6c84d65fa4fc6f1"
@@ -1865,10 +1559,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.453665,
-          34.256142
-        ],
+        "coordinates": [-118.453665, 34.256142],
         "type": "Point"
       },
       "id": "63a4e9d952387d93164477e3f19ba9cc"
@@ -1883,10 +1574,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.432256,
-          33.985956
-        ],
+        "coordinates": [-118.432256, 33.985956],
         "type": "Point"
       },
       "id": "63ca9c70ce2c15f602bef9898b234f34"
@@ -1901,10 +1589,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.422243,
-          34.19439
-        ],
+        "coordinates": [-118.422243, 34.19439],
         "type": "Point"
       },
       "id": "65cfc35fd61995a979082316008a1ed1"
@@ -1919,10 +1604,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.301239,
-          33.711058
-        ],
+        "coordinates": [-118.301239, 33.711058],
         "type": "Point"
       },
       "id": "662ef2f64a52b3086518e947f979a042"
@@ -1937,10 +1619,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.376151,
-          34.149243
-        ],
+        "coordinates": [-118.376151, 34.149243],
         "type": "Point"
       },
       "id": "6716dfbdfd7a0bba262b183084c86a0e"
@@ -1955,10 +1634,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.2466,
-          34.078254
-        ],
+        "coordinates": [-118.2466, 34.078254],
         "type": "Point"
       },
       "id": "6769cdf018f22234c8ca21c1a17f4c81"
@@ -1973,10 +1649,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.341903,
-          34.040938
-        ],
+        "coordinates": [-118.341903, 34.040938],
         "type": "Point"
       },
       "id": "6837dcf36e2d7135c2ab560b8c014db3"
@@ -1991,10 +1664,7 @@
         "cat": "dog"
       },
       "geometry": {
-        "coordinates": [
-          -118.448345,
-          34.053436
-        ],
+        "coordinates": [-118.448345, 34.053436],
         "type": "Point"
       },
       "id": "68a52e4568757a2fcd0b3b711bd9fe00"
@@ -2009,10 +1679,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.357608,
-          33.999155
-        ],
+        "coordinates": [-118.357608, 33.999155],
         "type": "Point"
       },
       "id": "6b9057dcb4421cc80537e51dd00e002e"
@@ -2027,10 +1694,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.560364,
-          34.06897
-        ],
+        "coordinates": [-118.560364, 34.06897],
         "type": "Point"
       },
       "id": "6c0cee7cd2ef24afd31c751f76cc64be"
@@ -2045,10 +1709,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.193561,
-          34.091056
-        ],
+        "coordinates": [-118.193561, 34.091056],
         "type": "Point"
       },
       "id": "6c30208efc38cac62b9204ee03544b2f"
@@ -2063,10 +1724,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.49847,
-          34.181399
-        ],
+        "coordinates": [-118.49847, 34.181399],
         "type": "Point"
       },
       "id": "6c7e28e23ec3f71a44bd850f08fc2f6c"
@@ -2081,10 +1739,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.331458,
-          34.003939
-        ],
+        "coordinates": [-118.331458, 34.003939],
         "type": "Point"
       },
       "id": "6c964f3a7de6b81e4194e09bc6865e38"
@@ -2099,10 +1754,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.284341,
-          34.24064
-        ],
+        "coordinates": [-118.284341, 34.24064],
         "type": "Point"
       },
       "id": "6cadf12d5ed17685f345e5b7caedfd2e"
@@ -2117,10 +1769,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.291026,
-          33.763005
-        ],
+        "coordinates": [-118.291026, 33.763005],
         "type": "Point"
       },
       "id": "6db4cfdb4fe5cae702d17f6616674e6a"
@@ -2135,10 +1784,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.272464,
-          33.984448
-        ],
+        "coordinates": [-118.272464, 33.984448],
         "type": "Point"
       },
       "id": "70ec67eb8c8a9fb7bab5e4a0b8a55295"
@@ -2153,10 +1799,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.60241,
-          34.273547
-        ],
+        "coordinates": [-118.60241, 34.273547],
         "type": "Point"
       },
       "id": "7226ad40ea3559655799c3b84adbc6eb"
@@ -2171,10 +1814,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.481651,
-          34.280198
-        ],
+        "coordinates": [-118.481651, 34.280198],
         "type": "Point"
       },
       "id": "726fccbded8a80c80c5815e3aa5e5017"
@@ -2189,10 +1829,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.513241,
-          34.128446
-        ],
+        "coordinates": [-118.513241, 34.128446],
         "type": "Point"
       },
       "id": "7307d656deb7118637b378e9dd02e3ad"
@@ -2207,10 +1844,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.612292,
-          34.262814
-        ],
+        "coordinates": [-118.612292, 34.262814],
         "type": "Point"
       },
       "id": "73e03b8cfe80ffe4217e061961d6bdd2"
@@ -2225,10 +1859,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.249599,
-          34.074431
-        ],
+        "coordinates": [-118.249599, 34.074431],
         "type": "Point"
       },
       "id": "7476646c45e89004b0a850eb41867999"
@@ -2243,10 +1874,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.588004,
-          34.198271
-        ],
+        "coordinates": [-118.588004, 34.198271],
         "type": "Point"
       },
       "id": "74d0920e209766a51321bbc6f19960ca"
@@ -2261,10 +1889,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.293369,
-          33.713337
-        ],
+        "coordinates": [-118.293369, 33.713337],
         "type": "Point"
       },
       "id": "751deb2614da7d83b93e692e32b05ffd"
@@ -2279,10 +1904,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.443847,
-          34.119248
-        ],
+        "coordinates": [-118.443847, 34.119248],
         "type": "Point"
       },
       "id": "7524ab9c4bf349ad4c43b58ca0c5e3f2"
@@ -2297,10 +1919,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.313384,
-          33.970914
-        ],
+        "coordinates": [-118.313384, 33.970914],
         "type": "Point"
       },
       "id": "7662dfac60da7c54efb2ea69f5487d88"
@@ -2315,10 +1934,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.338524,
-          34.215339
-        ],
+        "coordinates": [-118.338524, 34.215339],
         "type": "Point"
       },
       "id": "767be7e1e3f580ed82a7039e9c2dc78b"
@@ -2333,10 +1949,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.243639,
-          34.052907
-        ],
+        "coordinates": [-118.243639, 34.052907],
         "type": "Point"
       },
       "id": "77a11b84ca4f00ef1407d12ecbcd15d7"
@@ -2351,10 +1964,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.255962,
-          34.006831
-        ],
+        "coordinates": [-118.255962, 34.006831],
         "type": "Point"
       },
       "id": "7864e2a971baf932954bacac9465ef27"
@@ -2369,10 +1979,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.326105,
-          34.126944
-        ],
+        "coordinates": [-118.326105, 34.126944],
         "type": "Point"
       },
       "id": "7a69013e0fd976db0e1ed739e27d9def"
@@ -2387,10 +1994,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.200762,
-          34.066548
-        ],
+        "coordinates": [-118.200762, 34.066548],
         "type": "Point"
       },
       "id": "7ac601f0b1d424a6ebe00409ac2e8405"
@@ -2405,10 +2009,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.598899,
-          34.227708
-        ],
+        "coordinates": [-118.598899, 34.227708],
         "type": "Point"
       },
       "id": "7b53e2803ec8c4509754da8e218e31c5"
@@ -2423,10 +2024,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.391856,
-          34.133219
-        ],
+        "coordinates": [-118.391856, 34.133219],
         "type": "Point"
       },
       "id": "7cf1b9008fe80f9bbfc59c7d67b9f658"
@@ -2441,10 +2039,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.314825,
-          34.05247
-        ],
+        "coordinates": [-118.314825, 34.05247],
         "type": "Point"
       },
       "id": "7dc0158fb3d2a1bc4bcbb774240d1009"
@@ -2459,10 +2054,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.510637,
-          34.075696
-        ],
+        "coordinates": [-118.510637, 34.075696],
         "type": "Point"
       },
       "id": "7e65332a7c9c99700ea64d5d51b1f17c"
@@ -2477,10 +2069,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.248584,
-          34.04797
-        ],
+        "coordinates": [-118.248584, 34.04797],
         "type": "Point"
       },
       "id": "822839ab9a5f1379cf667465a5c4dcc7"
@@ -2495,10 +2084,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.597324,
-          34.167197
-        ],
+        "coordinates": [-118.597324, 34.167197],
         "type": "Point"
       },
       "id": "8231a06e6bb4fcbb085507c38232f838"
@@ -2513,10 +2099,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.381073,
-          34.280813
-        ],
+        "coordinates": [-118.381073, 34.280813],
         "type": "Point"
       },
       "id": "82cca17ade95341ae61eeeca83363ee3"
@@ -2531,10 +2114,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.246032,
-          34.118633
-        ],
+        "coordinates": [-118.246032, 34.118633],
         "type": "Point"
       },
       "id": "8483e1a442e5d3197c84fe676cd07626"
@@ -2549,10 +2129,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.202011,
-          34.059543
-        ],
+        "coordinates": [-118.202011, 34.059543],
         "type": "Point"
       },
       "id": "8567cbcdc3a98cce11e5b9aeea99c8dd"
@@ -2567,10 +2144,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.650543,
-          34.217968
-        ],
+        "coordinates": [-118.650543, 34.217968],
         "type": "Point"
       },
       "id": "8588ede106493662cbafd5ecb6b6404e"
@@ -2585,10 +2159,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.203317,
-          34.100093
-        ],
+        "coordinates": [-118.203317, 34.100093],
         "type": "Point"
       },
       "id": "8624430c29dbab8b4bb211e5f41261f8"
@@ -2603,10 +2174,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.29376,
-          34.118063
-        ],
+        "coordinates": [-118.29376, 34.118063],
         "type": "Point"
       },
       "id": "8638271927f1fa636d5c44e121f1d8a6"
@@ -2621,10 +2189,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.284701,
-          33.948053
-        ],
+        "coordinates": [-118.284701, 33.948053],
         "type": "Point"
       },
       "id": "87d911fbf02ba6467b65fcadb1975f6a"
@@ -2639,10 +2204,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.291115,
-          33.96529
-        ],
+        "coordinates": [-118.291115, 33.96529],
         "type": "Point"
       },
       "id": "8c35f8216ef7dce270cb2c53253eb2a4"
@@ -2657,10 +2219,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.332816,
-          34.099886
-        ],
+        "coordinates": [-118.332816, 34.099886],
         "type": "Point"
       },
       "id": "8c77a15c1b6be4213b4f58b44a77987b"
@@ -2675,10 +2234,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.33275,
-          33.97944
-        ],
+        "coordinates": [-118.33275, 33.97944],
         "type": "Point"
       },
       "id": "8cc91bebb4dfbca56a2a1354f7bc0525"
@@ -2693,10 +2249,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.249028,
-          34.068978
-        ],
+        "coordinates": [-118.249028, 34.068978],
         "type": "Point"
       },
       "id": "8ce0ac85b3b46c3765e8993f460280c0"
@@ -2711,10 +2264,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.542511,
-          34.190187
-        ],
+        "coordinates": [-118.542511, 34.190187],
         "type": "Point"
       },
       "id": "8d5d3437a7acf6115af4946a2b914ac3"
@@ -2729,10 +2279,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.286271,
-          34.112117
-        ],
+        "coordinates": [-118.286271, 34.112117],
         "type": "Point"
       },
       "id": "8ee087839bf4a06f0a14aa021e8a1bce"
@@ -2747,10 +2294,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.263488,
-          33.998359
-        ],
+        "coordinates": [-118.263488, 33.998359],
         "type": "Point"
       },
       "id": "91d6ccf7493b5b96921d012023b8e0f6"
@@ -2765,10 +2309,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.334734,
-          34.095772
-        ],
+        "coordinates": [-118.334734, 34.095772],
         "type": "Point"
       },
       "id": "93d5dbc3449b2d89e21a3478359665d5"
@@ -2783,10 +2324,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.451174,
-          33.961137
-        ],
+        "coordinates": [-118.451174, 33.961137],
         "type": "Point"
       },
       "id": "94499a8e886c4333c58fc1dd9120d9e9"
@@ -2801,10 +2339,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.406927,
-          34.215487
-        ],
+        "coordinates": [-118.406927, 34.215487],
         "type": "Point"
       },
       "id": "94db0199a1e75e8f7447cca2c3d3a1e0"
@@ -2819,10 +2354,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.354149,
-          34.07558
-        ],
+        "coordinates": [-118.354149, 34.07558],
         "type": "Point"
       },
       "id": "953a6107fbb8630071b250c33098d32b"
@@ -2837,10 +2369,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.434767,
-          34.084587
-        ],
+        "coordinates": [-118.434767, 34.084587],
         "type": "Point"
       },
       "id": "965de14a6bf6c7ea0dec9bb42ec08015"
@@ -2855,10 +2384,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.308017,
-          33.748875
-        ],
+        "coordinates": [-118.308017, 33.748875],
         "type": "Point"
       },
       "id": "965f4d1f8aedfb879b9de1b1ab754d40"
@@ -2873,10 +2399,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.325448,
-          34.000209
-        ],
+        "coordinates": [-118.325448, 34.000209],
         "type": "Point"
       },
       "id": "9754041dd500ead64f46bef5ee4fb82c"
@@ -2891,10 +2414,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.186775,
-          34.105535
-        ],
+        "coordinates": [-118.186775, 34.105535],
         "type": "Point"
       },
       "id": "9825074e0db450a20ba29686c677c08b"
@@ -2909,10 +2429,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.212039,
-          34.044669
-        ],
+        "coordinates": [-118.212039, 34.044669],
         "type": "Point"
       },
       "id": "9842d9d83af118361a7cf678a0dc4aa0"
@@ -2927,10 +2444,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.183426,
-          34.098115
-        ],
+        "coordinates": [-118.183426, 34.098115],
         "type": "Point"
       },
       "id": "986b1276f3bcd3f08e0ce8a0784e6e86"
@@ -2945,10 +2459,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.270614,
-          34.069354
-        ],
+        "coordinates": [-118.270614, 34.069354],
         "type": "Point"
       },
       "id": "98f309209300146df9d50574adae1d3e"
@@ -2963,10 +2474,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.295632,
-          34.030215
-        ],
+        "coordinates": [-118.295632, 34.030215],
         "type": "Point"
       },
       "id": "993c27f275ed78939e3411a45be094dc"
@@ -2981,10 +2489,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.605877,
-          34.307622
-        ],
+        "coordinates": [-118.605877, 34.307622],
         "type": "Point"
       },
       "id": "993f29f52106cfe61c574ab469763f93"
@@ -2999,10 +2504,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.187799,
-          34.113273
-        ],
+        "coordinates": [-118.187799, 34.113273],
         "type": "Point"
       },
       "id": "9a285bcd7457cfe4d9f0af764b72b59c"
@@ -3017,10 +2519,7 @@
         "cat": "dog"
       },
       "geometry": {
-        "coordinates": [
-          -118.514777,
-          34.18576
-        ],
+        "coordinates": [-118.514777, 34.18576],
         "type": "Point"
       },
       "id": "9ae6ba3325486b1d596e3684403fe4c4"
@@ -3035,10 +2534,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.382298,
-          34.166728
-        ],
+        "coordinates": [-118.382298, 34.166728],
         "type": "Point"
       },
       "id": "9b057035f6b0a2275c1b0bc3da0c39ea"
@@ -3053,10 +2549,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.425939,
-          34.190227
-        ],
+        "coordinates": [-118.425939, 34.190227],
         "type": "Point"
       },
       "id": "9b1d62c88282894b6c4af8185787c636"
@@ -3071,10 +2564,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.300713,
-          34.257878
-        ],
+        "coordinates": [-118.300713, 34.257878],
         "type": "Point"
       },
       "id": "9e19c14e2247fafa7aee74cfb74a9279"
@@ -3089,10 +2579,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.242464,
-          34.04028
-        ],
+        "coordinates": [-118.242464, 34.04028],
         "type": "Point"
       },
       "id": "9ebafbe158602271bad04a2777c72f0e"
@@ -3107,10 +2594,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.646873,
-          34.195444
-        ],
+        "coordinates": [-118.646873, 34.195444],
         "type": "Point"
       },
       "id": "9ebb9325c4914f03f692adc7e4a77f51"
@@ -3125,10 +2609,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.260703,
-          33.998754
-        ],
+        "coordinates": [-118.260703, 33.998754],
         "type": "Point"
       },
       "id": "9ebd3d0ccb0b2c5f422a7010b83c9852"
@@ -3143,10 +2624,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.37535,
-          34.123556
-        ],
+        "coordinates": [-118.37535, 34.123556],
         "type": "Point"
       },
       "id": "9f4a87592f6b4706eab7466793a38ded"
@@ -3161,10 +2639,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.271454,
-          33.959497
-        ],
+        "coordinates": [-118.271454, 33.959497],
         "type": "Point"
       },
       "id": "a01517d7e8581139b54573b1d1d86db6"
@@ -3179,10 +2654,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.281107,
-          34.044908
-        ],
+        "coordinates": [-118.281107, 34.044908],
         "type": "Point"
       },
       "id": "a0c5b7ba77351c58319fce3c9963d10a"
@@ -3197,10 +2669,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.579834,
-          34.260858
-        ],
+        "coordinates": [-118.579834, 34.260858],
         "type": "Point"
       },
       "id": "a1dbc0d28f30fd8dd4f1a97eda8f7049"
@@ -3215,10 +2684,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.405278,
-          34.21533
-        ],
+        "coordinates": [-118.405278, 34.21533],
         "type": "Point"
       },
       "id": "a232d99f1544cea1eee830361d5fb32e"
@@ -3233,10 +2699,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.265283,
-          33.982398
-        ],
+        "coordinates": [-118.265283, 33.982398],
         "type": "Point"
       },
       "id": "a28a8a81fe4c95991cb1c0ea2aa2b4f2"
@@ -3251,10 +2714,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.313957,
-          34.093048
-        ],
+        "coordinates": [-118.313957, 34.093048],
         "type": "Point"
       },
       "id": "a34395e7253f103a9443ba2659673fae"
@@ -3269,10 +2729,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.48883,
-          34.076784
-        ],
+        "coordinates": [-118.48883, 34.076784],
         "type": "Point"
       },
       "id": "a3f8c8fdd580209d7f86b32132462b7a"
@@ -3287,10 +2744,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.301102,
-          34.053834
-        ],
+        "coordinates": [-118.301102, 34.053834],
         "type": "Point"
       },
       "id": "a42b6531f214abbc4ed5c263f906aeb6"
@@ -3305,10 +2759,7 @@
         "cat": "dog"
       },
       "geometry": {
-        "coordinates": [
-          -118.264268,
-          34.092203
-        ],
+        "coordinates": [-118.264268, 34.092203],
         "type": "Point"
       },
       "id": "a5ad69cd715fe546e532636f07c85ca3"
@@ -3323,10 +2774,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.548498,
-          34.233394
-        ],
+        "coordinates": [-118.548498, 34.233394],
         "type": "Point"
       },
       "id": "a7ee2c8bc786f317ae3da67c986953a2"
@@ -3341,10 +2789,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.286402,
-          33.941104
-        ],
+        "coordinates": [-118.286402, 33.941104],
         "type": "Point"
       },
       "id": "a83c2f3ddadea5c24595dd41d2916467"
@@ -3359,10 +2804,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.328251,
-          34.075734
-        ],
+        "coordinates": [-118.328251, 34.075734],
         "type": "Point"
       },
       "id": "a93e8911f3079f4cd924f07857b5a55e"
@@ -3377,10 +2819,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.367312,
-          34.061448
-        ],
+        "coordinates": [-118.367312, 34.061448],
         "type": "Point"
       },
       "id": "aab6bb063c0c4fa29c9944ea63cc7741"
@@ -3395,10 +2834,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.364822,
-          34.140993
-        ],
+        "coordinates": [-118.364822, 34.140993],
         "type": "Point"
       },
       "id": "ab3dd2bfaedc5d855bdde779c3ae53b8"
@@ -3413,10 +2849,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.502681,
-          34.16091
-        ],
+        "coordinates": [-118.502681, 34.16091],
         "type": "Point"
       },
       "id": "ab6bc6cb0972ea9a531b61c1b200fb6d"
@@ -3431,10 +2864,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.664923,
-          34.196271
-        ],
+        "coordinates": [-118.664923, 34.196271],
         "type": "Point"
       },
       "id": "abcfc6abdf6c0166b952dca95c22d2bc"
@@ -3449,10 +2879,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.638329,
-          34.21262
-        ],
+        "coordinates": [-118.638329, 34.21262],
         "type": "Point"
       },
       "id": "ac0f4e3aa26932d6bc9c9e84bba12f7d"
@@ -3467,10 +2894,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.295041,
-          33.75821
-        ],
+        "coordinates": [-118.295041, 33.75821],
         "type": "Point"
       },
       "id": "af5dc6f7e58ec6c340e7510a9e85a918"
@@ -3485,10 +2909,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.441801,
-          34.1151
-        ],
+        "coordinates": [-118.441801, 34.1151],
         "type": "Point"
       },
       "id": "aff5e22c6fd285aefdcde80af6d83258"
@@ -3503,10 +2924,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.222537,
-          34.069162
-        ],
+        "coordinates": [-118.222537, 34.069162],
         "type": "Point"
       },
       "id": "b12862a673c429a0b17cafecb6d770fd"
@@ -3521,10 +2939,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.280455,
-          34.132721
-        ],
+        "coordinates": [-118.280455, 34.132721],
         "type": "Point"
       },
       "id": "b436c32de5b89c0928e78c64d86deaf7"
@@ -3539,10 +2954,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.57305,
-          34.20461
-        ],
+        "coordinates": [-118.57305, 34.20461],
         "type": "Point"
       },
       "id": "b5a0568cf249d8409ba1031458d23094"
@@ -3557,10 +2969,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.371546,
-          34.095394
-        ],
+        "coordinates": [-118.371546, 34.095394],
         "type": "Point"
       },
       "id": "b7416cd3d15edda9f1ed3595b879e7a4"
@@ -3575,10 +2984,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.446337,
-          34.271641
-        ],
+        "coordinates": [-118.446337, 34.271641],
         "type": "Point"
       },
       "id": "b796cdc6823a55ed6277055f71aa507b"
@@ -3593,10 +2999,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.634439,
-          34.205228
-        ],
+        "coordinates": [-118.634439, 34.205228],
         "type": "Point"
       },
       "id": "b82ffb8de2f110e77f410923beeef5a6"
@@ -3611,10 +3014,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.245261,
-          34.04442
-        ],
+        "coordinates": [-118.245261, 34.04442],
         "type": "Point"
       },
       "id": "b86de5d77a5a1c6828871e4dfd92667e"
@@ -3629,10 +3029,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.406452,
-          34.28129
-        ],
+        "coordinates": [-118.406452, 34.28129],
         "type": "Point"
       },
       "id": "b8738d3af3aba3983338de508bf2685d"
@@ -3647,10 +3044,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.207511,
-          34.121313
-        ],
+        "coordinates": [-118.207511, 34.121313],
         "type": "Point"
       },
       "id": "bc26c2d78edffc595260102f4ff28dba"
@@ -3665,10 +3059,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.404991,
-          34.259316
-        ],
+        "coordinates": [-118.404991, 34.259316],
         "type": "Point"
       },
       "id": "be54514271e93a9cdcbf4edd29d24309"
@@ -3683,10 +3074,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.294971,
-          33.746248
-        ],
+        "coordinates": [-118.294971, 33.746248],
         "type": "Point"
       },
       "id": "be660485371132a3c26cf319ec947dcc"
@@ -3701,10 +3089,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.368415,
-          34.036807
-        ],
+        "coordinates": [-118.368415, 34.036807],
         "type": "Point"
       },
       "id": "bf2e03e9e8228d80eba316315eacb099"
@@ -3719,10 +3104,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.271265,
-          33.934163
-        ],
+        "coordinates": [-118.271265, 33.934163],
         "type": "Point"
       },
       "id": "c036e6379bbc57a052fd3e7988439363"
@@ -3737,10 +3119,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.32172,
-          34.260438
-        ],
+        "coordinates": [-118.32172, 34.260438],
         "type": "Point"
       },
       "id": "c2811d53394e315247cd824f0961a1ac"
@@ -3755,10 +3134,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.408332,
-          34.228365
-        ],
+        "coordinates": [-118.408332, 34.228365],
         "type": "Point"
       },
       "id": "c32ca3bc7305e28d39d09c3ee6ec521d"
@@ -3773,10 +3149,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.192156,
-          34.08788
-        ],
+        "coordinates": [-118.192156, 34.08788],
         "type": "Point"
       },
       "id": "c372d617373c94823f727e814cbfd872"
@@ -3791,10 +3164,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.167923,
-          34.097651
-        ],
+        "coordinates": [-118.167923, 34.097651],
         "type": "Point"
       },
       "id": "c3ac1488d9fccaa88be78880d6a2a388"
@@ -3809,10 +3179,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.288233,
-          34.252647
-        ],
+        "coordinates": [-118.288233, 34.252647],
         "type": "Point"
       },
       "id": "c49a12ec1d519cd95f972321941839bb"
@@ -3827,10 +3194,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.236644,
-          33.938138
-        ],
+        "coordinates": [-118.236644, 33.938138],
         "type": "Point"
       },
       "id": "c569fd1575d6497e3a3e8c3038d67a5f"
@@ -3845,10 +3209,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.513616,
-          34.309395
-        ],
+        "coordinates": [-118.513616, 34.309395],
         "type": "Point"
       },
       "id": "ca28f48ebb2be547f617510620d52337"
@@ -3863,10 +3224,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.288884,
-          34.001555
-        ],
+        "coordinates": [-118.288884, 34.001555],
         "type": "Point"
       },
       "id": "ccb095af14cdfaf2d57d8bab014a0d83"
@@ -3881,10 +3239,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.239951,
-          33.931642
-        ],
+        "coordinates": [-118.239951, 33.931642],
         "type": "Point"
       },
       "id": "ccf862b297a85231c248a745e45b7351"
@@ -3899,10 +3254,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.252799,
-          34.110205
-        ],
+        "coordinates": [-118.252799, 34.110205],
         "type": "Point"
       },
       "id": "cd3a8c5f5bf68a02fc6fd8149fdacdad"
@@ -3917,10 +3269,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.473337,
-          34.304373
-        ],
+        "coordinates": [-118.473337, 34.304373],
         "type": "Point"
       },
       "id": "cd412c7ae38f13cbf861d743a3325911"
@@ -3935,10 +3284,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.180688,
-          34.119454
-        ],
+        "coordinates": [-118.180688, 34.119454],
         "type": "Point"
       },
       "id": "cd773e381ec0c7b0af905af435564797"
@@ -3953,10 +3299,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.526975,
-          34.278971
-        ],
+        "coordinates": [-118.526975, 34.278971],
         "type": "Point"
       },
       "id": "cda958283635c0c293b0e8b0e8c7af2d"
@@ -3971,10 +3314,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.222855,
-          34.070367
-        ],
+        "coordinates": [-118.222855, 34.070367],
         "type": "Point"
       },
       "id": "ce622f3de30094b8a7d95827931c1baa"
@@ -3989,10 +3329,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.463676,
-          33.988482
-        ],
+        "coordinates": [-118.463676, 33.988482],
         "type": "Point"
       },
       "id": "ce8265eca675ce92239583b6d31d6dbc"
@@ -4007,10 +3344,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.342913,
-          34.103945
-        ],
+        "coordinates": [-118.342913, 34.103945],
         "type": "Point"
       },
       "id": "cf5c9c421dd582b4eed265a9c5278218"
@@ -4025,10 +3359,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.23352,
-          34.115974
-        ],
+        "coordinates": [-118.23352, 34.115974],
         "type": "Point"
       },
       "id": "d0450f2acb5c1f779e238c234a2346b0"
@@ -4043,10 +3374,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.213851,
-          34.107836
-        ],
+        "coordinates": [-118.213851, 34.107836],
         "type": "Point"
       },
       "id": "d0fac3342fa02b232f105d96093c08d3"
@@ -4061,10 +3389,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.287515,
-          33.98222
-        ],
+        "coordinates": [-118.287515, 33.98222],
         "type": "Point"
       },
       "id": "d1a219c89c36405ec4c0c1c04fb9442f"
@@ -4079,10 +3404,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.236581,
-          34.083804
-        ],
+        "coordinates": [-118.236581, 34.083804],
         "type": "Point"
       },
       "id": "d1eaffb25cb3629867d30594373e0cd5"
@@ -4097,10 +3419,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.560248,
-          34.275793
-        ],
+        "coordinates": [-118.560248, 34.275793],
         "type": "Point"
       },
       "id": "d2239473791543a3fbcfead2ff292f9a"
@@ -4115,10 +3434,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.398997,
-          34.039918
-        ],
+        "coordinates": [-118.398997, 34.039918],
         "type": "Point"
       },
       "id": "d2da27f543541420e15ba31518c2e588"
@@ -4133,10 +3449,7 @@
         "cat": "dog"
       },
       "geometry": {
-        "coordinates": [
-          -118.379978,
-          34.121367
-        ],
+        "coordinates": [-118.379978, 34.121367],
         "type": "Point"
       },
       "id": "d3014cac4fd7e65304a462e003f59a17"
@@ -4151,10 +3464,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.46661,
-          33.984784
-        ],
+        "coordinates": [-118.46661, 33.984784],
         "type": "Point"
       },
       "id": "d36aeb64482f1380105ce7baa90b8b0f"
@@ -4169,10 +3479,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.294911,
-          33.751038
-        ],
+        "coordinates": [-118.294911, 33.751038],
         "type": "Point"
       },
       "id": "d3b7c8feb7cf38a6750d253f1957de9b"
@@ -4187,10 +3494,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.403045,
-          34.129158
-        ],
+        "coordinates": [-118.403045, 34.129158],
         "type": "Point"
       },
       "id": "d44e446cc8ce4350c29f616f6d92b9f1"
@@ -4205,10 +3509,7 @@
         "cat": "dog"
       },
       "geometry": {
-        "coordinates": [
-          -118.358955,
-          34.173839
-        ],
+        "coordinates": [-118.358955, 34.173839],
         "type": "Point"
       },
       "id": "d488bdc1c5c275c277fadfcc8902a6f3"
@@ -4223,10 +3524,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.396169,
-          34.150487
-        ],
+        "coordinates": [-118.396169, 34.150487],
         "type": "Point"
       },
       "id": "d60b4027d28c19f1c733f3fd149d76b7"
@@ -4241,10 +3539,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.184216,
-          34.143978
-        ],
+        "coordinates": [-118.184216, 34.143978],
         "type": "Point"
       },
       "id": "d959cfb6eefa719ed5dcf6d7772a4a9c"
@@ -4259,10 +3554,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.318951,
-          34.100769
-        ],
+        "coordinates": [-118.318951, 34.100769],
         "type": "Point"
       },
       "id": "d9801b928dd3637daf85c925ce461c5f"
@@ -4277,10 +3569,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.408095,
-          34.21272
-        ],
+        "coordinates": [-118.408095, 34.21272],
         "type": "Point"
       },
       "id": "d993a1d1a0084c5f84672a596f54abbd"
@@ -4295,10 +3584,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.241503,
-          34.060951
-        ],
+        "coordinates": [-118.241503, 34.060951],
         "type": "Point"
       },
       "id": "d998615cff84326f57c45f30cc3fe2f5"
@@ -4313,10 +3599,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.335,
-          34.103333
-        ],
+        "coordinates": [-118.335, 34.103333],
         "type": "Point"
       },
       "id": "da6019a4bd0ee6f029c396b2e1d07331"
@@ -4331,10 +3614,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.297695,
-          34.249867
-        ],
+        "coordinates": [-118.297695, 34.249867],
         "type": "Point"
       },
       "id": "daa2d413a5257abda11af9c613717311"
@@ -4349,10 +3629,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.268051,
-          34.115923
-        ],
+        "coordinates": [-118.268051, 34.115923],
         "type": "Point"
       },
       "id": "dc440b9672cb6366f11ab723e68f015d"
@@ -4367,10 +3644,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.319699,
-          34.025789
-        ],
+        "coordinates": [-118.319699, 34.025789],
         "type": "Point"
       },
       "id": "dc78dc8059a8e41d03f08770e1e0e454"
@@ -4385,10 +3659,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.653228,
-          34.207229
-        ],
+        "coordinates": [-118.653228, 34.207229],
         "type": "Point"
       },
       "id": "dc898d90866e32ddcd9aa5d8bfedcb9a"
@@ -4403,10 +3674,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.246449,
-          33.990069
-        ],
+        "coordinates": [-118.246449, 33.990069],
         "type": "Point"
       },
       "id": "dd8c53c7dc5bd5b98449512ceb8d1b6c"
@@ -4421,10 +3689,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.523982,
-          34.036395
-        ],
+        "coordinates": [-118.523982, 34.036395],
         "type": "Point"
       },
       "id": "dea4b1b6b54554bd47ba743b113a95a4"
@@ -4439,10 +3704,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.441683,
-          33.94431
-        ],
+        "coordinates": [-118.441683, 33.94431],
         "type": "Point"
       },
       "id": "dec08f2b59371f06419a596c933dcdcd"
@@ -4457,10 +3719,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.49806,
-          34.171107
-        ],
+        "coordinates": [-118.49806, 34.171107],
         "type": "Point"
       },
       "id": "e081e7799cf05fea58a750258a580874"
@@ -4475,10 +3734,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.382366,
-          34.178388
-        ],
+        "coordinates": [-118.382366, 34.178388],
         "type": "Point"
       },
       "id": "e18f63e2b925c82b707036370c7bfcc6"
@@ -4493,10 +3749,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.288294,
-          33.97096
-        ],
+        "coordinates": [-118.288294, 33.97096],
         "type": "Point"
       },
       "id": "e191169a5e08c82cde190eb51234bba5"
@@ -4511,10 +3764,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.430837,
-          34.194783
-        ],
+        "coordinates": [-118.430837, 34.194783],
         "type": "Point"
       },
       "id": "e3558a4536510fdc1ae0092a583514ed"
@@ -4529,10 +3779,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.287946,
-          33.976233
-        ],
+        "coordinates": [-118.287946, 33.976233],
         "type": "Point"
       },
       "id": "e3f23ab043bb1f94b015a20216208b07"
@@ -4547,10 +3794,7 @@
         "cat": "dog"
       },
       "geometry": {
-        "coordinates": [
-          -118.467198,
-          34.062201
-        ],
+        "coordinates": [-118.467198, 34.062201],
         "type": "Point"
       },
       "id": "e5f3ddbab7eb4afe51213c56ce6a9337"
@@ -4565,10 +3809,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.50494,
-          34.183722
-        ],
+        "coordinates": [-118.50494, 34.183722],
         "type": "Point"
       },
       "id": "e5fef10e9fd3f240b522f671c08a7834"
@@ -4583,10 +3824,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.517961,
-          34.199714
-        ],
+        "coordinates": [-118.517961, 34.199714],
         "type": "Point"
       },
       "id": "e6272c32cc43170eafef9c530f437fc3"
@@ -4601,10 +3839,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.262072,
-          33.780984
-        ],
+        "coordinates": [-118.262072, 33.780984],
         "type": "Point"
       },
       "id": "e699f3e1eac9de10d29bff587bfb27d8"
@@ -4619,10 +3854,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.508678,
-          34.200419
-        ],
+        "coordinates": [-118.508678, 34.200419],
         "type": "Point"
       },
       "id": "e7158ed44bd1f95d5d2eddfb92f5f42b"
@@ -4637,10 +3869,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.319507,
-          34.034743
-        ],
+        "coordinates": [-118.319507, 34.034743],
         "type": "Point"
       },
       "id": "e86d4bc022196d2739183416380809ff"
@@ -4655,10 +3884,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.252891,
-          34.048569
-        ],
+        "coordinates": [-118.252891, 34.048569],
         "type": "Point"
       },
       "id": "ea352d0fabf311aa64a74871e8f23559"
@@ -4673,10 +3899,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.325277,
-          34.057777
-        ],
+        "coordinates": [-118.325277, 34.057777],
         "type": "Point"
       },
       "id": "eaa1697b389664d42e214f419d294b32"
@@ -4691,10 +3914,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.314825,
-          34.05247
-        ],
+        "coordinates": [-118.314825, 34.05247],
         "type": "Point"
       },
       "id": "ec1eaf88f27a2d73c8ada48ffd89782f"
@@ -4709,10 +3929,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.418055,
-          34.252946
-        ],
+        "coordinates": [-118.418055, 34.252946],
         "type": "Point"
       },
       "id": "ec3e27860248c1f6150d7761b6c166a4"
@@ -4727,10 +3944,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.292584,
-          33.746107
-        ],
+        "coordinates": [-118.292584, 33.746107],
         "type": "Point"
       },
       "id": "ed746669c75e27b1f2167b9a87771a4b"
@@ -4745,10 +3959,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.237723,
-          34.080838
-        ],
+        "coordinates": [-118.237723, 34.080838],
         "type": "Point"
       },
       "id": "edbb69ed83fb2297f344e932c40df720"
@@ -4763,10 +3974,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.284363,
-          34.041072
-        ],
+        "coordinates": [-118.284363, 34.041072],
         "type": "Point"
       },
       "id": "ee0defa8fac4650265672c47898370e7"
@@ -4781,10 +3989,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.308154,
-          34.013564
-        ],
+        "coordinates": [-118.308154, 34.013564],
         "type": "Point"
       },
       "id": "ee4c3ed9bdde0c0598efe80f98fc650a"
@@ -4799,10 +4004,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.53739,
-          34.166954
-        ],
+        "coordinates": [-118.53739, 34.166954],
         "type": "Point"
       },
       "id": "f18187d8980573cd9ccc85dff69cb344"
@@ -4817,10 +4019,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.382089,
-          34.16112
-        ],
+        "coordinates": [-118.382089, 34.16112],
         "type": "Point"
       },
       "id": "f28fdc6a7fd0650e2f2a6fca35df412c"
@@ -4835,10 +4034,7 @@
         "cat": "dog"
       },
       "geometry": {
-        "coordinates": [
-          -118.473606,
-          33.989884
-        ],
+        "coordinates": [-118.473606, 33.989884],
         "type": "Point"
       },
       "id": "f2a5667a58c01ef3cb09379013103864"
@@ -4853,10 +4049,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.405904,
-          33.994261
-        ],
+        "coordinates": [-118.405904, 33.994261],
         "type": "Point"
       },
       "id": "f303987fe222953eee25cb9d02dddf57"
@@ -4871,10 +4064,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.187506,
-          34.135318
-        ],
+        "coordinates": [-118.187506, 34.135318],
         "type": "Point"
       },
       "id": "f30eaead9ae39659d32130e4d59557d3"
@@ -4889,10 +4079,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.645418,
-          34.212511
-        ],
+        "coordinates": [-118.645418, 34.212511],
         "type": "Point"
       },
       "id": "f38d451f1290e779ce4e0021c10444cd"
@@ -4907,10 +4094,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.412554,
-          34.21548
-        ],
+        "coordinates": [-118.412554, 34.21548],
         "type": "Point"
       },
       "id": "f4b5cd62c654aacdd2369095fa866468"
@@ -4925,10 +4109,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.463763,
-          34.288916
-        ],
+        "coordinates": [-118.463763, 34.288916],
         "type": "Point"
       },
       "id": "f4fdb2e4dca22c536a435c7bc50d6dd6"
@@ -4943,10 +4124,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.251189,
-          33.994525
-        ],
+        "coordinates": [-118.251189, 33.994525],
         "type": "Point"
       },
       "id": "f548afe2ba793e6bf82ba390655c8e61"
@@ -4961,10 +4139,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.608234,
-          34.150435
-        ],
+        "coordinates": [-118.608234, 34.150435],
         "type": "Point"
       },
       "id": "f5604e899e997e03a44af7468c454804"
@@ -4979,10 +4154,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.258783,
-          33.78437
-        ],
+        "coordinates": [-118.258783, 33.78437],
         "type": "Point"
       },
       "id": "f5986a7f8fa3d919102e0bc7a04dad48"
@@ -4997,10 +4169,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.509021,
-          34.086515
-        ],
+        "coordinates": [-118.509021, 34.086515],
         "type": "Point"
       },
       "id": "f5df24f61a99c92a58d9c569321d5a48"
@@ -5015,10 +4184,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.212708,
-          34.113099
-        ],
+        "coordinates": [-118.212708, 34.113099],
         "type": "Point"
       },
       "id": "f643e642a67665b184907427df075951"
@@ -5033,10 +4199,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.280499,
-          34.132802
-        ],
+        "coordinates": [-118.280499, 34.132802],
         "type": "Point"
       },
       "id": "f652cde2c47e72b9f38dc5b448a8bd52"
@@ -5051,10 +4214,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.340396,
-          34.033833
-        ],
+        "coordinates": [-118.340396, 34.033833],
         "type": "Point"
       },
       "id": "f7b651dc45373845038bf2eee24b6874"
@@ -5069,10 +4229,7 @@
         "cat": "dog"
       },
       "geometry": {
-        "coordinates": [
-          -118.432258,
-          33.983952
-        ],
+        "coordinates": [-118.432258, 33.983952],
         "type": "Point"
       },
       "id": "f7f14cac299003261121d5199e5f8746"
@@ -5087,10 +4244,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.476463,
-          34.178656
-        ],
+        "coordinates": [-118.476463, 34.178656],
         "type": "Point"
       },
       "id": "f90fca8ba097dd332cbbdb21cf19ecf2"
@@ -5105,10 +4259,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.170095,
-          34.120007
-        ],
+        "coordinates": [-118.170095, 34.120007],
         "type": "Point"
       },
       "id": "f96957fae8d6e3834a857fa7234be9de"
@@ -5123,10 +4274,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.466322,
-          34.230462
-        ],
+        "coordinates": [-118.466322, 34.230462],
         "type": "Point"
       },
       "id": "fa83ad1d01742c7b2e9dc4555a933ee0"
@@ -5141,10 +4289,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.28893,
-          34.079693
-        ],
+        "coordinates": [-118.28893, 34.079693],
         "type": "Point"
       },
       "id": "faf0fe26c6fae96835fc043516d57d04"
@@ -5159,10 +4304,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.450009,
-          34.243556
-        ],
+        "coordinates": [-118.450009, 34.243556],
         "type": "Point"
       },
       "id": "fb4ed682b9ef07d77150ccac78950295"
@@ -5177,10 +4319,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.440429,
-          34.201522
-        ],
+        "coordinates": [-118.440429, 34.201522],
         "type": "Point"
       },
       "id": "fd1df395f48e8a9c9f150ebac6b611f7"
@@ -5195,10 +4334,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.544413,
-          34.280914
-        ],
+        "coordinates": [-118.544413, 34.280914],
         "type": "Point"
       },
       "id": "fdd0bc9244b715eb22724748ae7bd5ec"
@@ -5213,10 +4349,7 @@
         "cat": "parks"
       },
       "geometry": {
-        "coordinates": [
-          -118.315792,
-          34.076156
-        ],
+        "coordinates": [-118.315792, 34.076156],
         "type": "Point"
       },
       "id": "ff1c3aee2de29b2edb2923c490251b48"

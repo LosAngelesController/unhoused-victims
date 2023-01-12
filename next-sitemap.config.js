@@ -7,6 +7,6 @@ module.exports = {
   /** Without additional '/' on the end, e.g. https://theodorusclarence.com */
   generateRobotsTxt: true,
   robotsTxtOptions: {
-    policies: [{ userAgent: '*', allow: '/' }],
+    policies: [{ userAgent: "*", allow: "/" }],
   },
 };
