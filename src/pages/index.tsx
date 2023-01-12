@@ -221,6 +221,7 @@ const [showpop, setshowpop] = useState(false)
    if (toprightbox) {
     var toprightgeocoderbox:any = toprightbox.querySelector(".mapboxgl-ctrl-geocoder");
     if (toprightgeocoderbox) {
+      if (typeof window != "undefined") {
       if (window.innerWidth >= 768) {
         console.log('changing to block')
         toprightgeocoderbox.style.display = 'block'
@@ -228,6 +229,9 @@ const [showpop, setshowpop] = useState(false)
         toprightgeocoderbox.style.display = 'none'
         console.log('hiding')
       }
+    } else{
+      toprightgeocoderbox.style.display = 'none'
+    }
     }
    }
   }
@@ -253,14 +257,17 @@ const [showpop, setshowpop] = useState(false)
 mapboxgl.accessToken = 'pk.eyJ1IjoiY29tcmFkZWt5bGVyIiwiYSI6ImNrdjBkOXNyeDdscnoycHE2cDk4aWJraTIifQ.77Gid9mgpEdLpFszO5n4oQ';
  
 const formulaForZoom = () => {
-  if (window.innerWidth > 700) {
-    return 10
-  } else { 
-    return 9.1
+  if (typeof window != "undefined") {
+    if (window.innerWidth > 700) {
+      return 10
+    } else { 
+      return 9.1
+    }
   }
+
 }
 
-const urlParams = new URLSearchParams(window.location.search);
+const urlParams = new URLSearchParams(typeof window != "undefined" ? window.location.search : '');
 const latParam = urlParams.get('lat');
 const lngParam = urlParams.get('lng');
 const zoomParam = urlParams.get('zoom');
@@ -890,7 +897,7 @@ var mapname = 'parks'
 
 }} className="map-container w-full h-full " />
       
- {( window.innerWidth >= 640) && (
+ {(typeof window !== 'undefined' ?  window.innerWidth >= 640 : false) && (
    <>
   
 
