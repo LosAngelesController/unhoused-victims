@@ -31,6 +31,7 @@
     "@turf/boolean-point-in-polygon": "^6.5.0",
     "@turf/turf": "^6.5.0",
     "@types/turf": "^3.5.32",
+    "husky": "^8.0.3",
     "mapbox": "^1.0.0-beta10",
     "mapbox-gl": "^2.9.1",
     "next": "^12.1.0",
