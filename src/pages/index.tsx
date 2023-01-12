@@ -135,9 +135,7 @@ const calculateifboxisvisible = () => {
 const [showtotalarea, setshowtotalarea] = useState(false)
 const [showpop, setshowpop] = useState(false)
   let [disclaimerOpen, setDisclaimerOpen] = useState(false)
-  let [instructionsOpen, setInstructionsOpen] = useState(false)
   const touchref = useRef<any>(null);
-  let [boxPrimed, setBoxPrimed] = useState(false)
   let [houseClickedData, setHouseClickedData]:any = useState(null)
   let [parkClickedData, setParkClickedData]:any = useState(null);
   let [housingaddyopen,sethousingaddyopen] = useState(false);
@@ -892,7 +890,7 @@ var mapname = 'parks'
 
 }} className="map-container w-full h-full " />
       
- {(housingaddyopen === false || window.innerWidth >= 640) && (
+ {( window.innerWidth >= 640) && (
    <>
   
 
