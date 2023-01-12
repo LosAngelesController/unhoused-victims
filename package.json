@@ -6,6 +6,7 @@
   ],
   "scripts": {
     "dev": "next dev",
+    "cloudrunstart": "next start -p  ${PORT:-8080}",
     "build": " next build",
     "homebuild": "export SET NODE_OPTIONS=--openssl-legacy-provider",
     "start": "next start",
