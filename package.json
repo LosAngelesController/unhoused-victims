@@ -27,6 +27,7 @@
     "@datadog/browser-rum": "^4.1.0",
     "@headlessui/react": "^0.0.0-insiders.63383c4",
     "@heroicons/react": "^1.0.6",
+    "@mantine/core": "^5.10.0",
     "@mapbox/mapbox-gl-geocoder": "^5.0.0",
     "@mapbox/mapbox-gl-language": "^1.0.0",
     "@turf/boolean-point-in-polygon": "^6.5.0",

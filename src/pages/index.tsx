@@ -11,9 +11,9 @@ import { uploadMapboxTrack } from "../components/mapboxtrack";
 
 import { CloseButton } from "../components/CloseButton";
 import Nav from "../components/nav";
-
+import { MantineProvider } from '@mantine/core';
 import React, { useEffect, useState, useRef } from "react";
-
+import {  Checkbox } from '@mantine/core';
 import CouncilDist from "./CouncilDistricts.json";
 
 const councildistricts = require("./CouncilDistricts.json");
@@ -139,6 +139,31 @@ const Home: NextPage = () => {
   var [metric, setmetric] = useState(false);
   const [showInitInstructions, setshowInitInstructions] = useState(true);
 
+ const listofracefilters = {
+  'A' : 'Other Asian',
+  'B' : 'Black',
+  'C' : 'Chinese',
+  'D' : 'Cambodian',
+  'F' : 'Filipino',
+  'G' : 'Guamanian',
+  'H' : 'Hispanic/Latin/Mexican',
+  'I' : 'American Indian/Alaskan Native',
+  'J' : 'Japanese',
+  'K' : 'Korean',
+  'L' : 'Laotian',
+  'O' : 'Other',
+  'P' : 'Pacific Islander',
+  'S' : 'Samoan',
+  'U' : 'Hawaiian',
+  'V' : 'Vietnamese',
+  'W' : 'White',
+  'X' : 'Unknown',
+  'Z' : 'Asian Indian' 
+ }
+
+ const [enabledRaceFilters, setEnabledRaceFilters] = useState(Object.keys(listofracefilters))
+
+
   function closeModal() {
     setDisclaimerOpen(false);
   }
@@ -237,6 +262,30 @@ const Home: NextPage = () => {
   const divRef: any = React.useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    console.log('filter', enabledRaceFilters)
+    console.log(mapref.current)
+
+    var filtersystem = JSON.parse(JSON.stringify(
+      [
+        "match",
+        ["get", "Vict Descent"],
+        enabledRaceFilters,
+        true,
+        false
+      ]
+    ))
+
+    console.log('filtersystem', filtersystem)
+    if (mapref.current) {
+      mapref.current.setFilter('unhoused-crime-victim-data', filtersystem);
+    } else {
+      console.log('no map')
+      console.log(mapref.current)
+    }
+  
+  }, [enabledRaceFilters])
+
+  useEffect(() => {
     console.log("map div", divRef);
 
     if (divRef.current) {
@@ -304,6 +353,8 @@ const Home: NextPage = () => {
     }
 
     window.addEventListener("resize", handleResize);
+
+
 
     map.on("load", () => {
       setshowtotalarea(window.innerWidth > 640 ? true : false);
@@ -737,6 +788,7 @@ const Home: NextPage = () => {
 
   return (
     <div className="flex flex-col h-full w-screen absolute">
+      <MantineProvider theme={{ colorScheme: 'dark' }} withGlobalStyles withNormalizeCSS>
       <Head>
         <link
           rel="icon"
@@ -827,6 +879,25 @@ const Home: NextPage = () => {
             id="geocoder"
           ></div>
 
+<div className='
+ scrollbar-thumb-gray-400 scrollbar-rounded scrollbar scrollbar-thin scrollbar-trackgray-900  mejiascrollbar
+overflow-y-scroll h-full text-white bg-gray-800'>
+  <h2 className="text-white">Filter by Race</h2>
+                  <Checkbox.Group
+                    orientation="vertical"
+                    spacing="sm"
+                    value={enabledRaceFilters} onChange={(changes:any) => {
+                      setEnabledRaceFilters(changes)
+                      console.log(changes)
+                    }}>
+                    {Object.entries(listofracefilters).map((eachComponent:any, key:number) => (
+                      <Checkbox key={key} value={eachComponent[0]} label={eachComponent[1]} />
+                    ))
+                    }
+                  </Checkbox.Group>
+                  <br />
+                </div>
+
           <div className="w-content"></div>
 
           <div
@@ -870,6 +941,7 @@ const Home: NextPage = () => {
           </div>
         </>
       )}
+        </MantineProvider>
     </div>
   );
 };
