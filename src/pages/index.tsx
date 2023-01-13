@@ -692,7 +692,7 @@ const Home: NextPage = () => {
         <meta
           name="twitter:image"
           key="twitterimg"
-          content=""
+          content="https://unhousedvictims.lacontroller.io"
         ></meta>
         <meta
           name="description"
@@ -701,7 +701,7 @@ const Home: NextPage = () => {
 
         <meta
           property="og:url"
-          content="https://parks.mejiaforcontroller.com/"
+          content="https://unhousedvictims.lacontroller.io/"
         />
         <meta property="og:type" content="website" />
         <meta
@@ -714,7 +714,7 @@ const Home: NextPage = () => {
         />
         <meta
           property="og:image"
-          content=""
+          content="https://unhousedvictims.lacontroller.io"
         />
       </Head>
 
