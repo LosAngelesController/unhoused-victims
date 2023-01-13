@@ -674,7 +674,7 @@ const Home: NextPage = () => {
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
         />
-        <title>Unhoused Crime Victims Statistics</title>
+        <title>Unhoused Crime Victims Statistics | Map</title>
         <meta property="og:type" content="website" />
         <meta name="twitter:site" content="@lacontroller" />
         <meta name="twitter:creator" content="@lacontroller" />
