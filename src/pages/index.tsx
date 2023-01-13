@@ -789,7 +789,8 @@ overflow-y-scroll h-full text-white bg-gray-800 py-2 px-2 relative'>
   filterraceopen === false && (
     <div   onClick={() => {
       console.log('open the filter box')
-      setfilterraceopen(true)}}><button className='mt-2  rounded-full px-3 pb-1.5 pt-0.5 text-sm bold md:text-base bg-gray-800 bg-opacity-80 text-white border-white border-2'>   <svg style={{
+      setfilterraceopen(true)}}
+      ><button className='mt-2  rounded-full px-3 pb-1.5 pt-0.5 text-sm bold md:text-base bg-gray-800 bg-opacity-80 text-white border-white border-2'>   <svg style={{
       width: '20px',
       height: '20px'
     }} viewBox="0 0 24 24"
