@@ -880,9 +880,9 @@ const Home: NextPage = () => {
           ></div>
 
 <div className='
- scrollbar-thumb-gray-400 scrollbar-rounded scrollbar scrollbar-thin scrollbar-trackgray-900  mejiascrollbar
-overflow-y-scroll h-full text-white bg-gray-800'>
-  <h2 className="text-white">Filter by Race</h2>
+ ml-2 mt-1 rounded-lg scrollbar-thumb-gray-400 scrollbar-rounded scrollbar scrollbar-thin scrollbar-trackgray-900  mejiascrollbar
+overflow-y-scroll h-full text-white bg-gray-800 py-2 px-2'>
+  <h2 className="text-white text-lg font-semibold">Filter by Race</h2>
                   <Checkbox.Group
                     orientation="vertical"
                     spacing="sm"
