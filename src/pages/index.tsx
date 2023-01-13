@@ -728,7 +728,7 @@ const Home: NextPage = () => {
             className="titleBox  ml-2 text-base bold md:semi-bold break-words bg-[#212121]"
             style={{
               backgroundColor: "#212121",
-              color: "#dddddd",
+              color: "#ffffff",
             }}
           >
             <strong className="">Unhoused Crime Victims Statistics</strong>
