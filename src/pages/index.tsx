@@ -740,10 +740,10 @@ const Home: NextPage = () => {
           ></div>
 
 {
-  filterraceopen && (
+  filterraceopen === true && (
     <div className='
-w-full sm:w-auto ml-2 mt-2 rounded-lg scrollbar-thumb-gray-400 scrollbar-rounded scrollbar scrollbar-thin scrollbar-trackgray-900  mejiascrollbar
-overflow-y-scroll h-full text-white bg-gray-800 py-2 px-2'>
+w-full sm:w-auto ml-2 mt-2 srounded-lg scrollbar-thumb-gray-400 scrollbar-rounded scrollbar scrollbar-thin scrollbar-trackgray-900  mejiascrollbar
+overflow-y-scroll h-full text-white bg-gray-800 py-2 px-2 relative'>
   <h2 className="text-white text-lg font-semibold">Filter by Race</h2>
   <CloseButton
   onClose={() => {
@@ -787,12 +787,16 @@ overflow-y-scroll h-full text-white bg-gray-800 py-2 px-2'>
 
 {
   filterraceopen === false && (
-    <div><button className='mt-2  rounded-full px-3 pb-1.5 pt-0.5 text-sm bold md:text-base bg-gray-800 bg-opacity-80 text-white border-white border-2'>   <svg style={{
+    <div   onClick={() => {
+      console.log('open the filter box')
+      setfilterraceopen(true)}}><button className='mt-2  rounded-full px-3 pb-1.5 pt-0.5 text-sm bold md:text-base bg-gray-800 bg-opacity-80 text-white border-white border-2'>   <svg style={{
       width: '20px',
       height: '20px'
     }} viewBox="0 0 24 24"
       className='inline align-middle mt-0.5'
-      onClick={() => { setfilterraceopen(true)}}
+      onClick={() => {
+        console.log('open the filter box')
+        setfilterraceopen(true)}}
     >
 
 
