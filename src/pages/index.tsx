@@ -5,15 +5,14 @@ import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, createRef } from "react";
 import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder";
 import MapboxLanguage from "@mapbox/mapbox-gl-language";
-import parks from "./outputparks.json";
 
 import { uploadMapboxTrack } from "../components/mapboxtrack";
 
 import { CloseButton } from "../components/CloseButton";
 import Nav from "../components/nav";
-import { MantineProvider } from '@mantine/core';
+import { MantineProvider, Checkbox  } from '@mantine/core';
 import React, { useEffect, useState, useRef } from "react";
-import {  Checkbox } from '@mantine/core';
+
 import CouncilDist from "./CouncilDistricts.json";
 
 const councildistricts = require("./CouncilDistricts.json");
@@ -95,24 +94,7 @@ var councilpopulations: any = {
 };
 
 const Home: NextPage = () => {
-  var parksGeojson: any = parks;
-
-  var dogparksGeojson: any = {
-    type: "FeatureCollection",
-    features: parks.features.filter((eachPark: any) => {
-      if (eachPark.properties.name) {
-        var addresscontaindog =
-          eachPark.properties.name.toLowerCase().includes("dog") ||
-          eachPark.properties.name.toLowerCase().includes("glen alla") ||
-          eachPark.properties.name.toLowerCase().includes("ross snyder");
-
-        return addresscontaindog;
-      } else {
-        console.log("no name", eachPark);
-        return false;
-      }
-    }),
-  };
+ 
 
   var councilBounds: any = {
     features: CouncilDist.features,
@@ -135,6 +117,7 @@ const Home: NextPage = () => {
   let [parkClickedData, setParkClickedData]: any = useState(null);
   let [housingaddyopen, sethousingaddyopen] = useState(false);
   var mapref: any = useRef(null);
+  let [filterraceopen, setfilterraceopen] = useState(false);
   const okaydeletepoints: any = useRef(null);
   var [metric, setmetric] = useState(false);
   const [showInitInstructions, setshowInitInstructions] = useState(true);
@@ -359,15 +342,7 @@ const Home: NextPage = () => {
     map.on("load", () => {
       setshowtotalarea(window.innerWidth > 640 ? true : false);
 
-      map.addSource("parks", {
-        type: "geojson",
-        data: parksGeojson,
-      });
-
-      map.addSource("dogparks", {
-        type: "geojson",
-        data: dogparksGeojson,
-      });
+     
 
       console.log("maps parks source", map.getSource("parks"));
 
@@ -598,124 +573,9 @@ const Home: NextPage = () => {
         });
       });
 
-      map.on("mousedown", "parks", (e: any) => {
-        var dataToWrite = null;
+    
 
-        console.log(e.lngLat);
-
-        var pointturf = turf.point([e.lngLat.lng, e.lngLat.lat]);
-
-        console.log(e.features);
-
-        const namesofparks = e.features.map(
-          (feature: any) => feature.properties.name
-        );
-
-        var arrayOfFeatures = parksGeojson.features.filter((eachPark: any) => {
-          try {
-            var thispark = turfify(eachPark);
-
-            // @ts-ignore: Unreachable code error
-            var intersects = turf.booleanPointInPolygon(pointturf, thispark);
-
-            return intersects;
-          } catch (err: any) {
-            return false;
-          }
-        });
-
-        console.log("click inside these parks", arrayOfFeatures);
-
-        if (arrayOfFeatures > 1) {
-          var smallestParkClicked = arrayOfFeatures.reduce(
-            (prev: any, curr: any) => {
-              // if previous item is bigger park, then the current item is the smallest park
-              if (prev.properties.area > curr.properties.area) {
-                //return current item which is smaller park
-                return curr;
-              } else {
-                return prev;
-              }
-            }
-          );
-
-          setParkClickedData(smallestParkClicked);
-          dataToWrite = smallestParkClicked;
-        } else {
-          setParkClickedData(arrayOfFeatures[0]);
-          dataToWrite = arrayOfFeatures[0];
-        }
-        sethousingaddyopen(true);
-        setshowInitInstructions(false);
-
-        if (window.innerWidth < 768) {
-          //on mobile, close the other popup of cd park areas
-          setshowtotalarea(false);
-        }
-
-        var affordablepoint: any = map.getSource("selected-park-area");
-
-        if (dataToWrite) {
-          affordablepoint.setData(dataToWrite.geometry);
-        }
-
-        //  map.setLayoutProperty("areasparks", 'visibility', 'visible');
-      });
-
-      map.on("mousedown", "littledogs", (e: any) => {
-        console.log("dog clicked");
-        console.log(e);
-        console.log(e.features[0]);
-
-        console.log("coords", e.features[0].geometry.coordinates);
-
-        var dogparkfound = parksGeojson.features.filter((eachPark: any) => {
-          return eachPark.properties.name === e.features[0].properties.name;
-        });
-
-        sethousingaddyopen(true);
-        setshowInitInstructions(false);
-
-        setParkClickedData(dogparkfound[0]);
-
-        var affordablepoint: any = map.getSource("selected-park-area");
-
-        affordablepoint.setData(dogparkfound[0].geometry);
-
-        if (dogparkfound[0]) {
-          var polygonOrMulti: any = turfify(dogparkfound[0]);
-
-          var coordtoflyto = turf.center(polygonOrMulti);
-
-          console.log("coords to fly to", coordtoflyto);
-
-          console.log(coordtoflyto.geometry.coordinates);
-
-          var coordinates: [number, number] = [
-            coordtoflyto.geometry.coordinates[0],
-            coordtoflyto.geometry.coordinates[1],
-          ];
-
-          console.log("final fly to coords", coordinates);
-
-          setTimeout(() => {
-            map.flyTo({
-              center: coordinates,
-              zoom: 15,
-              essential: true, // this animation is considered essential with respect to prefers-reduced-motion
-            });
-          }, 100);
-
-          console.log("fly complete");
-        }
-
-        /*
-    map.flyTo({
-      center: [coordtoflyto.geometry.coordinates[0], coordtoflyto.geometry.coordinates[1]],
-      zoom: 9,
-      speed: 0.2
-      });*/
-      });
+    
 
       if (
         !document.querySelector(
@@ -867,8 +727,8 @@ const Home: NextPage = () => {
           <div
             className="titleBox  ml-2 text-base bold md:semi-bold break-words bg-[#212121]"
             style={{
-              backgroundColor: "#41ffca55",
-              color: "#ffffff",
+              backgroundColor: "#212121",
+              color: "#dddddd",
             }}
           >
             <strong className="">Unhoused Crime Victims Statistics</strong>
@@ -879,10 +739,35 @@ const Home: NextPage = () => {
             id="geocoder"
           ></div>
 
-<div className='
- ml-2 mt-1 rounded-lg scrollbar-thumb-gray-400 scrollbar-rounded scrollbar scrollbar-thin scrollbar-trackgray-900  mejiascrollbar
+{
+  filterraceopen && (
+    <div className='
+w-full sm:w-auto ml-2 mt-2 rounded-lg scrollbar-thumb-gray-400 scrollbar-rounded scrollbar scrollbar-thin scrollbar-trackgray-900  mejiascrollbar
 overflow-y-scroll h-full text-white bg-gray-800 py-2 px-2'>
   <h2 className="text-white text-lg font-semibold">Filter by Race</h2>
+  <CloseButton
+  onClose={() => {
+    setfilterraceopen(false)
+  }}
+  />
+   <div className='flex flex-row gap-x-1'>
+                  <button className='align-middle bg-gray-800 rounded-lg px-1  border border-gray-400 text-sm md:text-base'
+                    onClick={() => {
+                      setEnabledRaceFilters(Object.keys(listofracefilters))
+                    }}
+
+                  >Select All</button>
+                  <button className='align-middle bg-gray-800 rounded-lg px-1 text-sm md:text-base border border-gray-400'
+                    onClick={() => {
+                      setEnabledRaceFilters([])
+                    }}
+                  >Unselect All</button>
+                  <button
+                    onClick={() => {
+                      setEnabledRaceFilters(Object.keys(listofracefilters).filter(n => !enabledRaceFilters.includes(n)))
+                    }}
+                    className='align-middle bg-gray-800 rounded-lg px-1 text-sm md:text-base  border border-gray-400'>Invert</button>
+                </div>
                   <Checkbox.Group
                     orientation="vertical"
                     spacing="sm"
@@ -897,6 +782,25 @@ overflow-y-scroll h-full text-white bg-gray-800 py-2 px-2'>
                   </Checkbox.Group>
                   <br />
                 </div>
+  )
+}
+
+{
+  filterraceopen === false && (
+    <div><button className='mt-2  rounded-full px-3 pb-1.5 pt-0.5 text-sm bold md:text-base bg-gray-800 bg-opacity-80 text-white border-white border-2'>   <svg style={{
+      width: '20px',
+      height: '20px'
+    }} viewBox="0 0 24 24"
+      className='inline align-middle mt-0.5'
+    >
+
+
+
+      <path fill="currentColor" d="M14,12V19.88C14.04,20.18 13.94,20.5 13.71,20.71C13.32,21.1 12.69,21.1 12.3,20.71L10.29,18.7C10.06,18.47 9.96,18.16 10,17.87V12H9.97L4.21,4.62C3.87,4.19 3.95,3.56 4.38,3.22C4.57,3.08 4.78,3 5,3V3H19V3C19.22,3 19.43,3.08 19.62,3.22C20.05,3.56 20.13,4.19 19.79,4.62L14.03,12H14Z" />
+    </svg>
+ Filter by Race</button></div>
+  )
+}
 
           <div className="w-content"></div>
 
