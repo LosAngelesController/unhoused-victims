@@ -792,6 +792,7 @@ overflow-y-scroll h-full text-white bg-gray-800 py-2 px-2'>
       height: '20px'
     }} viewBox="0 0 24 24"
       className='inline align-middle mt-0.5'
+      onClick={() => { setfilterraceopen(true)}}
     >
 
 
