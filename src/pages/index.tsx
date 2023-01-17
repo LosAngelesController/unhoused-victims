@@ -147,6 +147,15 @@ const Home: NextPage = () => {
  const [enabledRaceFilters, setEnabledRaceFilters] = useState(Object.keys(listofracefilters))
 
 
+ function setEnabledRaceFiltersProxy(newEnabledRaceFilters: string[]) {
+  if (newEnabledRaceFilters.length == 0) {
+    setEnabledRaceFilters(['bruh'])
+  }
+  else {
+    setEnabledRaceFilters(newEnabledRaceFilters)
+  }
+ }
+
   function closeModal() {
     setDisclaimerOpen(false);
   }
@@ -753,18 +762,18 @@ overflow-y-scroll h-full text-white bg-gray-800 py-2 px-2 relative'>
    <div className='flex flex-row gap-x-1'>
                   <button className='align-middle bg-gray-800 rounded-lg px-1  border border-gray-400 text-sm md:text-base'
                     onClick={() => {
-                      setEnabledRaceFilters(Object.keys(listofracefilters))
+                      setEnabledRaceFiltersProxy(Object.keys(listofracefilters))
                     }}
 
                   >Select All</button>
                   <button className='align-middle bg-gray-800 rounded-lg px-1 text-sm md:text-base border border-gray-400'
                     onClick={() => {
-                      setEnabledRaceFilters([])
+                      setEnabledRaceFiltersProxy(['bruh'])
                     }}
                   >Unselect All</button>
                   <button
                     onClick={() => {
-                      setEnabledRaceFilters(Object.keys(listofracefilters).filter(n => !enabledRaceFilters.includes(n)))
+                      setEnabledRaceFiltersProxy(Object.keys(listofracefilters).filter(n => !enabledRaceFilters.includes(n)))
                     }}
                     className='align-middle bg-gray-800 rounded-lg px-1 text-sm md:text-base  border border-gray-400'>Invert</button>
                 </div>
@@ -772,7 +781,7 @@ overflow-y-scroll h-full text-white bg-gray-800 py-2 px-2 relative'>
                     orientation="vertical"
                     spacing="sm"
                     value={enabledRaceFilters} onChange={(changes:any) => {
-                      setEnabledRaceFilters(changes)
+                      setEnabledRaceFiltersProxy(changes)
                       console.log(changes)
                     }}>
                     {Object.entries(listofracefilters).map((eachComponent:any, key:number) => (

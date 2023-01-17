@@ -1,6 +1,10 @@
 import Head from 'next/head';
 import * as React from 'react'
 import Nav from "../components/nav";
+import * as d3 from "d3";
+
+
+import rd3 from 'react-d3-library'
 
 export default function charts() {
     return (
@@ -78,7 +82,11 @@ export default function charts() {
       </div>
           <div className='mx-4'>
             <h1 className="text-3xl font-bold mt-5">Charts</h1>
-            
+              <div className='flex flex-row gap-x-3' id='filterslist'>
+
+                
+
+              </div>
           </div>
         </div>
     )
