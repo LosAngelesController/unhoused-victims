@@ -52,7 +52,7 @@ export default function charts() {
         <meta
           name="twitter:image"
           key="twitterimg"
-          content="https://unhousedvictims.lacontroller.io"
+          content="https://controller.lacity.gov/unhoused-victims-thumbnail-min.png"
         ></meta>
         <meta
           name="description"
@@ -74,7 +74,7 @@ export default function charts() {
         />
         <meta
           property="og:image"
-          content="https://unhousedvictims.lacontroller.io"
+          content="https://controller.lacity.gov/unhoused-victims-thumbnail-min.png"
         />
       </Head>
              <div className="flex-none">
