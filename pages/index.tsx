@@ -740,6 +740,20 @@ if (! document.querySelector(".mapboxgl-ctrl-top-right > .mapboxgl-ctrl-geocoder
   })
 
   map.addLayer({
+    id: 'councilline',
+    type: 'line',
+    source: {
+      type: 'geojson',
+      data:  councilBounds
+    },
+    paint: {
+      "line-color": '#ffffff',
+      'line-opacity': 1,
+      'line-width': 3
+    }
+  })
+
+  map.addLayer({
     id: 'cityboundfill',
     type: 'fill',
     source: {
