@@ -260,7 +260,7 @@ const Home: NextPage = () => {
     var filtersystem = JSON.parse(JSON.stringify(
       [
         "match",
-        ["get", "Vict Descent"],
+        ["get", "decent"],
         enabledRaceFilters,
         true,
         false
