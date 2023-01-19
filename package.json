@@ -23,6 +23,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@appbaseio/reactivesearch": "^3.43.7-alpha.1",
     "@babel/types": "^7.17.0",
     "@datadog/browser-rum": "^4.1.0",
     "@headlessui/react": "^0.0.0-insiders.63383c4",
