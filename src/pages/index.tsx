@@ -144,7 +144,14 @@ const Home: NextPage = () => {
   'Z' : 'Asian Indian' 
  }
 
+ const listofgenderfilters = {
+  "M": "Male",
+  "F": "Female",
+  "U": "Unknown"
+ }
+
  const [enabledRaceFilters, setEnabledRaceFilters] = useState(Object.keys(listofracefilters))
+ const [enabledGenderFilters, setEnabledGenderFilters] = useState(Object.keys(listofgenderfilters))
 
 
  function setEnabledRaceFiltersProxy(newEnabledRaceFilters: string[]) {
